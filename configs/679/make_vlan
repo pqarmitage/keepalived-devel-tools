@@ -1,0 +1,15 @@
+#!/bin/bash
+
+[[ $2 = del ]] && CMD=del || CMD=add
+
+for i in $(seq 1 $1); do
+	ip netns exec low ip link $CMD link eth0 bond0.$i type vlan id $i
+	ip netns exec high ip link $CMD link eth0 bond0.$i type vlan id $i
+	if [[ $CMD = add ]]; then
+		ip netns exec low ip link set bond0.$i up
+		ip netns exec high ip link set bond0.$i up
+
+		ip netns exec low ip addr add 192.168.$i.3/24 brd + dev bond0.$i
+		ip netns exec high ip addr add 192.168.$i.1/24 brd + dev bond0.$i
+	fi
+done

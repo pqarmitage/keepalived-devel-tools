@@ -7,7 +7,7 @@ import sys
 import time
 from prettytable import PrettyTable
 
-with open("/var/run/keepalived.pid", "r") as f:
+with open("/var/run/keepalived/low/keepalived.pid", "r") as f:
     keepalived_pid = int(f.read())
 
 os.kill(keepalived_pid, 36)

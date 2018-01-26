@@ -11,7 +11,7 @@ class Vlan:
 
 vlans = []
 for looper in range(0,1):
-    for vlan_id in range(2,10):
+    for vlan_id in range(2,100):
         looper_vlan = ( looper * 256 ) + vlan_id
         ip4addr = "10." + str(looper) + "." + str(vlan_id) + ".254/24"
         ip4net = "10." + str(looper) + "." + str(vlan_id) + ".0/24"
@@ -28,4 +28,3 @@ vrrpconf = templateEnv.get_template('template_vrrp_instance').render(vlans=vlans
 output_file = open("conf_vrrp_full", "w")
 output_file.write(vrrpconf)
 output_file.close()
-
