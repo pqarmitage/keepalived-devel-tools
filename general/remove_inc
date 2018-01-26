@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for f in $(git status | grep modified: | sed -e "s/.*: *//"); do
+	num=$(git diff $f | grep "^+// *# *include" | wc -l)
+	[[ $num -eq 0 ]] && echo skipping $f && continue
+
+	mkdir -p tmp/new/${f%/*}
+	cp -p $f tmp/new/${f%/*}
+	git diff $f | grep "^+// *# *include" | \
+		while read line; do
+			sed -i -e "\:^${line:1}:d" tmp/new/$f 
+		done
+	echo Remove $num lines from $f
+done

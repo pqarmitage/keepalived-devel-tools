@@ -1,0 +1,36 @@
+#!/bin/bash
+
+FLAGS="-DHAVE_CONFIG_H -Wall -Wunused -Wstrict-prototypes -Wextra -g -O2 -DNETSNMP_ENABLE_IPV6 -fno-strict-aliasing -pipe -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_RPM_4_4_COMPAT -Ulinux -Dlinux=linux -D_REENTRANT -D_GNU_SOURCE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64" # -I/usr/lib64/perl5/CORE -I/usr/include -DNETSNMP_NO_INLINE -pthread "
+
+check_file()
+{
+	f=$1
+	changed=0
+
+	cp $f test.c
+	[[ $f =~ genhash ]] && INC="-I../genhash -I../lib" || INC="-I../keepalived/include -I../lib -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
+
+	num_inc=$(grep "^[ 	]*#include" test.c | wc -l)
+	cp -p test.c test.c.orig
+
+	for i in $(seq 2 $num_inc); do
+		line=$(grep "^[ 	]*#include" test.c | head -$i | tail -1)
+		sed -i -e "s:$line:\/\/$line:" test.c
+		gcc -c -Werror $FLAGS -o test.o $INC test.c >/dev/null 2>&1
+		if [[ $? -ne 0 ]]; then
+			sed -i -e "s:\/\/$line:$line:" test.c
+		else
+#			echo $line not needed
+			changed=1
+		fi
+	done
+	gcc -c -Werror $FLAGS -o test.o $INC test.c >/dev/null 2>&1
+	[[ $? -eq 0 && changed -eq 1 ]] && mkdir -p new/dummy && mkdir -p new/dummy/${f%/*} && cp -p test.c new/dummy/$f && echo $f improved
+}
+
+for f in $(find .. -name "*.c" | grep -v "tmp/"); do
+#	echo Compiling $f
+	dir=${f%/*}
+	
+	check_file $f
+done

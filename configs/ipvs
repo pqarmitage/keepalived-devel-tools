@@ -1,0 +1,63 @@
+net_namespace low
+
+global_defs {
+	vrrp_iptables TESTIN # TESTOUT
+vrrp_check_unicast_src
+        vrrp_garp_master_delay 0
+        vrrp_garp_master_repeat 1
+        vrrp_garp_master_refresh 0
+        vrrp_garp_master_refresh_repeat 2
+}
+
+vrrp_instance VI_2 {
+    interface eth0
+    state BACKUP
+    virtual_router_id 253
+    use_vmac
+    version 3
+    unicast_peer {
+	10.21.60.14
+    }
+    unicast_src_ip 10.21.60.20
+    priority 254
+    advert_int 1
+    virtual_ipaddress {
+      172.21.60.39/24 brd 172.21.60.255
+      172.21.70.110/24 brd 172.21.70.255
+    }
+}
+
+virtual_server 172.21.64.39 24 {
+	delay_loop 4
+	lb_algo wrr
+	lb_kind DR
+	protocol TCP
+	alpha
+	omega
+	quorum 10
+
+	real_server 10.21.60.20 22 {
+	  weight 200
+        TCP_CHECK {                     # TCP healthchecker
+            connect_ip fe80::4031:eeff:fe7a:6260  # IP address to connect
+#            connect_port 80     # TCP port to connect
+            bindto fe80::1c5c:94ff:fe70:a3d6     # IP address to bind to
+            bind_port 456        # TCP port to bind to
+	    bind_if eth3
+            connect_timeout 3   # Timeout connection
+          }
+	HTTP_GET {
+            connect_ip fe80::4031:eeff:fe7a:6260  # IP address to connect
+            connect_port 80     # TCP port to connect
+            bindto fe80::1c5c:94ff:fe70:a3d6     # IP address to bind to
+            bind_port 456        # TCP port to bind to
+	    bind_if eth3
+            connect_timeout 3   # Timeout connection
+	    url {
+		path /fred/wed/wed
+		digest 1qsefqwerfqrgqerqeg
+		virtualhost ab.cd.ef
+	    }
+	}
+	}
+}

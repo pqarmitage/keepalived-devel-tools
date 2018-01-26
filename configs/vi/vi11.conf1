@@ -1,0 +1,14 @@
+vrrp_instance VI_11 {
+    state BACKUP
+    interface eth3
+    virtual_router_id 11
+@low    priority 60
+@high   priority 100
+    advert_int 2
+    virtual_ipaddress {
+        169.11.1.2
+        169.11.3.2
+        169.11.1.4
+        169.11.3.4
+    }
+}

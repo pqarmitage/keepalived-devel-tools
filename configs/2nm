@@ -1,0 +1,54 @@
+@high net_namespace high
+@low net_namespace low
+
+global_defs {
+    vrrp_garp_master_delay 0
+    vrrp_garp_master_repeat 1
+    vrrp_garp_lower_prio_delay 0
+    vrrp_garp_lower_prio_repeat 2
+    vrrp_lower_prio_no_advert true
+}
+
+vrrp_script prio {
+	script /etc/keepalived/scripts/2nm.sh
+	interval 1
+	fall 1
+	rise 1
+	weight 100
+}
+
+vrrp_instance VI_0 {
+	state BACKUP
+	interface eth0
+	virtual_router_id 1
+@high	priority 170
+@low	priority 85
+	advert_int 1
+	version 3
+	use_vmac
+	virtual_ipaddress {
+		10.1.0.254/32
+		192.168.0.240/32
+	}
+#	track_script {
+#		prio
+#	}
+}
+
+vrrp_instance VI_1 {
+	state BACKUP
+	interface eth1
+	virtual_router_id 2
+@high	priority 170
+@low	priority 85
+	advert_int 1
+	version 3
+	use_vmac
+
+	virtual_ipaddress {
+#		10.1.0.253/32
+#		192.168.0.241/32
+		fe84::1
+		fd00:0:1:101::100
+	}
+}

@@ -1,0 +1,110 @@
+#! /bin/bash
+
+[[ -z $PAT ]] && PAT=../patches.019
+
+set_patch_num()
+{
+	SAV_PATCH_NO=$(printf "%4.4d" $(sed <<<$1 -e "s/^0*//"))
+}
+d()
+{
+	[[ -d $1 ]] && PAT=$1 || echo $PAT is not a directory
+}
+e () 
+{ 
+    $PAT/16/extract $1
+}
+p () 
+{ 
+    [[ -n $1 ]] && set_patch_num $1
+    patch --fuzz=0 -p1 < $PAT/$SAV_PATCH_NO-*.patch
+}
+pt () 
+{ 
+    [[ -n $1 ]] && set_patch_num $1
+    patch -p1 < $PAT/$SAV_PATCH_NO-*.patch
+}
+pr () 
+{ 
+    [[ -n $1 ]] && set_patch_num $1
+    patch --fuzz=0 -R -p1 < $PAT/$SAV_PATCH_NO-*.patch
+}
+prt () 
+{ 
+    [[ -n $1 ]] && set_patch_num $1
+    patch -R -p1 < $PAT/$SAV_PATCH_NO-*.patch
+}
+pat () 
+{ 
+    vim $PAT/16/patches
+}
+v () 
+{ 
+    [[ -n $1 ]] && set_patch_num $1
+    vim $PAT/$SAV_PATCH_NO-*.patch
+}
+m () 
+{ 
+    [[ -n $1 ]] && set_patch_num $1
+    more $PAT/$SAV_PATCH_NO-*.patch
+}
+g()
+{
+    [[ -n $1 ]] && set_patch_num $1
+    git diff $2 | diff $PAT/$SAV_PATCH_NO-*.patch - 
+}
+c()
+{
+	[[ -n $1 ]] && set_patch_num $1
+	git add -A
+	git  commit -m $1
+}
+am()
+{
+	[[ -n $1 ]] && set_patch_num $1
+	[[ $(git branch | grep "^\*" | sed -e "s/^\* //") = dev ]] && echo You are on dev && return
+	git am --ignore-date $PAT/$SAV_PATCH_NO-*.patch
+	[[ $? -ne 0 ]] && return
+	echo -n "Next: "
+	x
+}
+r()
+{
+	[[ -n $1 ]] && set_patch_num $1
+	src=$(ls $PAT/$SAV_PATCH_NO-*.patch)
+        where=$(grep -n "^diff " $src | head -1 | sed -e "s/:.*//")
+        head -n $((where - 1)) $src >${src}.new
+        git diff >>${src}.new
+        [[ --\  = $(tail -n 3 $src | head -1) ]] && tail -n 3 $src >>${src}.new
+	mv $src ${src}.orig
+	mv ${src}.new $src
+}
+x()
+{
+	SAV_PATCH_NO=$(printf "%4.4d" $(($(sed <<<$SAV_PATCH_NO -e "s/^0*//") + 1)))
+	echo $SAV_PATCH_NO
+}
+X()
+{
+	SAV_PATCH_NO=$(printf "%4.4d" $(($(sed <<<$SAV_PATCH_NO -e "s/^0*//") - 1)))
+	echo $SAV_PATCH_NO
+}
+n()
+{
+	echo $SAV_PATCH_NO
+}
+b()
+{
+	[[ $(git branch | grep "^\*" | sed -e "s/^\* //") != dev ]] && echo You are not on dev && return
+	git branch -t $1
+	git checkout $1
+	CUR_BRANCH=$1
+}
+C()
+{
+	[[ $CUR_BRANCH != $(git branch | grep "^\*" | sed -e "s/^\* //") ]] && echo Expected to be on $CUR_BRANCH && return
+	[[ $CUR_BRANCH = dev ]] && echo You are on dev && return
+
+	git checkout dev
+	git merge $CUR_BRANCH
+}

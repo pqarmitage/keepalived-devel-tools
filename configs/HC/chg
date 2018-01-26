@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[[ -n $1 ]] && SLEEP=$1 || SLEEP=0
+
+ret=$(cat /tmp/op/HC-DB-master-10.1.18.21.ret)
+
+# ret = 0 => 2, 1
+# ret = 1 => 1, 2
+
+echo 0 >/tmp/op/HC-DB-master-10.$((2 - ret)).18.21.ret
+[[ $SLEEP -gt 0 ]] && sleep $SLEEP
+echo 1 >/tmp/op/HC-DB-master-10.$((1 + ret)).18.21.ret

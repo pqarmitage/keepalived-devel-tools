@@ -1,0 +1,102 @@
+global_defs {
+	vrrp_iptables TESTIN # TESTOUT
+vrrp_check_unicast_src
+        vrrp_garp_master_delay 0
+        vrrp_garp_master_repeat 1
+        vrrp_garp_master_refresh 0
+        vrrp_garp_master_refresh_repeat 2
+
+}
+
+vrrp_script wsrepready {          # VRRP script declaration
+    script "/tmp/wsrepready"      # script to run periodically
+    interval 3          # run the script this every seconds
+    timeout 1           # script considered failed after 'timeout' seconds
+!    weight -254  # adjust priority by this weight
+    fall 1              # required number of failures for KO switch
+    rise 1              # required number of successes for OK switch
+}
+
+vrrp_instance VI_2 {
+    interface eth0.60
+    state BACKUP
+    virtual_router_id 253
+!    use_vmac
+    version 3
+    unicast_peer {
+	10.21.60.14
+    }
+    unicast_src_ip 10.21.60.20
+    priority 254
+    advert_int 1
+!preempt_delay 10
+! nopreempt
+  track_script {
+!   wsrepready weight -254
+  wsrepready
+  }
+    virtual_ipaddress {
+      172.21.60.39/24 brd 172.21.60.255
+      172.21.70.110/24 brd 172.21.70.255
+    }
+}
+
+vrrp_instance VI_3 {
+    interface eth0.60
+    state BACKUP
+    virtual_router_id 252
+!    use_vmac
+    version 3
+    unicast_peer {
+	10.21.60.14
+    }
+    unicast_src_ip 10.21.60.20
+    priority 64
+    advert_int 1
+!preempt_delay 10
+! nopreempt
+  track_script {
+!   wsrepready weight -254
+  wsrepready
+  }
+    virtual_ipaddress {
+      172.21.64.39/24 brd 172.21.64.255
+      172.21.74.110/24 brd 172.21.74.255
+    }
+}
+
+vrrp_instance VI_6 {
+    native_ipv6
+    interface eth0.60
+    state BACKUP
+    virtual_router_id 253
+    use_vmac
+    priority 254
+    advert_int 1
+  track_script {
+   wsrepready
+  }
+    virtual_ipaddress {
+      fe80::1:2
+      2001:470:69dd:60::4234
+      2001:470:69dd:60::5345
+    }
+}
+
+vrrp_instance VI_7 {
+    native_ipv6
+    interface eth0.60
+    state BACKUP
+    virtual_router_id 252
+    use_vmac
+    priority 192
+    advert_int 1
+  track_script {
+   wsrepready
+  }
+    virtual_ipaddress {
+      fe80::2:2
+      2001:470:69dd:64::4234
+      2001:470:69dd:64::5345
+    }
+}

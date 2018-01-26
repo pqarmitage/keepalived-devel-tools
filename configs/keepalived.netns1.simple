@@ -1,0 +1,21 @@
+global_defs {
+	vrrp_iptables TESTIN TESTOUT
+        vrrp_garp_master_delay 0
+        vrrp_garp_master_repeat 1
+        vrrp_garp_master_refresh 0
+        vrrp_garp_master_refresh_repeat 2
+	net_namespace netns1
+}
+
+vrrp_instance VI_1 {
+    interface eth0
+    state BACKUP
+    virtual_router_id 253
+    version 3
+    priority 254
+    advert_int 1
+    virtual_ipaddress {
+	10.2.0.100/32
+	10.2.0.101/32
+    }
+}

@@ -1,0 +1,313 @@
+#! /bin/bash
+
+# 10.10.20.2 5141
+# 10.10.20.2 80
+# 10.10.20.2 9200
+# 10.1.18.24 443
+# 10.1.18.24 80
+# 10.1.18.32 80
+# 10.1.18.40 80
+# 10.1.20.2 5141
+# 10.1.20.2 80
+# 10.1.20.2 9200
+# 10.1.29.7 9306
+# 10.1.29.8 9306
+# 10.1.31.11 80
+# 10.1.44.40 443
+# 10.1.44.40 80
+# 10.1.44.40 9306
+# 10.1.44.40 9312
+# 10.1.45.3 80
+# 10.1.46.12 6379
+# 10.1.46.21 6379
+# 10.1.47.3 16390
+# 10.1.47.3 16392
+# 10.1.47.3 16394
+# 10.1.47.3 16396
+# 10.1.52.2 80
+# 10.1.52.2 8020
+# 10.1.58.5 6379
+# 10.1.58.6 6379
+# 10.1.58.9 6379
+# 10.1.61.9 443
+# 10.1.61.9 80
+# 10.1.62.2 16390
+# 10.1.62.2 16391
+# 10.1.62.2 16392
+# 10.1.62.3 16390
+# 10.1.62.3 16391
+# 10.1.62.5 16390
+# 10.1.62.5 16391
+# 10.1.64.13 443
+# 10.1.64.13 80
+# 10.1.64.43 80
+# 10.1.66.5 80
+# 10.1.66.6 80
+# 10.1.72.61 5433
+# 10.1.72.62 5433
+# 10.1.72.63 5433
+# 10.1.73.26 6379
+# 10.1.73.6 443
+# 10.1.73.6 80
+# 10.1.99.2 443
+# 10.1.99.2 80
+# 10.1.99.5 9306
+# 10.2.11.21 5433
+# 10.2.11.21 9001
+# 10.2.11.21 9002
+# 10.2.11.22 5433
+# 10.2.11.22 9001
+# 10.2.11.22 9002
+# 10.2.11.23 5433
+# 10.2.11.23 9001
+# 10.2.11.23 9002
+# 10.2.11.2 8123
+# 10.2.11.2 9001
+# 10.2.11.2 9002
+# 10.2.11.3 8123
+# 10.2.11.3 9001
+# 10.2.11.3 9002
+# 10.2.18.24 443
+# 10.2.18.24 80
+# 10.2.18.32 80
+# 10.2.18.40 80
+# 10.2.18.43 80
+# 10.2.18.44 443
+# 10.2.18.44 80
+# 10.2.20.105 5140
+# 10.2.20.2 5141
+# 10.2.20.2 80
+# 10.2.20.2 9200
+# 10.2.21.201 80
+# 10.2.21.201 8006
+# 10.2.21.202 80
+# 10.2.21.202 8006
+# 10.2.21.203 80
+# 10.2.21.203 8006
+# 10.2.21.204 80
+# 10.2.21.204 8006
+# 10.2.21.205 80
+# 10.2.21.205 8006
+# 10.2.24.19 443
+# 10.2.24.19 80
+# 10.2.24.19 9306
+# 10.2.24.19 9312
+# 10.2.41.2 80
+# 10.2.42.12 6379
+# 10.2.42.21 6379
+# 10.2.43.4 16390
+# 10.2.43.4 16392
+# 10.2.43.4 16394
+# 10.2.43.4 16396
+# 10.2.48.2 80
+# 10.2.48.2 8020
+# 10.2.59.14 6379
+# 10.2.59.15 6379
+# 10.2.59.20 6379
+# 10.2.59.6 443
+# 10.2.59.6 80
+# 10.2.60.2 16390
+# 10.2.60.2 16391
+# 10.2.60.2 16392
+# 10.2.60.4 16391
+# 10.2.60.4 16392
+# 10.2.60.6 16390
+# 10.2.60.6 16391
+# 10.2.60.7 16390
+# 10.2.60.7 16391
+# 10.2.60.7 16392
+# 10.2.61.101 443
+# 10.2.61.101 80
+# 10.2.69.2 9306
+# 10.2.69.4 9306
+# 10.2.71.11 80
+# 10.2.99.2 443
+# 10.2.99.2 80
+# 10.2.99.55 9306
+# 10.9.5.146 5140
+# 194.190.77.16 25
+# 194.190.77.18 80
+# 194.190.77.18 8080
+# 91.207.59.16 25
+# 91.207.59.18 80
+# 91.207.59.18 8080
+
+[[ $1 != start && $1 != stop ]] && echo Invalid option $1 && exit
+
+[[ $1 = start ]] && IPCMD=add || IPCMD=del
+
+if [[ $1 = start ]]; then
+	ip netns exec high test/tcp_server -s -p 16390 &
+	ip netns exec high test/tcp_server -s -p 16391 &
+	ip netns exec high test/tcp_server -s -p 16392 &
+	ip netns exec high test/tcp_server -s -p 16394 &
+	ip netns exec high test/tcp_server -s -p 16396 &
+	ip netns exec high test/tcp_server -s -p 25 &
+	ip netns exec high test/tcp_server -s -p 443 &
+	ip netns exec high test/tcp_server -s -p 5140 &
+	ip netns exec high test/tcp_server -s -p 5141 &
+	ip netns exec high test/tcp_server -s -p 5433 &
+	ip netns exec high test/tcp_server -s -p 6379 &
+	ip netns exec high test/tcp_server -s -p 80 &
+	ip netns exec high test/tcp_server -s -p 8006 &
+	ip netns exec high test/tcp_server -s -p 8020 &
+	ip netns exec high test/tcp_server -s -p 8080 &
+	ip netns exec high test/tcp_server -s -p 8123 &
+	ip netns exec high test/tcp_server -s -p 9001 &
+	ip netns exec high test/tcp_server -s -p 9002 &
+	ip netns exec high test/tcp_server -s -p 9200 &
+	ip netns exec high test/tcp_server -s -p 9306 &
+	ip netns exec high test/tcp_server -s -p 9312 &
+else
+	killall tcp_server
+fi
+
+ip netns exec high ip addr $IPCMD dev eth0 10.10.20.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.18.24/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.18.32/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.18.40/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.20.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.29.7/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.29.8/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.31.11/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.44.40/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.45.3/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.46.12/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.46.21/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.47.3/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.52.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.58.5/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.58.6/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.58.9/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.61.9/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.62.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.62.3/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.62.5/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.64.13/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.64.43/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.66.5/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.66.6/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.72.61/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.72.62/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.72.63/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.73.26/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.73.6/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.99.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.1.99.5/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.11.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.11.21/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.11.22/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.11.23/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.11.3/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.18.24/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.18.32/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.18.40/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.18.43/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.18.44/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.20.105/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.20.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.21.201/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.21.202/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.21.203/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.21.204/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.21.205/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.24.19/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.41.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.42.12/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.42.21/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.43.4/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.48.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.59.14/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.59.15/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.59.20/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.59.6/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.60.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.60.4/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.60.6/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.60.7/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.61.101/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.69.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.69.4/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.71.11/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.99.2/32
+ip netns exec high ip addr $IPCMD dev eth0 10.2.99.55/32
+ip netns exec high ip addr $IPCMD dev eth0 10.9.5.146/32
+ip netns exec high ip addr $IPCMD dev eth0 194.190.77.16/32
+ip netns exec high ip addr $IPCMD dev eth0 194.190.77.18/32
+ip netns exec high ip addr $IPCMD dev eth0 91.207.59.16/32
+ip netns exec high ip addr $IPCMD dev eth0 91.207.59.18/32
+
+
+ip netns exec high ip addr $IPCMD dev eth0 10.10.20.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.18.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.20.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.29.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.31.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.44.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.45.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.46.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.47.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.52.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.58.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.61.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.62.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.64.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.66.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.72.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.73.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.1.99.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.11.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.18.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.20.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.21.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.24.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.41.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.42.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.43.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.48.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.59.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.60.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.61.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.69.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.71.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.2.99.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 10.9.5.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 194.190.77.70/24 brd +
+ip netns exec high ip addr $IPCMD dev eth0 91.207.59.70/24 brd +
+
+ip netns exec low ip addr $IPCMD dev eth0 10.10.20.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.18.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.20.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.29.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.31.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.44.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.45.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.46.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.47.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.52.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.58.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.61.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.62.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.64.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.66.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.72.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.73.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.1.99.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.11.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.18.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.20.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.21.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.24.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.41.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.42.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.43.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.48.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.59.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.60.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.61.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.69.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.71.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.2.99.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 10.9.5.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 194.190.77.71/24 brd +
+ip netns exec low ip addr $IPCMD dev eth0 91.207.59.71/24 brd +

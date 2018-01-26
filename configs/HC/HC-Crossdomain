@@ -1,0 +1,21 @@
+#! /bin/bash
+
+NAME=${0##*/}
+NAME=${NAME%.sh}
+if [[ $# -ge 1 ]]; then
+	NAME=${NAME}-$1
+	[[ ! -z $2 ]] && NAME=$NAME:$2
+fi
+
+[[ ! -f /tmp/op/$NAME.ret ]] && echo 0 >/tmp/op/$NAME.ret
+
+RET=$(cat /tmp/op/$NAME.ret)
+
+if [[ $RET -ge 3 && $RET -le 15 ]]; then
+	 echo $((RET - 1)) >/tmp/op/$NAME.ret
+	 sleep $RET
+fi
+
+echo $(date): $* - returning $RET >>/tmp/op/$NAME.log
+
+exit $RET

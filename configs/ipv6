@@ -1,0 +1,15 @@
+@low net_namespace low
+@medium net_namespace medium
+@high net_namespace high
+
+vrrp_instance VI_1 {
+@low    interface eth0
+@medium    interface br0
+@high    interface eth0
+    virtual_ipaddress {
+        fe80::0102:0304
+        2001:db8::1
+    }
+
+    virtual_router_id 64
+}
