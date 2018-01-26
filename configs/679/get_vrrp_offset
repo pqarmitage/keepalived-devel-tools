@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import argparse
+import json
+import sys
+
+parser = argparse.ArgumentParser(description='Arguments')
+parser.add_argument('instance', type=int, help='Instance id')
+args = parser.parse_args()
+
+try:
+    with open("/mnt/ramdisk/keepalived_offset.json", "r") as jsonfile:
+        to_return = json.load(jsonfile)[str(args.instance)]
+except:
+    sys.exit(0)
+
+sys.exit(to_return)
