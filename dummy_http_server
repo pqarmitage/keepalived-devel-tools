@@ -18,6 +18,6 @@ if [ -z "$PORT" ]; then
 fi
 
 echo "Fake 200 server listening on port $PORT"
-while true; do echo -e "$HTTP_HEADER" | nc -l "$PORT"; done;
+while true; do echo -ne "$HTTP_HEADER" | nc -l "$PORT"; done;
 EOF
 
