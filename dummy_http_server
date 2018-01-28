@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#
+# Fake HTTP 200 OK Daemon
+#
+PORT=${1:-10000}
+HTTP_BODY='It Works!'
+BODY_LENGTH=$( expr length "$HTTP_BODY" )
+HTTP_HEADER="HTTP/1.1 200 OK\r\n"\
+"Content-Type: text/plain\r\n"\
+"Content-Length: $BODY_LENGTH\r\n"\
+"Pragma: no-cache\r\n"\
+"Expires: Thu, 01 Jan 1970 00:00:00 GMT\r\n"\
+"Connection: Close\r\n\r\n"\
+"$HTTP_BODY"
+
+if [ -z "$PORT" ]; then
+    PORT=10000
+fi
+
+echo "Fake 200 server listening on port $PORT"
+while true; do echo -ne "$HTTP_HEADER" | nc -l "$PORT"; done;
+EOF
+
