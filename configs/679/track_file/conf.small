@@ -22,14 +22,14 @@ vrrp_script check_oco {
 
 vrrp_track_file offset_instance_42 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/42"
+    file "${_PWD}/../track_files/42"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_62 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/62"
+    file "${_PWD}/../track_files/62"
     weight -100
     init_file
 }

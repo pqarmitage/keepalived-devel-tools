@@ -27,7 +27,7 @@ vrrp_script check_oco {
 
 vrrp_script offset_instance_42 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 42"
+    script "${_PWD}/../get_vrrp_offset 42"
     interval 5
     timeout 5
     weight -100
@@ -37,7 +37,7 @@ vrrp_script offset_instance_42 {
 
 vrrp_script offset_instance_62 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 62"
+    script "${_PWD}/../get_vrrp_offset 62"
     interval 5
     timeout 5
     weight -100
@@ -47,7 +47,7 @@ vrrp_script offset_instance_62 {
 
 vrrp_script offset_instance_43 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 43"
+    script "${_PWD}/../get_vrrp_offset 43"
     interval 5
     timeout 5
     weight -100
@@ -57,7 +57,7 @@ vrrp_script offset_instance_43 {
 
 vrrp_script offset_instance_63 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 63"
+    script "${_PWD}/../get_vrrp_offset 63"
     interval 5
     timeout 5
     weight -100
@@ -67,7 +67,7 @@ vrrp_script offset_instance_63 {
 
 vrrp_script offset_instance_44 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 44"
+    script "${_PWD}/../get_vrrp_offset 44"
     interval 5
     timeout 5
     weight -100
@@ -77,7 +77,7 @@ vrrp_script offset_instance_44 {
 
 vrrp_script offset_instance_64 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 64"
+    script "${_PWD}/../get_vrrp_offset 64"
     interval 5
     timeout 5
     weight -100
@@ -87,7 +87,7 @@ vrrp_script offset_instance_64 {
 
 vrrp_script offset_instance_45 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 45"
+    script "${_PWD}/../get_vrrp_offset 45"
     interval 5
     timeout 5
     weight -100
@@ -97,7 +97,7 @@ vrrp_script offset_instance_45 {
 
 vrrp_script offset_instance_65 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 65"
+    script "${_PWD}/../get_vrrp_offset 65"
     interval 5
     timeout 5
     weight -100
@@ -107,7 +107,7 @@ vrrp_script offset_instance_65 {
 
 vrrp_script offset_instance_46 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 46"
+    script "${_PWD}/../get_vrrp_offset 46"
     interval 5
     timeout 5
     weight -100
@@ -117,7 +117,7 @@ vrrp_script offset_instance_46 {
 
 vrrp_script offset_instance_66 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 66"
+    script "${_PWD}/../get_vrrp_offset 66"
     interval 5
     timeout 5
     weight -100
@@ -127,7 +127,7 @@ vrrp_script offset_instance_66 {
 
 vrrp_script offset_instance_47 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 47"
+    script "${_PWD}/../get_vrrp_offset 47"
     interval 5
     timeout 5
     weight -100
@@ -137,7 +137,7 @@ vrrp_script offset_instance_47 {
 
 vrrp_script offset_instance_67 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 67"
+    script "${_PWD}/../get_vrrp_offset 67"
     interval 5
     timeout 5
     weight -100
@@ -147,7 +147,7 @@ vrrp_script offset_instance_67 {
 
 vrrp_script offset_instance_48 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 48"
+    script "${_PWD}/../get_vrrp_offset 48"
     interval 5
     timeout 5
     weight -100
@@ -157,7 +157,7 @@ vrrp_script offset_instance_48 {
 
 vrrp_script offset_instance_68 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 68"
+    script "${_PWD}/../get_vrrp_offset 68"
     interval 5
     timeout 5
     weight -100
@@ -167,7 +167,7 @@ vrrp_script offset_instance_68 {
 
 vrrp_script offset_instance_49 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 49"
+    script "${_PWD}/../get_vrrp_offset 49"
     interval 5
     timeout 5
     weight -100
@@ -177,7 +177,7 @@ vrrp_script offset_instance_49 {
 
 vrrp_script offset_instance_69 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 69"
+    script "${_PWD}/../get_vrrp_offset 69"
     interval 5
     timeout 5
     weight -100
@@ -187,7 +187,7 @@ vrrp_script offset_instance_69 {
 
 vrrp_script offset_instance_410 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 410"
+    script "${_PWD}/../get_vrrp_offset 410"
     interval 5
     timeout 5
     weight -100
@@ -197,7 +197,7 @@ vrrp_script offset_instance_410 {
 
 vrrp_script offset_instance_610 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 610"
+    script "${_PWD}/../get_vrrp_offset 610"
     interval 5
     timeout 5
     weight -100
@@ -207,7 +207,7 @@ vrrp_script offset_instance_610 {
 
 vrrp_script offset_instance_411 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 411"
+    script "${_PWD}/../get_vrrp_offset 411"
     interval 5
     timeout 5
     weight -100
@@ -217,7 +217,7 @@ vrrp_script offset_instance_411 {
 
 vrrp_script offset_instance_611 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 611"
+    script "${_PWD}/../get_vrrp_offset 611"
     interval 5
     timeout 5
     weight -100
@@ -227,7 +227,7 @@ vrrp_script offset_instance_611 {
 
 vrrp_script offset_instance_412 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 412"
+    script "${_PWD}/../get_vrrp_offset 412"
     interval 5
     timeout 5
     weight -100
@@ -237,7 +237,7 @@ vrrp_script offset_instance_412 {
 
 vrrp_script offset_instance_612 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 612"
+    script "${_PWD}/../get_vrrp_offset 612"
     interval 5
     timeout 5
     weight -100
@@ -247,7 +247,7 @@ vrrp_script offset_instance_612 {
 
 vrrp_script offset_instance_413 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 413"
+    script "${_PWD}/../get_vrrp_offset 413"
     interval 5
     timeout 5
     weight -100
@@ -257,7 +257,7 @@ vrrp_script offset_instance_413 {
 
 vrrp_script offset_instance_613 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 613"
+    script "${_PWD}/../get_vrrp_offset 613"
     interval 5
     timeout 5
     weight -100
@@ -267,7 +267,7 @@ vrrp_script offset_instance_613 {
 
 vrrp_script offset_instance_414 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 414"
+    script "${_PWD}/../get_vrrp_offset 414"
     interval 5
     timeout 5
     weight -100
@@ -277,7 +277,7 @@ vrrp_script offset_instance_414 {
 
 vrrp_script offset_instance_614 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 614"
+    script "${_PWD}/../get_vrrp_offset 614"
     interval 5
     timeout 5
     weight -100
@@ -287,7 +287,7 @@ vrrp_script offset_instance_614 {
 
 vrrp_script offset_instance_415 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 415"
+    script "${_PWD}/../get_vrrp_offset 415"
     interval 5
     timeout 5
     weight -100
@@ -297,7 +297,7 @@ vrrp_script offset_instance_415 {
 
 vrrp_script offset_instance_615 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 615"
+    script "${_PWD}/../get_vrrp_offset 615"
     interval 5
     timeout 5
     weight -100
@@ -307,7 +307,7 @@ vrrp_script offset_instance_615 {
 
 vrrp_script offset_instance_416 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 416"
+    script "${_PWD}/../get_vrrp_offset 416"
     interval 5
     timeout 5
     weight -100
@@ -317,7 +317,7 @@ vrrp_script offset_instance_416 {
 
 vrrp_script offset_instance_616 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 616"
+    script "${_PWD}/../get_vrrp_offset 616"
     interval 5
     timeout 5
     weight -100
@@ -327,7 +327,7 @@ vrrp_script offset_instance_616 {
 
 vrrp_script offset_instance_417 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 417"
+    script "${_PWD}/../get_vrrp_offset 417"
     interval 5
     timeout 5
     weight -100
@@ -337,7 +337,7 @@ vrrp_script offset_instance_417 {
 
 vrrp_script offset_instance_617 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 617"
+    script "${_PWD}/../get_vrrp_offset 617"
     interval 5
     timeout 5
     weight -100
@@ -347,7 +347,7 @@ vrrp_script offset_instance_617 {
 
 vrrp_script offset_instance_418 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 418"
+    script "${_PWD}/../get_vrrp_offset 418"
     interval 5
     timeout 5
     weight -100
@@ -357,7 +357,7 @@ vrrp_script offset_instance_418 {
 
 vrrp_script offset_instance_618 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 618"
+    script "${_PWD}/../get_vrrp_offset 618"
     interval 5
     timeout 5
     weight -100
@@ -367,7 +367,7 @@ vrrp_script offset_instance_618 {
 
 vrrp_script offset_instance_419 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 419"
+    script "${_PWD}/../get_vrrp_offset 419"
     interval 5
     timeout 5
     weight -100
@@ -377,7 +377,7 @@ vrrp_script offset_instance_419 {
 
 vrrp_script offset_instance_619 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 619"
+    script "${_PWD}/../get_vrrp_offset 619"
     interval 5
     timeout 5
     weight -100
@@ -387,7 +387,7 @@ vrrp_script offset_instance_619 {
 
 vrrp_script offset_instance_420 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 420"
+    script "${_PWD}/../get_vrrp_offset 420"
     interval 5
     timeout 5
     weight -100
@@ -397,7 +397,7 @@ vrrp_script offset_instance_420 {
 
 vrrp_script offset_instance_620 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 620"
+    script "${_PWD}/../get_vrrp_offset 620"
     interval 5
     timeout 5
     weight -100
@@ -407,7 +407,7 @@ vrrp_script offset_instance_620 {
 
 vrrp_script offset_instance_421 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 421"
+    script "${_PWD}/../get_vrrp_offset 421"
     interval 5
     timeout 5
     weight -100
@@ -417,7 +417,7 @@ vrrp_script offset_instance_421 {
 
 vrrp_script offset_instance_621 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 621"
+    script "${_PWD}/../get_vrrp_offset 621"
     interval 5
     timeout 5
     weight -100
@@ -427,7 +427,7 @@ vrrp_script offset_instance_621 {
 
 vrrp_script offset_instance_422 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 422"
+    script "${_PWD}/../get_vrrp_offset 422"
     interval 5
     timeout 5
     weight -100
@@ -437,7 +437,7 @@ vrrp_script offset_instance_422 {
 
 vrrp_script offset_instance_622 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 622"
+    script "${_PWD}/../get_vrrp_offset 622"
     interval 5
     timeout 5
     weight -100
@@ -447,7 +447,7 @@ vrrp_script offset_instance_622 {
 
 vrrp_script offset_instance_423 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 423"
+    script "${_PWD}/../get_vrrp_offset 423"
     interval 5
     timeout 5
     weight -100
@@ -457,7 +457,7 @@ vrrp_script offset_instance_423 {
 
 vrrp_script offset_instance_623 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 623"
+    script "${_PWD}/../get_vrrp_offset 623"
     interval 5
     timeout 5
     weight -100
@@ -467,7 +467,7 @@ vrrp_script offset_instance_623 {
 
 vrrp_script offset_instance_424 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 424"
+    script "${_PWD}/../get_vrrp_offset 424"
     interval 5
     timeout 5
     weight -100
@@ -477,7 +477,7 @@ vrrp_script offset_instance_424 {
 
 vrrp_script offset_instance_624 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 624"
+    script "${_PWD}/../get_vrrp_offset 624"
     interval 5
     timeout 5
     weight -100
@@ -487,7 +487,7 @@ vrrp_script offset_instance_624 {
 
 vrrp_script offset_instance_425 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 425"
+    script "${_PWD}/../get_vrrp_offset 425"
     interval 5
     timeout 5
     weight -100
@@ -497,7 +497,7 @@ vrrp_script offset_instance_425 {
 
 vrrp_script offset_instance_625 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 625"
+    script "${_PWD}/../get_vrrp_offset 625"
     interval 5
     timeout 5
     weight -100
@@ -507,7 +507,7 @@ vrrp_script offset_instance_625 {
 
 vrrp_script offset_instance_426 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 426"
+    script "${_PWD}/../get_vrrp_offset 426"
     interval 5
     timeout 5
     weight -100
@@ -517,7 +517,7 @@ vrrp_script offset_instance_426 {
 
 vrrp_script offset_instance_626 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 626"
+    script "${_PWD}/../get_vrrp_offset 626"
     interval 5
     timeout 5
     weight -100
@@ -527,7 +527,7 @@ vrrp_script offset_instance_626 {
 
 vrrp_script offset_instance_427 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 427"
+    script "${_PWD}/../get_vrrp_offset 427"
     interval 5
     timeout 5
     weight -100
@@ -537,7 +537,7 @@ vrrp_script offset_instance_427 {
 
 vrrp_script offset_instance_627 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 627"
+    script "${_PWD}/../get_vrrp_offset 627"
     interval 5
     timeout 5
     weight -100
@@ -547,7 +547,7 @@ vrrp_script offset_instance_627 {
 
 vrrp_script offset_instance_428 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 428"
+    script "${_PWD}/../get_vrrp_offset 428"
     interval 5
     timeout 5
     weight -100
@@ -557,7 +557,7 @@ vrrp_script offset_instance_428 {
 
 vrrp_script offset_instance_628 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 628"
+    script "${_PWD}/../get_vrrp_offset 628"
     interval 5
     timeout 5
     weight -100
@@ -567,7 +567,7 @@ vrrp_script offset_instance_628 {
 
 vrrp_script offset_instance_429 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 429"
+    script "${_PWD}/../get_vrrp_offset 429"
     interval 5
     timeout 5
     weight -100
@@ -577,7 +577,7 @@ vrrp_script offset_instance_429 {
 
 vrrp_script offset_instance_629 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 629"
+    script "${_PWD}/../get_vrrp_offset 629"
     interval 5
     timeout 5
     weight -100
@@ -587,7 +587,7 @@ vrrp_script offset_instance_629 {
 
 vrrp_script offset_instance_430 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 430"
+    script "${_PWD}/../get_vrrp_offset 430"
     interval 5
     timeout 5
     weight -100
@@ -597,7 +597,7 @@ vrrp_script offset_instance_430 {
 
 vrrp_script offset_instance_630 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 630"
+    script "${_PWD}/../get_vrrp_offset 630"
     interval 5
     timeout 5
     weight -100
@@ -607,7 +607,7 @@ vrrp_script offset_instance_630 {
 
 vrrp_script offset_instance_431 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 431"
+    script "${_PWD}/../get_vrrp_offset 431"
     interval 5
     timeout 5
     weight -100
@@ -617,7 +617,7 @@ vrrp_script offset_instance_431 {
 
 vrrp_script offset_instance_631 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 631"
+    script "${_PWD}/../get_vrrp_offset 631"
     interval 5
     timeout 5
     weight -100
@@ -627,7 +627,7 @@ vrrp_script offset_instance_631 {
 
 vrrp_script offset_instance_432 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 432"
+    script "${_PWD}/../get_vrrp_offset 432"
     interval 5
     timeout 5
     weight -100
@@ -637,7 +637,7 @@ vrrp_script offset_instance_432 {
 
 vrrp_script offset_instance_632 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 632"
+    script "${_PWD}/../get_vrrp_offset 632"
     interval 5
     timeout 5
     weight -100
@@ -647,7 +647,7 @@ vrrp_script offset_instance_632 {
 
 vrrp_script offset_instance_433 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 433"
+    script "${_PWD}/../get_vrrp_offset 433"
     interval 5
     timeout 5
     weight -100
@@ -657,7 +657,7 @@ vrrp_script offset_instance_433 {
 
 vrrp_script offset_instance_633 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 633"
+    script "${_PWD}/../get_vrrp_offset 633"
     interval 5
     timeout 5
     weight -100
@@ -667,7 +667,7 @@ vrrp_script offset_instance_633 {
 
 vrrp_script offset_instance_434 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 434"
+    script "${_PWD}/../get_vrrp_offset 434"
     interval 5
     timeout 5
     weight -100
@@ -677,7 +677,7 @@ vrrp_script offset_instance_434 {
 
 vrrp_script offset_instance_634 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 634"
+    script "${_PWD}/../get_vrrp_offset 634"
     interval 5
     timeout 5
     weight -100
@@ -687,7 +687,7 @@ vrrp_script offset_instance_634 {
 
 vrrp_script offset_instance_435 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 435"
+    script "${_PWD}/../get_vrrp_offset 435"
     interval 5
     timeout 5
     weight -100
@@ -697,7 +697,7 @@ vrrp_script offset_instance_435 {
 
 vrrp_script offset_instance_635 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 635"
+    script "${_PWD}/../get_vrrp_offset 635"
     interval 5
     timeout 5
     weight -100
@@ -707,7 +707,7 @@ vrrp_script offset_instance_635 {
 
 vrrp_script offset_instance_436 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 436"
+    script "${_PWD}/../get_vrrp_offset 436"
     interval 5
     timeout 5
     weight -100
@@ -717,7 +717,7 @@ vrrp_script offset_instance_436 {
 
 vrrp_script offset_instance_636 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 636"
+    script "${_PWD}/../get_vrrp_offset 636"
     interval 5
     timeout 5
     weight -100
@@ -727,7 +727,7 @@ vrrp_script offset_instance_636 {
 
 vrrp_script offset_instance_437 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 437"
+    script "${_PWD}/../get_vrrp_offset 437"
     interval 5
     timeout 5
     weight -100
@@ -737,7 +737,7 @@ vrrp_script offset_instance_437 {
 
 vrrp_script offset_instance_637 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 637"
+    script "${_PWD}/../get_vrrp_offset 637"
     interval 5
     timeout 5
     weight -100
@@ -747,7 +747,7 @@ vrrp_script offset_instance_637 {
 
 vrrp_script offset_instance_438 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 438"
+    script "${_PWD}/../get_vrrp_offset 438"
     interval 5
     timeout 5
     weight -100
@@ -757,7 +757,7 @@ vrrp_script offset_instance_438 {
 
 vrrp_script offset_instance_638 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 638"
+    script "${_PWD}/../get_vrrp_offset 638"
     interval 5
     timeout 5
     weight -100
@@ -767,7 +767,7 @@ vrrp_script offset_instance_638 {
 
 vrrp_script offset_instance_439 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 439"
+    script "${_PWD}/../get_vrrp_offset 439"
     interval 5
     timeout 5
     weight -100
@@ -777,7 +777,7 @@ vrrp_script offset_instance_439 {
 
 vrrp_script offset_instance_639 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 639"
+    script "${_PWD}/../get_vrrp_offset 639"
     interval 5
     timeout 5
     weight -100
@@ -787,7 +787,7 @@ vrrp_script offset_instance_639 {
 
 vrrp_script offset_instance_440 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 440"
+    script "${_PWD}/../get_vrrp_offset 440"
     interval 5
     timeout 5
     weight -100
@@ -797,7 +797,7 @@ vrrp_script offset_instance_440 {
 
 vrrp_script offset_instance_640 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 640"
+    script "${_PWD}/../get_vrrp_offset 640"
     interval 5
     timeout 5
     weight -100
@@ -807,7 +807,7 @@ vrrp_script offset_instance_640 {
 
 vrrp_script offset_instance_441 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 441"
+    script "${_PWD}/../get_vrrp_offset 441"
     interval 5
     timeout 5
     weight -100
@@ -817,7 +817,7 @@ vrrp_script offset_instance_441 {
 
 vrrp_script offset_instance_641 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 641"
+    script "${_PWD}/../get_vrrp_offset 641"
     interval 5
     timeout 5
     weight -100
@@ -827,7 +827,7 @@ vrrp_script offset_instance_641 {
 
 vrrp_script offset_instance_442 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 442"
+    script "${_PWD}/../get_vrrp_offset 442"
     interval 5
     timeout 5
     weight -100
@@ -837,7 +837,7 @@ vrrp_script offset_instance_442 {
 
 vrrp_script offset_instance_642 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 642"
+    script "${_PWD}/../get_vrrp_offset 642"
     interval 5
     timeout 5
     weight -100
@@ -847,7 +847,7 @@ vrrp_script offset_instance_642 {
 
 vrrp_script offset_instance_443 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 443"
+    script "${_PWD}/../get_vrrp_offset 443"
     interval 5
     timeout 5
     weight -100
@@ -857,7 +857,7 @@ vrrp_script offset_instance_443 {
 
 vrrp_script offset_instance_643 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 643"
+    script "${_PWD}/../get_vrrp_offset 643"
     interval 5
     timeout 5
     weight -100
@@ -867,7 +867,7 @@ vrrp_script offset_instance_643 {
 
 vrrp_script offset_instance_444 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 444"
+    script "${_PWD}/../get_vrrp_offset 444"
     interval 5
     timeout 5
     weight -100
@@ -877,7 +877,7 @@ vrrp_script offset_instance_444 {
 
 vrrp_script offset_instance_644 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 644"
+    script "${_PWD}/../get_vrrp_offset 644"
     interval 5
     timeout 5
     weight -100
@@ -887,7 +887,7 @@ vrrp_script offset_instance_644 {
 
 vrrp_script offset_instance_445 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 445"
+    script "${_PWD}/../get_vrrp_offset 445"
     interval 5
     timeout 5
     weight -100
@@ -897,7 +897,7 @@ vrrp_script offset_instance_445 {
 
 vrrp_script offset_instance_645 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 645"
+    script "${_PWD}/../get_vrrp_offset 645"
     interval 5
     timeout 5
     weight -100
@@ -907,7 +907,7 @@ vrrp_script offset_instance_645 {
 
 vrrp_script offset_instance_446 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 446"
+    script "${_PWD}/../get_vrrp_offset 446"
     interval 5
     timeout 5
     weight -100
@@ -917,7 +917,7 @@ vrrp_script offset_instance_446 {
 
 vrrp_script offset_instance_646 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 646"
+    script "${_PWD}/../get_vrrp_offset 646"
     interval 5
     timeout 5
     weight -100
@@ -927,7 +927,7 @@ vrrp_script offset_instance_646 {
 
 vrrp_script offset_instance_447 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 447"
+    script "${_PWD}/../get_vrrp_offset 447"
     interval 5
     timeout 5
     weight -100
@@ -937,7 +937,7 @@ vrrp_script offset_instance_447 {
 
 vrrp_script offset_instance_647 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 647"
+    script "${_PWD}/../get_vrrp_offset 647"
     interval 5
     timeout 5
     weight -100
@@ -947,7 +947,7 @@ vrrp_script offset_instance_647 {
 
 vrrp_script offset_instance_448 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 448"
+    script "${_PWD}/../get_vrrp_offset 448"
     interval 5
     timeout 5
     weight -100
@@ -957,7 +957,7 @@ vrrp_script offset_instance_448 {
 
 vrrp_script offset_instance_648 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 648"
+    script "${_PWD}/../get_vrrp_offset 648"
     interval 5
     timeout 5
     weight -100
@@ -967,7 +967,7 @@ vrrp_script offset_instance_648 {
 
 vrrp_script offset_instance_449 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 449"
+    script "${_PWD}/../get_vrrp_offset 449"
     interval 5
     timeout 5
     weight -100
@@ -977,7 +977,7 @@ vrrp_script offset_instance_449 {
 
 vrrp_script offset_instance_649 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 649"
+    script "${_PWD}/../get_vrrp_offset 649"
     interval 5
     timeout 5
     weight -100
@@ -987,7 +987,7 @@ vrrp_script offset_instance_649 {
 
 vrrp_script offset_instance_450 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 450"
+    script "${_PWD}/../get_vrrp_offset 450"
     interval 5
     timeout 5
     weight -100
@@ -997,7 +997,7 @@ vrrp_script offset_instance_450 {
 
 vrrp_script offset_instance_650 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 650"
+    script "${_PWD}/../get_vrrp_offset 650"
     interval 5
     timeout 5
     weight -100
@@ -1007,7 +1007,7 @@ vrrp_script offset_instance_650 {
 
 vrrp_script offset_instance_451 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 451"
+    script "${_PWD}/../get_vrrp_offset 451"
     interval 5
     timeout 5
     weight -100
@@ -1017,7 +1017,7 @@ vrrp_script offset_instance_451 {
 
 vrrp_script offset_instance_651 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 651"
+    script "${_PWD}/../get_vrrp_offset 651"
     interval 5
     timeout 5
     weight -100
@@ -1027,7 +1027,7 @@ vrrp_script offset_instance_651 {
 
 vrrp_script offset_instance_452 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 452"
+    script "${_PWD}/../get_vrrp_offset 452"
     interval 5
     timeout 5
     weight -100
@@ -1037,7 +1037,7 @@ vrrp_script offset_instance_452 {
 
 vrrp_script offset_instance_652 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 652"
+    script "${_PWD}/../get_vrrp_offset 652"
     interval 5
     timeout 5
     weight -100
@@ -1047,7 +1047,7 @@ vrrp_script offset_instance_652 {
 
 vrrp_script offset_instance_453 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 453"
+    script "${_PWD}/../get_vrrp_offset 453"
     interval 5
     timeout 5
     weight -100
@@ -1057,7 +1057,7 @@ vrrp_script offset_instance_453 {
 
 vrrp_script offset_instance_653 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 653"
+    script "${_PWD}/../get_vrrp_offset 653"
     interval 5
     timeout 5
     weight -100
@@ -1067,7 +1067,7 @@ vrrp_script offset_instance_653 {
 
 vrrp_script offset_instance_454 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 454"
+    script "${_PWD}/../get_vrrp_offset 454"
     interval 5
     timeout 5
     weight -100
@@ -1077,7 +1077,7 @@ vrrp_script offset_instance_454 {
 
 vrrp_script offset_instance_654 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 654"
+    script "${_PWD}/../get_vrrp_offset 654"
     interval 5
     timeout 5
     weight -100
@@ -1087,7 +1087,7 @@ vrrp_script offset_instance_654 {
 
 vrrp_script offset_instance_455 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 455"
+    script "${_PWD}/../get_vrrp_offset 455"
     interval 5
     timeout 5
     weight -100
@@ -1097,7 +1097,7 @@ vrrp_script offset_instance_455 {
 
 vrrp_script offset_instance_655 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 655"
+    script "${_PWD}/../get_vrrp_offset 655"
     interval 5
     timeout 5
     weight -100
@@ -1107,7 +1107,7 @@ vrrp_script offset_instance_655 {
 
 vrrp_script offset_instance_456 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 456"
+    script "${_PWD}/../get_vrrp_offset 456"
     interval 5
     timeout 5
     weight -100
@@ -1117,7 +1117,7 @@ vrrp_script offset_instance_456 {
 
 vrrp_script offset_instance_656 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 656"
+    script "${_PWD}/../get_vrrp_offset 656"
     interval 5
     timeout 5
     weight -100
@@ -1127,7 +1127,7 @@ vrrp_script offset_instance_656 {
 
 vrrp_script offset_instance_457 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 457"
+    script "${_PWD}/../get_vrrp_offset 457"
     interval 5
     timeout 5
     weight -100
@@ -1137,7 +1137,7 @@ vrrp_script offset_instance_457 {
 
 vrrp_script offset_instance_657 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 657"
+    script "${_PWD}/../get_vrrp_offset 657"
     interval 5
     timeout 5
     weight -100
@@ -1147,7 +1147,7 @@ vrrp_script offset_instance_657 {
 
 vrrp_script offset_instance_458 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 458"
+    script "${_PWD}/../get_vrrp_offset 458"
     interval 5
     timeout 5
     weight -100
@@ -1157,7 +1157,7 @@ vrrp_script offset_instance_458 {
 
 vrrp_script offset_instance_658 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 658"
+    script "${_PWD}/../get_vrrp_offset 658"
     interval 5
     timeout 5
     weight -100
@@ -1167,7 +1167,7 @@ vrrp_script offset_instance_658 {
 
 vrrp_script offset_instance_459 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 459"
+    script "${_PWD}/../get_vrrp_offset 459"
     interval 5
     timeout 5
     weight -100
@@ -1177,7 +1177,7 @@ vrrp_script offset_instance_459 {
 
 vrrp_script offset_instance_659 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 659"
+    script "${_PWD}/../get_vrrp_offset 659"
     interval 5
     timeout 5
     weight -100
@@ -1187,7 +1187,7 @@ vrrp_script offset_instance_659 {
 
 vrrp_script offset_instance_460 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 460"
+    script "${_PWD}/../get_vrrp_offset 460"
     interval 5
     timeout 5
     weight -100
@@ -1197,7 +1197,7 @@ vrrp_script offset_instance_460 {
 
 vrrp_script offset_instance_660 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 660"
+    script "${_PWD}/../get_vrrp_offset 660"
     interval 5
     timeout 5
     weight -100
@@ -1207,7 +1207,7 @@ vrrp_script offset_instance_660 {
 
 vrrp_script offset_instance_461 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 461"
+    script "${_PWD}/../get_vrrp_offset 461"
     interval 5
     timeout 5
     weight -100
@@ -1217,7 +1217,7 @@ vrrp_script offset_instance_461 {
 
 vrrp_script offset_instance_661 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 661"
+    script "${_PWD}/../get_vrrp_offset 661"
     interval 5
     timeout 5
     weight -100
@@ -1227,7 +1227,7 @@ vrrp_script offset_instance_661 {
 
 vrrp_script offset_instance_462 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 462"
+    script "${_PWD}/../get_vrrp_offset 462"
     interval 5
     timeout 5
     weight -100
@@ -1237,7 +1237,7 @@ vrrp_script offset_instance_462 {
 
 vrrp_script offset_instance_662 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 662"
+    script "${_PWD}/../get_vrrp_offset 662"
     interval 5
     timeout 5
     weight -100
@@ -1247,7 +1247,7 @@ vrrp_script offset_instance_662 {
 
 vrrp_script offset_instance_463 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 463"
+    script "${_PWD}/../get_vrrp_offset 463"
     interval 5
     timeout 5
     weight -100
@@ -1257,7 +1257,7 @@ vrrp_script offset_instance_463 {
 
 vrrp_script offset_instance_663 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 663"
+    script "${_PWD}/../get_vrrp_offset 663"
     interval 5
     timeout 5
     weight -100
@@ -1267,7 +1267,7 @@ vrrp_script offset_instance_663 {
 
 vrrp_script offset_instance_464 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 464"
+    script "${_PWD}/../get_vrrp_offset 464"
     interval 5
     timeout 5
     weight -100
@@ -1277,7 +1277,7 @@ vrrp_script offset_instance_464 {
 
 vrrp_script offset_instance_664 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 664"
+    script "${_PWD}/../get_vrrp_offset 664"
     interval 5
     timeout 5
     weight -100
@@ -1287,7 +1287,7 @@ vrrp_script offset_instance_664 {
 
 vrrp_script offset_instance_465 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 465"
+    script "${_PWD}/../get_vrrp_offset 465"
     interval 5
     timeout 5
     weight -100
@@ -1297,7 +1297,7 @@ vrrp_script offset_instance_465 {
 
 vrrp_script offset_instance_665 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 665"
+    script "${_PWD}/../get_vrrp_offset 665"
     interval 5
     timeout 5
     weight -100
@@ -1307,7 +1307,7 @@ vrrp_script offset_instance_665 {
 
 vrrp_script offset_instance_466 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 466"
+    script "${_PWD}/../get_vrrp_offset 466"
     interval 5
     timeout 5
     weight -100
@@ -1317,7 +1317,7 @@ vrrp_script offset_instance_466 {
 
 vrrp_script offset_instance_666 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 666"
+    script "${_PWD}/../get_vrrp_offset 666"
     interval 5
     timeout 5
     weight -100
@@ -1327,7 +1327,7 @@ vrrp_script offset_instance_666 {
 
 vrrp_script offset_instance_467 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 467"
+    script "${_PWD}/../get_vrrp_offset 467"
     interval 5
     timeout 5
     weight -100
@@ -1337,7 +1337,7 @@ vrrp_script offset_instance_467 {
 
 vrrp_script offset_instance_667 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 667"
+    script "${_PWD}/../get_vrrp_offset 667"
     interval 5
     timeout 5
     weight -100
@@ -1347,7 +1347,7 @@ vrrp_script offset_instance_667 {
 
 vrrp_script offset_instance_468 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 468"
+    script "${_PWD}/../get_vrrp_offset 468"
     interval 5
     timeout 5
     weight -100
@@ -1357,7 +1357,7 @@ vrrp_script offset_instance_468 {
 
 vrrp_script offset_instance_668 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 668"
+    script "${_PWD}/../get_vrrp_offset 668"
     interval 5
     timeout 5
     weight -100
@@ -1367,7 +1367,7 @@ vrrp_script offset_instance_668 {
 
 vrrp_script offset_instance_469 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 469"
+    script "${_PWD}/../get_vrrp_offset 469"
     interval 5
     timeout 5
     weight -100
@@ -1377,7 +1377,7 @@ vrrp_script offset_instance_469 {
 
 vrrp_script offset_instance_669 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 669"
+    script "${_PWD}/../get_vrrp_offset 669"
     interval 5
     timeout 5
     weight -100
@@ -1387,7 +1387,7 @@ vrrp_script offset_instance_669 {
 
 vrrp_script offset_instance_470 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 470"
+    script "${_PWD}/../get_vrrp_offset 470"
     interval 5
     timeout 5
     weight -100
@@ -1397,7 +1397,7 @@ vrrp_script offset_instance_470 {
 
 vrrp_script offset_instance_670 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 670"
+    script "${_PWD}/../get_vrrp_offset 670"
     interval 5
     timeout 5
     weight -100
@@ -1407,7 +1407,7 @@ vrrp_script offset_instance_670 {
 
 vrrp_script offset_instance_471 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 471"
+    script "${_PWD}/../get_vrrp_offset 471"
     interval 5
     timeout 5
     weight -100
@@ -1417,7 +1417,7 @@ vrrp_script offset_instance_471 {
 
 vrrp_script offset_instance_671 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 671"
+    script "${_PWD}/../get_vrrp_offset 671"
     interval 5
     timeout 5
     weight -100
@@ -1427,7 +1427,7 @@ vrrp_script offset_instance_671 {
 
 vrrp_script offset_instance_472 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 472"
+    script "${_PWD}/../get_vrrp_offset 472"
     interval 5
     timeout 5
     weight -100
@@ -1437,7 +1437,7 @@ vrrp_script offset_instance_472 {
 
 vrrp_script offset_instance_672 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 672"
+    script "${_PWD}/../get_vrrp_offset 672"
     interval 5
     timeout 5
     weight -100
@@ -1447,7 +1447,7 @@ vrrp_script offset_instance_672 {
 
 vrrp_script offset_instance_473 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 473"
+    script "${_PWD}/../get_vrrp_offset 473"
     interval 5
     timeout 5
     weight -100
@@ -1457,7 +1457,7 @@ vrrp_script offset_instance_473 {
 
 vrrp_script offset_instance_673 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 673"
+    script "${_PWD}/../get_vrrp_offset 673"
     interval 5
     timeout 5
     weight -100
@@ -1467,7 +1467,7 @@ vrrp_script offset_instance_673 {
 
 vrrp_script offset_instance_474 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 474"
+    script "${_PWD}/../get_vrrp_offset 474"
     interval 5
     timeout 5
     weight -100
@@ -1477,7 +1477,7 @@ vrrp_script offset_instance_474 {
 
 vrrp_script offset_instance_674 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 674"
+    script "${_PWD}/../get_vrrp_offset 674"
     interval 5
     timeout 5
     weight -100
@@ -1487,7 +1487,7 @@ vrrp_script offset_instance_674 {
 
 vrrp_script offset_instance_475 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 475"
+    script "${_PWD}/../get_vrrp_offset 475"
     interval 5
     timeout 5
     weight -100
@@ -1497,7 +1497,7 @@ vrrp_script offset_instance_475 {
 
 vrrp_script offset_instance_675 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 675"
+    script "${_PWD}/../get_vrrp_offset 675"
     interval 5
     timeout 5
     weight -100
@@ -1507,7 +1507,7 @@ vrrp_script offset_instance_675 {
 
 vrrp_script offset_instance_476 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 476"
+    script "${_PWD}/../get_vrrp_offset 476"
     interval 5
     timeout 5
     weight -100
@@ -1517,7 +1517,7 @@ vrrp_script offset_instance_476 {
 
 vrrp_script offset_instance_676 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 676"
+    script "${_PWD}/../get_vrrp_offset 676"
     interval 5
     timeout 5
     weight -100
@@ -1527,7 +1527,7 @@ vrrp_script offset_instance_676 {
 
 vrrp_script offset_instance_477 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 477"
+    script "${_PWD}/../get_vrrp_offset 477"
     interval 5
     timeout 5
     weight -100
@@ -1537,7 +1537,7 @@ vrrp_script offset_instance_477 {
 
 vrrp_script offset_instance_677 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 677"
+    script "${_PWD}/../get_vrrp_offset 677"
     interval 5
     timeout 5
     weight -100
@@ -1547,7 +1547,7 @@ vrrp_script offset_instance_677 {
 
 vrrp_script offset_instance_478 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 478"
+    script "${_PWD}/../get_vrrp_offset 478"
     interval 5
     timeout 5
     weight -100
@@ -1557,7 +1557,7 @@ vrrp_script offset_instance_478 {
 
 vrrp_script offset_instance_678 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 678"
+    script "${_PWD}/../get_vrrp_offset 678"
     interval 5
     timeout 5
     weight -100
@@ -1567,7 +1567,7 @@ vrrp_script offset_instance_678 {
 
 vrrp_script offset_instance_479 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 479"
+    script "${_PWD}/../get_vrrp_offset 479"
     interval 5
     timeout 5
     weight -100
@@ -1577,7 +1577,7 @@ vrrp_script offset_instance_479 {
 
 vrrp_script offset_instance_679 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 679"
+    script "${_PWD}/../get_vrrp_offset 679"
     interval 5
     timeout 5
     weight -100
@@ -1587,7 +1587,7 @@ vrrp_script offset_instance_679 {
 
 vrrp_script offset_instance_480 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 480"
+    script "${_PWD}/../get_vrrp_offset 480"
     interval 5
     timeout 5
     weight -100
@@ -1597,7 +1597,7 @@ vrrp_script offset_instance_480 {
 
 vrrp_script offset_instance_680 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 680"
+    script "${_PWD}/../get_vrrp_offset 680"
     interval 5
     timeout 5
     weight -100
@@ -1607,7 +1607,7 @@ vrrp_script offset_instance_680 {
 
 vrrp_script offset_instance_481 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 481"
+    script "${_PWD}/../get_vrrp_offset 481"
     interval 5
     timeout 5
     weight -100
@@ -1617,7 +1617,7 @@ vrrp_script offset_instance_481 {
 
 vrrp_script offset_instance_681 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 681"
+    script "${_PWD}/../get_vrrp_offset 681"
     interval 5
     timeout 5
     weight -100
@@ -1627,7 +1627,7 @@ vrrp_script offset_instance_681 {
 
 vrrp_script offset_instance_482 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 482"
+    script "${_PWD}/../get_vrrp_offset 482"
     interval 5
     timeout 5
     weight -100
@@ -1637,7 +1637,7 @@ vrrp_script offset_instance_482 {
 
 vrrp_script offset_instance_682 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 682"
+    script "${_PWD}/../get_vrrp_offset 682"
     interval 5
     timeout 5
     weight -100
@@ -1647,7 +1647,7 @@ vrrp_script offset_instance_682 {
 
 vrrp_script offset_instance_483 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 483"
+    script "${_PWD}/../get_vrrp_offset 483"
     interval 5
     timeout 5
     weight -100
@@ -1657,7 +1657,7 @@ vrrp_script offset_instance_483 {
 
 vrrp_script offset_instance_683 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 683"
+    script "${_PWD}/../get_vrrp_offset 683"
     interval 5
     timeout 5
     weight -100
@@ -1667,7 +1667,7 @@ vrrp_script offset_instance_683 {
 
 vrrp_script offset_instance_484 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 484"
+    script "${_PWD}/../get_vrrp_offset 484"
     interval 5
     timeout 5
     weight -100
@@ -1677,7 +1677,7 @@ vrrp_script offset_instance_484 {
 
 vrrp_script offset_instance_684 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 684"
+    script "${_PWD}/../get_vrrp_offset 684"
     interval 5
     timeout 5
     weight -100
@@ -1687,7 +1687,7 @@ vrrp_script offset_instance_684 {
 
 vrrp_script offset_instance_485 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 485"
+    script "${_PWD}/../get_vrrp_offset 485"
     interval 5
     timeout 5
     weight -100
@@ -1697,7 +1697,7 @@ vrrp_script offset_instance_485 {
 
 vrrp_script offset_instance_685 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 685"
+    script "${_PWD}/../get_vrrp_offset 685"
     interval 5
     timeout 5
     weight -100
@@ -1707,7 +1707,7 @@ vrrp_script offset_instance_685 {
 
 vrrp_script offset_instance_486 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 486"
+    script "${_PWD}/../get_vrrp_offset 486"
     interval 5
     timeout 5
     weight -100
@@ -1717,7 +1717,7 @@ vrrp_script offset_instance_486 {
 
 vrrp_script offset_instance_686 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 686"
+    script "${_PWD}/../get_vrrp_offset 686"
     interval 5
     timeout 5
     weight -100
@@ -1727,7 +1727,7 @@ vrrp_script offset_instance_686 {
 
 vrrp_script offset_instance_487 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 487"
+    script "${_PWD}/../get_vrrp_offset 487"
     interval 5
     timeout 5
     weight -100
@@ -1737,7 +1737,7 @@ vrrp_script offset_instance_487 {
 
 vrrp_script offset_instance_687 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 687"
+    script "${_PWD}/../get_vrrp_offset 687"
     interval 5
     timeout 5
     weight -100
@@ -1747,7 +1747,7 @@ vrrp_script offset_instance_687 {
 
 vrrp_script offset_instance_488 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 488"
+    script "${_PWD}/../get_vrrp_offset 488"
     interval 5
     timeout 5
     weight -100
@@ -1757,7 +1757,7 @@ vrrp_script offset_instance_488 {
 
 vrrp_script offset_instance_688 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 688"
+    script "${_PWD}/../get_vrrp_offset 688"
     interval 5
     timeout 5
     weight -100
@@ -1767,7 +1767,7 @@ vrrp_script offset_instance_688 {
 
 vrrp_script offset_instance_489 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 489"
+    script "${_PWD}/../get_vrrp_offset 489"
     interval 5
     timeout 5
     weight -100
@@ -1777,7 +1777,7 @@ vrrp_script offset_instance_489 {
 
 vrrp_script offset_instance_689 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 689"
+    script "${_PWD}/../get_vrrp_offset 689"
     interval 5
     timeout 5
     weight -100
@@ -1787,7 +1787,7 @@ vrrp_script offset_instance_689 {
 
 vrrp_script offset_instance_490 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 490"
+    script "${_PWD}/../get_vrrp_offset 490"
     interval 5
     timeout 5
     weight -100
@@ -1797,7 +1797,7 @@ vrrp_script offset_instance_490 {
 
 vrrp_script offset_instance_690 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 690"
+    script "${_PWD}/../get_vrrp_offset 690"
     interval 5
     timeout 5
     weight -100
@@ -1807,7 +1807,7 @@ vrrp_script offset_instance_690 {
 
 vrrp_script offset_instance_491 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 491"
+    script "${_PWD}/../get_vrrp_offset 491"
     interval 5
     timeout 5
     weight -100
@@ -1817,7 +1817,7 @@ vrrp_script offset_instance_491 {
 
 vrrp_script offset_instance_691 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 691"
+    script "${_PWD}/../get_vrrp_offset 691"
     interval 5
     timeout 5
     weight -100
@@ -1827,7 +1827,7 @@ vrrp_script offset_instance_691 {
 
 vrrp_script offset_instance_492 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 492"
+    script "${_PWD}/../get_vrrp_offset 492"
     interval 5
     timeout 5
     weight -100
@@ -1837,7 +1837,7 @@ vrrp_script offset_instance_492 {
 
 vrrp_script offset_instance_692 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 692"
+    script "${_PWD}/../get_vrrp_offset 692"
     interval 5
     timeout 5
     weight -100
@@ -1847,7 +1847,7 @@ vrrp_script offset_instance_692 {
 
 vrrp_script offset_instance_493 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 493"
+    script "${_PWD}/../get_vrrp_offset 493"
     interval 5
     timeout 5
     weight -100
@@ -1857,7 +1857,7 @@ vrrp_script offset_instance_493 {
 
 vrrp_script offset_instance_693 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 693"
+    script "${_PWD}/../get_vrrp_offset 693"
     interval 5
     timeout 5
     weight -100
@@ -1867,7 +1867,7 @@ vrrp_script offset_instance_693 {
 
 vrrp_script offset_instance_494 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 494"
+    script "${_PWD}/../get_vrrp_offset 494"
     interval 5
     timeout 5
     weight -100
@@ -1877,7 +1877,7 @@ vrrp_script offset_instance_494 {
 
 vrrp_script offset_instance_694 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 694"
+    script "${_PWD}/../get_vrrp_offset 694"
     interval 5
     timeout 5
     weight -100
@@ -1887,7 +1887,7 @@ vrrp_script offset_instance_694 {
 
 vrrp_script offset_instance_495 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 495"
+    script "${_PWD}/../get_vrrp_offset 495"
     interval 5
     timeout 5
     weight -100
@@ -1897,7 +1897,7 @@ vrrp_script offset_instance_495 {
 
 vrrp_script offset_instance_695 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 695"
+    script "${_PWD}/../get_vrrp_offset 695"
     interval 5
     timeout 5
     weight -100
@@ -1907,7 +1907,7 @@ vrrp_script offset_instance_695 {
 
 vrrp_script offset_instance_496 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 496"
+    script "${_PWD}/../get_vrrp_offset 496"
     interval 5
     timeout 5
     weight -100
@@ -1917,7 +1917,7 @@ vrrp_script offset_instance_496 {
 
 vrrp_script offset_instance_696 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 696"
+    script "${_PWD}/../get_vrrp_offset 696"
     interval 5
     timeout 5
     weight -100
@@ -1927,7 +1927,7 @@ vrrp_script offset_instance_696 {
 
 vrrp_script offset_instance_497 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 497"
+    script "${_PWD}/../get_vrrp_offset 497"
     interval 5
     timeout 5
     weight -100
@@ -1937,7 +1937,7 @@ vrrp_script offset_instance_497 {
 
 vrrp_script offset_instance_697 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 697"
+    script "${_PWD}/../get_vrrp_offset 697"
     interval 5
     timeout 5
     weight -100
@@ -1947,7 +1947,7 @@ vrrp_script offset_instance_697 {
 
 vrrp_script offset_instance_498 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 498"
+    script "${_PWD}/../get_vrrp_offset 498"
     interval 5
     timeout 5
     weight -100
@@ -1957,7 +1957,7 @@ vrrp_script offset_instance_498 {
 
 vrrp_script offset_instance_698 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 698"
+    script "${_PWD}/../get_vrrp_offset 698"
     interval 5
     timeout 5
     weight -100
@@ -1967,7 +1967,7 @@ vrrp_script offset_instance_698 {
 
 vrrp_script offset_instance_499 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 499"
+    script "${_PWD}/../get_vrrp_offset 499"
     interval 5
     timeout 5
     weight -100
@@ -1977,7 +1977,7 @@ vrrp_script offset_instance_499 {
 
 vrrp_script offset_instance_699 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 699"
+    script "${_PWD}/../get_vrrp_offset 699"
     interval 5
     timeout 5
     weight -100

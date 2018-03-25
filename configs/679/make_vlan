@@ -1,8 +1,10 @@
 #!/bin/bash
 
+last=$1
 [[ $2 = del ]] && CMD=del || CMD=add
+first=${3:-1}
 
-for i in $(seq 1 $1); do
+for i in $(seq $first $last); do
 	ip netns exec low ip link $CMD link eth0 bond0.$i type vlan id $i
 	ip netns exec high ip link $CMD link eth0 bond0.$i type vlan id $i
 	if [[ $CMD = add ]]; then

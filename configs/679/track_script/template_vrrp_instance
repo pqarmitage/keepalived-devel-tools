@@ -22,7 +22,7 @@ vrrp_script check_oco {
 {% for vlan in vlans %}
 vrrp_script offset_instance_4{{ vlan.name }} {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 4{{ vlan.name }}"
+    script "${_PWD}/../get_vrrp_offset 4{{ vlan.name }}"
     interval 5
     timeout 5
     weight -100
@@ -32,7 +32,7 @@ vrrp_script offset_instance_4{{ vlan.name }} {
 
 vrrp_script offset_instance_6{{ vlan.name }} {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 6{{ vlan.name }}"
+    script "${_PWD}/../get_vrrp_offset 6{{ vlan.name }}"
     interval 5
     timeout 5
     weight -100

@@ -10,7 +10,7 @@ global_defs {
 }
 
 vrrp_script prio {
-	script /etc/keepalived/scripts/2nm.sh
+	script ${_PWD}/scripts/2nm.sh
 	interval 1
 	fall 1
 	rise 1

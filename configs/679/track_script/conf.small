@@ -24,7 +24,7 @@ vrrp_script check_oco {
 
 vrrp_script offset_instance_42 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 42"
+    script "${_PWD}/../get_vrrp_offset 42"
     interval 5
     timeout 5
     weight -100
@@ -34,7 +34,7 @@ vrrp_script offset_instance_42 {
 
 vrrp_script offset_instance_62 {
 
-    script "/home/quentin/keepalived/Damien_scripts/get_vrrp_offset 62"
+    script "${_PWD}/../get_vrrp_offset 62"
     interval 5
     timeout 5
     weight -100

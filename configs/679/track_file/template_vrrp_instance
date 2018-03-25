@@ -22,14 +22,14 @@ vrrp_script check_oco {
 {% for vlan in vlans %}
 vrrp_track_file offset_instance_4{{ vlan.name }} {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/4{{ vlan.name }}"
+    file "${_PWD}/../track_files/4{{ vlan.name }}"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_6{{ vlan.name }} {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/6{{ vlan.name }}"
+    file "${_PWD}/../track_files/6{{ vlan.name }}"
     weight -100
     init_file
 }

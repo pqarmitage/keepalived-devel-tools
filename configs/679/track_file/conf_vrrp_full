@@ -22,1372 +22,1372 @@ vrrp_script check_oco {
 
 vrrp_track_file offset_instance_42 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/42"
+    file "${_PWD}/../track_files/42"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_62 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/62"
+    file "${_PWD}/../track_files/62"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_43 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/43"
+    file "${_PWD}/../track_files/43"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_63 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/63"
+    file "${_PWD}/../track_files/63"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_44 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/44"
+    file "${_PWD}/../track_files/44"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_64 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/64"
+    file "${_PWD}/../track_files/64"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_45 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/45"
+    file "${_PWD}/../track_files/45"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_65 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/65"
+    file "${_PWD}/../track_files/65"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_46 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/46"
+    file "${_PWD}/../track_files/46"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_66 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/66"
+    file "${_PWD}/../track_files/66"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_47 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/47"
+    file "${_PWD}/../track_files/47"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_67 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/67"
+    file "${_PWD}/../track_files/67"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_48 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/48"
+    file "${_PWD}/../track_files/48"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_68 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/68"
+    file "${_PWD}/../track_files/68"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_49 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/49"
+    file "${_PWD}/../track_files/49"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_69 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/69"
+    file "${_PWD}/../track_files/69"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_410 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/410"
+    file "${_PWD}/../track_files/410"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_610 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/610"
+    file "${_PWD}/../track_files/610"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_411 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/411"
+    file "${_PWD}/../track_files/411"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_611 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/611"
+    file "${_PWD}/../track_files/611"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_412 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/412"
+    file "${_PWD}/../track_files/412"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_612 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/612"
+    file "${_PWD}/../track_files/612"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_413 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/413"
+    file "${_PWD}/../track_files/413"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_613 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/613"
+    file "${_PWD}/../track_files/613"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_414 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/414"
+    file "${_PWD}/../track_files/414"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_614 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/614"
+    file "${_PWD}/../track_files/614"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_415 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/415"
+    file "${_PWD}/../track_files/415"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_615 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/615"
+    file "${_PWD}/../track_files/615"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_416 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/416"
+    file "${_PWD}/../track_files/416"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_616 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/616"
+    file "${_PWD}/../track_files/616"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_417 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/417"
+    file "${_PWD}/../track_files/417"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_617 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/617"
+    file "${_PWD}/../track_files/617"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_418 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/418"
+    file "${_PWD}/../track_files/418"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_618 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/618"
+    file "${_PWD}/../track_files/618"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_419 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/419"
+    file "${_PWD}/../track_files/419"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_619 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/619"
+    file "${_PWD}/../track_files/619"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_420 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/420"
+    file "${_PWD}/../track_files/420"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_620 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/620"
+    file "${_PWD}/../track_files/620"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_421 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/421"
+    file "${_PWD}/../track_files/421"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_621 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/621"
+    file "${_PWD}/../track_files/621"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_422 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/422"
+    file "${_PWD}/../track_files/422"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_622 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/622"
+    file "${_PWD}/../track_files/622"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_423 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/423"
+    file "${_PWD}/../track_files/423"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_623 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/623"
+    file "${_PWD}/../track_files/623"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_424 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/424"
+    file "${_PWD}/../track_files/424"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_624 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/624"
+    file "${_PWD}/../track_files/624"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_425 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/425"
+    file "${_PWD}/../track_files/425"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_625 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/625"
+    file "${_PWD}/../track_files/625"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_426 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/426"
+    file "${_PWD}/../track_files/426"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_626 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/626"
+    file "${_PWD}/../track_files/626"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_427 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/427"
+    file "${_PWD}/../track_files/427"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_627 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/627"
+    file "${_PWD}/../track_files/627"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_428 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/428"
+    file "${_PWD}/../track_files/428"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_628 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/628"
+    file "${_PWD}/../track_files/628"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_429 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/429"
+    file "${_PWD}/../track_files/429"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_629 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/629"
+    file "${_PWD}/../track_files/629"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_430 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/430"
+    file "${_PWD}/../track_files/430"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_630 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/630"
+    file "${_PWD}/../track_files/630"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_431 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/431"
+    file "${_PWD}/../track_files/431"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_631 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/631"
+    file "${_PWD}/../track_files/631"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_432 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/432"
+    file "${_PWD}/../track_files/432"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_632 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/632"
+    file "${_PWD}/../track_files/632"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_433 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/433"
+    file "${_PWD}/../track_files/433"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_633 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/633"
+    file "${_PWD}/../track_files/633"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_434 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/434"
+    file "${_PWD}/../track_files/434"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_634 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/634"
+    file "${_PWD}/../track_files/634"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_435 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/435"
+    file "${_PWD}/../track_files/435"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_635 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/635"
+    file "${_PWD}/../track_files/635"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_436 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/436"
+    file "${_PWD}/../track_files/436"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_636 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/636"
+    file "${_PWD}/../track_files/636"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_437 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/437"
+    file "${_PWD}/../track_files/437"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_637 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/637"
+    file "${_PWD}/../track_files/637"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_438 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/438"
+    file "${_PWD}/../track_files/438"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_638 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/638"
+    file "${_PWD}/../track_files/638"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_439 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/439"
+    file "${_PWD}/../track_files/439"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_639 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/639"
+    file "${_PWD}/../track_files/639"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_440 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/440"
+    file "${_PWD}/../track_files/440"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_640 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/640"
+    file "${_PWD}/../track_files/640"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_441 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/441"
+    file "${_PWD}/../track_files/441"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_641 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/641"
+    file "${_PWD}/../track_files/641"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_442 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/442"
+    file "${_PWD}/../track_files/442"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_642 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/642"
+    file "${_PWD}/../track_files/642"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_443 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/443"
+    file "${_PWD}/../track_files/443"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_643 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/643"
+    file "${_PWD}/../track_files/643"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_444 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/444"
+    file "${_PWD}/../track_files/444"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_644 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/644"
+    file "${_PWD}/../track_files/644"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_445 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/445"
+    file "${_PWD}/../track_files/445"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_645 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/645"
+    file "${_PWD}/../track_files/645"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_446 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/446"
+    file "${_PWD}/../track_files/446"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_646 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/646"
+    file "${_PWD}/../track_files/646"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_447 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/447"
+    file "${_PWD}/../track_files/447"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_647 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/647"
+    file "${_PWD}/../track_files/647"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_448 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/448"
+    file "${_PWD}/../track_files/448"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_648 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/648"
+    file "${_PWD}/../track_files/648"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_449 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/449"
+    file "${_PWD}/../track_files/449"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_649 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/649"
+    file "${_PWD}/../track_files/649"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_450 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/450"
+    file "${_PWD}/../track_files/450"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_650 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/650"
+    file "${_PWD}/../track_files/650"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_451 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/451"
+    file "${_PWD}/../track_files/451"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_651 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/651"
+    file "${_PWD}/../track_files/651"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_452 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/452"
+    file "${_PWD}/../track_files/452"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_652 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/652"
+    file "${_PWD}/../track_files/652"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_453 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/453"
+    file "${_PWD}/../track_files/453"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_653 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/653"
+    file "${_PWD}/../track_files/653"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_454 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/454"
+    file "${_PWD}/../track_files/454"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_654 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/654"
+    file "${_PWD}/../track_files/654"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_455 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/455"
+    file "${_PWD}/../track_files/455"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_655 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/655"
+    file "${_PWD}/../track_files/655"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_456 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/456"
+    file "${_PWD}/../track_files/456"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_656 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/656"
+    file "${_PWD}/../track_files/656"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_457 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/457"
+    file "${_PWD}/../track_files/457"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_657 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/657"
+    file "${_PWD}/../track_files/657"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_458 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/458"
+    file "${_PWD}/../track_files/458"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_658 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/658"
+    file "${_PWD}/../track_files/658"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_459 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/459"
+    file "${_PWD}/../track_files/459"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_659 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/659"
+    file "${_PWD}/../track_files/659"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_460 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/460"
+    file "${_PWD}/../track_files/460"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_660 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/660"
+    file "${_PWD}/../track_files/660"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_461 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/461"
+    file "${_PWD}/../track_files/461"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_661 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/661"
+    file "${_PWD}/../track_files/661"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_462 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/462"
+    file "${_PWD}/../track_files/462"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_662 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/662"
+    file "${_PWD}/../track_files/662"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_463 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/463"
+    file "${_PWD}/../track_files/463"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_663 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/663"
+    file "${_PWD}/../track_files/663"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_464 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/464"
+    file "${_PWD}/../track_files/464"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_664 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/664"
+    file "${_PWD}/../track_files/664"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_465 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/465"
+    file "${_PWD}/../track_files/465"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_665 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/665"
+    file "${_PWD}/../track_files/665"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_466 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/466"
+    file "${_PWD}/../track_files/466"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_666 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/666"
+    file "${_PWD}/../track_files/666"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_467 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/467"
+    file "${_PWD}/../track_files/467"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_667 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/667"
+    file "${_PWD}/../track_files/667"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_468 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/468"
+    file "${_PWD}/../track_files/468"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_668 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/668"
+    file "${_PWD}/../track_files/668"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_469 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/469"
+    file "${_PWD}/../track_files/469"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_669 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/669"
+    file "${_PWD}/../track_files/669"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_470 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/470"
+    file "${_PWD}/../track_files/470"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_670 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/670"
+    file "${_PWD}/../track_files/670"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_471 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/471"
+    file "${_PWD}/../track_files/471"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_671 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/671"
+    file "${_PWD}/../track_files/671"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_472 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/472"
+    file "${_PWD}/../track_files/472"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_672 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/672"
+    file "${_PWD}/../track_files/672"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_473 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/473"
+    file "${_PWD}/../track_files/473"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_673 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/673"
+    file "${_PWD}/../track_files/673"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_474 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/474"
+    file "${_PWD}/../track_files/474"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_674 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/674"
+    file "${_PWD}/../track_files/674"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_475 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/475"
+    file "${_PWD}/../track_files/475"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_675 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/675"
+    file "${_PWD}/../track_files/675"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_476 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/476"
+    file "${_PWD}/../track_files/476"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_676 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/676"
+    file "${_PWD}/../track_files/676"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_477 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/477"
+    file "${_PWD}/../track_files/477"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_677 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/677"
+    file "${_PWD}/../track_files/677"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_478 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/478"
+    file "${_PWD}/../track_files/478"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_678 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/678"
+    file "${_PWD}/../track_files/678"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_479 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/479"
+    file "${_PWD}/../track_files/479"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_679 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/679"
+    file "${_PWD}/../track_files/679"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_480 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/480"
+    file "${_PWD}/../track_files/480"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_680 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/680"
+    file "${_PWD}/../track_files/680"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_481 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/481"
+    file "${_PWD}/../track_files/481"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_681 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/681"
+    file "${_PWD}/../track_files/681"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_482 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/482"
+    file "${_PWD}/../track_files/482"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_682 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/682"
+    file "${_PWD}/../track_files/682"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_483 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/483"
+    file "${_PWD}/../track_files/483"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_683 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/683"
+    file "${_PWD}/../track_files/683"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_484 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/484"
+    file "${_PWD}/../track_files/484"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_684 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/684"
+    file "${_PWD}/../track_files/684"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_485 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/485"
+    file "${_PWD}/../track_files/485"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_685 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/685"
+    file "${_PWD}/../track_files/685"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_486 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/486"
+    file "${_PWD}/../track_files/486"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_686 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/686"
+    file "${_PWD}/../track_files/686"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_487 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/487"
+    file "${_PWD}/../track_files/487"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_687 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/687"
+    file "${_PWD}/../track_files/687"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_488 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/488"
+    file "${_PWD}/../track_files/488"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_688 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/688"
+    file "${_PWD}/../track_files/688"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_489 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/489"
+    file "${_PWD}/../track_files/489"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_689 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/689"
+    file "${_PWD}/../track_files/689"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_490 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/490"
+    file "${_PWD}/../track_files/490"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_690 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/690"
+    file "${_PWD}/../track_files/690"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_491 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/491"
+    file "${_PWD}/../track_files/491"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_691 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/691"
+    file "${_PWD}/../track_files/691"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_492 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/492"
+    file "${_PWD}/../track_files/492"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_692 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/692"
+    file "${_PWD}/../track_files/692"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_493 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/493"
+    file "${_PWD}/../track_files/493"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_693 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/693"
+    file "${_PWD}/../track_files/693"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_494 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/494"
+    file "${_PWD}/../track_files/494"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_694 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/694"
+    file "${_PWD}/../track_files/694"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_495 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/495"
+    file "${_PWD}/../track_files/495"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_695 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/695"
+    file "${_PWD}/../track_files/695"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_496 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/496"
+    file "${_PWD}/../track_files/496"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_696 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/696"
+    file "${_PWD}/../track_files/696"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_497 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/497"
+    file "${_PWD}/../track_files/497"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_697 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/697"
+    file "${_PWD}/../track_files/697"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_498 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/498"
+    file "${_PWD}/../track_files/498"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_698 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/698"
+    file "${_PWD}/../track_files/698"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_499 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/499"
+    file "${_PWD}/../track_files/499"
     weight -100
     init_file
 }
 
 vrrp_track_file offset_instance_699 {
 
-    file "/home/quentin/keepalived/Damien_scripts/track_files/699"
+    file "${_PWD}/../track_files/699"
     weight -100
     init_file
 }

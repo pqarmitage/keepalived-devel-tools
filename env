@@ -17,10 +17,12 @@ s()
 
 k()
 {
+	SIG=${2:-TERM}
+
 	if [[ -z $1 ]]; then
-		kill -TERM $(cat /var/run/keepalived.pid)
+		kill -$SIG $(cat /var/run/keepalived.pid)
 	else
-		kill -TERM $(cat /var/run/keepalived/$1/keepalived.pid)
+		kill -$SIG $(cat /var/run/keepalived/$1/keepalived.pid)
 		fi
 }
 
