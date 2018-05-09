@@ -23,7 +23,7 @@ k()
 		kill -$SIG $(cat /var/run/keepalived.pid)
 	else
 		kill -$SIG $(cat /var/run/keepalived/$1/keepalived.pid)
-		fi
+	fi
 }
 
 j()
@@ -52,12 +52,19 @@ sb()
 	snmpd -LS0-6d
 }
 
-st()
+sk()
 {
-	MIBS="+KEEPALIVED-MIB:VRRP-MIB:VRRPV3-MIB" snmptrapd -f -Lo | sed -e "s/^2018/\\n2018/" -e "s/\t/@\t/g" | tr "@" "\n" | tee --output-error=exit /dev/tty >>/tmp/snmp.trap.log &
+	killall -TERM snmpd
 }
 
-sk()
+st()
+{
+	[[ -n $1 ]] && NETNS_CMD="ip netns exec $1" || NETNS_CMD=
+
+	MIBS="+KEEPALIVED-MIB:VRRP-MIB:VRRPV3-MIB" $NETNS_CMD snmptrapd -f -Lo 2>&1 | sed -ue "s/\t/\n\t/g" -e "s/^$(date +%Y)/\n$(date +%Y)/" | tee --output-error=exit /dev/tty >>/tmp/snmp_trap.log &
+}
+
+stk()
 {
 	killall -TERM snmptrapd
 }

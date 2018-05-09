@@ -18,7 +18,7 @@ LOG_FILE=/tmp/${FIFO##*/}.log
 
 stopping()
 {
-	PROLOGUE=$(echo $(date +"%a %b %e %X %Y"): \[$PPID:$$\])
+	PROLOGUE=$(echo "$(date +"%a %b %e %X %Y")": \[$PPID:$$\])
 	echo "$PROLOGUE" STOPPING >>$LOG_FILE
 }
 
@@ -61,7 +61,7 @@ do
 			# Now take whatever action is required
 			echo "$PROLOGUE" $TYPE $RS $VS $STATE >>$LOG_FILE
 		else
-			echo "$PROLOGUE" $TYPE - unknown >>$LOG_FILE
+			echo "$PROLOGUE" $TYPE - unknown "($*)" >>$LOG_FILE
 		fi
 	done < $FIFO
 done
