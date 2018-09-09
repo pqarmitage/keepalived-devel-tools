@@ -1,0 +1,16 @@
+#!/bin/bash
+
+ip netns exec low iptables -I INPUT -p 112 -j DROP
+
+echo Starting keepalived high
+keepalived/keepalived -DRM -mf $(pwd)/../utils/configs/950.conf -G -g/tmp/sched.log --flush-log-file -i high
+
+sleep 3
+
+echo Starting keepalived low
+keepalived/keepalived -DRM -mf $(pwd)/../utils/configs/950.conf -G -g/tmp/sched.log --flush-log-file -i low
+
+sleep 4
+
+echo Removing iptables DROP
+ip netns exec low iptables -D INPUT -p 112 -j DROP

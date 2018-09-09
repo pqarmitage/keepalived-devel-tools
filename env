@@ -44,7 +44,7 @@ j()
 
 rl()
 {
-	rm -f /tmp/*.log
+	rm -f /tmp/*log /tmp/*ret /tmp/*trk /tmp/*md5data
 }
 
 sb()
@@ -59,6 +59,9 @@ sk()
 
 st()
 {
+	killall -q -0 snmptrapd
+	[[ $? -eq 0 ]] && killall -TERM snmptrapd && sleep 1
+
 	[[ -n $1 ]] && NETNS_CMD="ip netns exec $1" || NETNS_CMD=
 
 	MIBS="+KEEPALIVED-MIB:VRRP-MIB:VRRPV3-MIB" $NETNS_CMD snmptrapd -f -Lo 2>&1 | sed -ue "s/\t/\n\t/g" -e "s/^$(date +%Y)/\n$(date +%Y)/" | tee --output-error=exit /dev/tty >>/tmp/snmp_trap.log &
@@ -66,6 +69,9 @@ st()
 
 stk()
 {
+	killall -q -0 snmptrapd
+	[[ $? -ne 0 ]] && echo snmptrapd not running && return 1
+
 	killall -TERM snmptrapd
 }
 

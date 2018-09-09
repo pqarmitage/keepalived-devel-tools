@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# --enable-mem-check-log --enable-strict-config-checks
+
+BUILD_OPTIONS="--enable-bfd --enable-snmp --enable-snmp-rfc --enable-dbus --enable-sha1 --enable-regex --enable-json --enable-perf"
+DEBUG_OPTIONS="--enable-smtp-alert-debug --enable-epoll-debug --enable-epoll-thread-dump --enable-timer-check --enable-netlink-timers --enable-regex-debug --enable-tsm-debug --enable-regex-timers"
+MEMCHECK_OPTIONS=--enable-mem-check
+
+OPTIONS=$BUILD_OPTIONS
+
+while getopts ":hdm-" opt; do
+	case $opt in
+		h)
+			echo "$0 -- usage:"
+			echo "	-h	Print this!"
+			echo "	-d enable debug options"
+			echo "	-m enable mem-check"
+
+			exit 0
+			;;
+		d)
+			OPTIONS="$OPTIONS $DEBUG_OPTIONS"
+			;;
+		m)
+			OPTIONS="$OPTIONS $MEMCHECK_OPTIONS"
+			;;
+		-)
+			break
+			;;
+		?)
+			echo Unknown option $OPTARG
+			exit 1
+			;;
+	esac
+done
+shift $((OPTIND-1))
+
+./configure $OPTIONS $*

@@ -3,15 +3,19 @@
 last=$1
 [[ $2 = del ]] && CMD=del || CMD=add
 first=${3:-1}
+iface=${4:-0}
+iface_last=${5:-$iface}
 
-for i in $(seq $first $last); do
-	ip netns exec low ip link $CMD link eth0 bond0.$i type vlan id $i
-	ip netns exec high ip link $CMD link eth0 bond0.$i type vlan id $i
-	if [[ $CMD = add ]]; then
-		ip netns exec low ip link set bond0.$i up
-		ip netns exec high ip link set bond0.$i up
+for if in $(seq $iface $iface_last); do
+	for i in $(seq $first $last); do
+		ip -n low link $CMD link eth${if} bond${if}.$i type vlan id $i
+		ip -n high link $CMD link eth${if} bond${if}.$i type vlan id $i
+		if [[ $CMD = add ]]; then
+			ip -n low link set bond${if}.$i up
+			ip -n high link set bond${if}.$i up
 
-		ip netns exec low ip addr add 192.168.$i.3/24 brd + dev bond0.$i
-		ip netns exec high ip addr add 192.168.$i.1/24 brd + dev bond0.$i
-	fi
+			ip -n low addr add 10.${if}.$i.3/24 brd + dev bond${if}.$i
+			ip -n high addr add 10.${if}.$i.1/24 brd + dev bond${if}.$i
+		fi
+	done
 done
