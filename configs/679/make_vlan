@@ -14,8 +14,8 @@ for if in $(seq $iface $iface_last); do
 			ip -n low link set bond${if}.$i up
 			ip -n high link set bond${if}.$i up
 
-			ip -n low addr add 10.${if}.$i.3/24 brd + dev bond${if}.$i
-			ip -n high addr add 10.${if}.$i.1/24 brd + dev bond${if}.$i
+			ip -n low addr add 100.${if}.$i.3/24 brd + dev bond${if}.$i
+			ip -n high addr add 100.${if}.$i.1/24 brd + dev bond${if}.$i
 		fi
 	done
 done

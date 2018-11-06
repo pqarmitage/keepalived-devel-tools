@@ -2,7 +2,7 @@
 @low net_namespace low
 @high net_namespace high
 
-child_wait_time 20
+child_wait_time 40
 
 global_defs {
     vrrp_garp_master_delay 0

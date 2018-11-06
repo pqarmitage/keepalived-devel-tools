@@ -86,3 +86,9 @@ fl ()
     lsof -p $KPID
 }
 
+lt()
+{
+	ns=${1-low}
+	ps=${2-vrrp}
+	while [ 1 ]; do tail -f /tmp/sched${ps:+_$ps}${ns:+_$ns}.log --follow=name; sleep 0.1; done
+}
