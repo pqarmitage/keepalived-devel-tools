@@ -3,7 +3,7 @@
 # --enable-mem-check-log --enable-strict-config-checks
 
 BUILD_OPTIONS="--enable-bfd --enable-snmp --enable-snmp-rfc --enable-dbus --enable-sha1 --enable-regex --enable-json"
-DEBUG_OPTIONS="--enable-smtp-alert-debug --enable-epoll-debug --enable-epoll-thread-dump --enable-timer-check --enable-netlink-timers --enable-regex-debug --enable-tsm-debug --enable-regex-timers --enable-vrrp-fd-debug"
+DEBUG_OPTIONS="--enable-smtp-alert-debug --enable-epoll-debug --enable-epoll-thread-dump --enable-timer-check --enable-netlink-timers --enable-regex-debug --enable-tsm-debug --enable-regex-timers --enable-vrrp-fd-debug --enable-log-file"
 MEMCHECK_OPTIONS=--enable-mem-check
 PERF_OPTIONS="--enable-perf"
 LINK_DEBUG_OPTIONS="--disable-hardening --disable-optimise"
@@ -30,7 +30,7 @@ while getopts ":f:hdDmp-" opt; do
 			OPTIONS="$OPTIONS $LINK_DEBUG_OPTIONS"
 			;;
 		f)
-			OPTIONS="$OPTIONS --enable-fixed-if-type=$OPTARG"
+			OPTIONS="$OPTIONS --with-fixed-if-type=$OPTARG"
 			;;
 		m)
 			OPTIONS="$OPTIONS $MEMCHECK_OPTIONS"
