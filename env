@@ -92,3 +92,30 @@ lt()
 	ps=${2-vrrp}
 	while [ 1 ]; do tail -f /tmp/sched${ps:+_$ps}${ns:+_$ns}.log --follow=name; sleep 0.1; done
 }
+
+low()
+{
+	ip netns exec low $*
+}
+
+med()
+{
+	ip netns exec medium $*
+}
+
+high()
+{
+	ip netns exec high $*
+}
+
+#setns()
+#{
+#	\$1()
+#	{
+#		ip netns exec ${1:0:3} \$*
+#	}
+#}
+#
+#setns low
+#setns medium
+#setns high
