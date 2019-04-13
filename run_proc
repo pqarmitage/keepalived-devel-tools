@@ -1,0 +1,47 @@
+#!/bin/bash
+
+SLEEP_FILE=/tmp/run_proc.slp
+RM_SLEEP_FILE=
+
+NUM_PROC=1
+SLEEP_TIME=10
+[[ -f $SLEEP_FILE ]] && SLEEP_TIME=$(cat $SLEEP_FILE)
+
+while getopts ":hn:s:-" opt; do
+	case $opt in
+		h)
+			echo "$0 -- usage:"
+			echo "	-h	Print this!"
+			echo "	-n n	num of processes"
+			echo "	-s t	sleep for t secs"
+
+			exit 0
+			;;
+		n)
+			NUM_PROC=$OPTARG
+			;;
+		s)
+			SLEEP_TIME=$OPTARG
+			;;
+		-)
+			break
+			;;
+		?)
+			echo Unknown option $OPTOPT
+			exit 1
+			;;
+	esac
+done
+shift $((OPTIND-1))
+
+[[ ! -f $SLEEP_FILE ]] && echo $SLEEP_TIME >$SLEEP_FILE && RM_SLEEP_FILE=1
+
+for p in $(seq 2 $NUM_PROC);do
+	$0 $* &
+done
+
+echo $$ sleeping for $SLEEP_TIME
+sleep $SLEEP_TIME
+
+[[ -n $RM_SLEEP_FILE ]] && rm -f $SLEEP_FILE
+echo $$ exitting

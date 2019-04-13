@@ -11,6 +11,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 /*
  * connect to netlink
@@ -95,6 +96,9 @@ static int handle_proc_ev(int nl_sock)
 	} nlcn_msg;
 	struct cn_msg *cn_msg;
 	struct proc_event *proc_ev;
+	time_t tv;
+	struct tm *tm_time;
+	char tbuf[9];
 
 	while (!need_exit) {
 		len = recv(nl_sock, &buf, sizeof(buf), 0);
@@ -107,8 +111,8 @@ static int handle_proc_ev(int nl_sock)
 			return -1;
 		}
 		for (nlmsghdr = (struct nlmsghdr *)buf;
-                        NLMSG_OK (nlmsghdr, len);
-                        nlmsghdr = NLMSG_NEXT (nlmsghdr, len)) {
+			NLMSG_OK (nlmsghdr, len);
+			nlmsghdr = NLMSG_NEXT (nlmsghdr, len)) {
 
 			if (nlmsghdr->nlmsg_type == NLMSG_ERROR ||
 			    nlmsghdr->nlmsg_type == NLMSG_NOOP)
@@ -116,56 +120,79 @@ static int handle_proc_ev(int nl_sock)
 
 			cn_msg = NLMSG_DATA(nlmsghdr);
 			if ((cn_msg->id.idx != CN_IDX_PROC) ||
-                            (cn_msg->id.val != CN_VAL_PROC))
-                                continue;
+			    (cn_msg->id.val != CN_VAL_PROC))
+				continue;
 
 			proc_ev = (struct proc_event *)cn_msg->data;
+
+			tv = time(NULL);
+			tm_time = localtime(&tv);
+			strftime(tbuf, sizeof tbuf, "%T", tm_time);
 
 			switch (proc_ev->what)
 			{
 			case PROC_EVENT_NONE:
-				printf("set mcast listen ok\n");
+				printf("%s set mcast listen ok\n", tbuf);
 				break;
 			case PROC_EVENT_FORK:
-				printf("fork: parent tid=%d pid=%d -> child tid=%d pid=%d\n",
+				printf("%s fork: parent tid=%d pid=%d -> child tid=%d pid=%d\n", tbuf,
 						proc_ev->event_data.fork.parent_pid,
 						proc_ev->event_data.fork.parent_tgid,
 						proc_ev->event_data.fork.child_pid,
 						proc_ev->event_data.fork.child_tgid);
 				break;
 			case PROC_EVENT_EXEC:
-				printf("exec: tid=%d pid=%d\n",
+				printf("%s exec: tid=%d pid=%d\n", tbuf,
 						proc_ev->event_data.exec.process_pid,
 						proc_ev->event_data.exec.process_tgid);
 				break;
 			case PROC_EVENT_UID:
-				printf("uid change: tid=%d pid=%d from %d to %d\n",
+				printf("%s uid change: tid=%d pid=%d from %d to %d\n", tbuf,
 						proc_ev->event_data.id.process_pid,
 						proc_ev->event_data.id.process_tgid,
 						proc_ev->event_data.id.r.ruid,
 						proc_ev->event_data.id.e.euid);
 				break;
 			case PROC_EVENT_GID:
-				printf("gid change: tid=%d pid=%d from %d to %d\n",
+				printf("%s gid change: tid=%d pid=%d from %d to %d\n", tbuf,
 						proc_ev->event_data.id.process_pid,
 						proc_ev->event_data.id.process_tgid,
 						proc_ev->event_data.id.r.rgid,
 						proc_ev->event_data.id.e.egid);
 				break;
+			case PROC_EVENT_SID:
+				printf("%s sid change: tid=%d pid=%d", tbuf,
+						proc_ev->event_data.sid.process_pid,
+						proc_ev->event_data.sid.process_tgid);
+				break;
+			case PROC_EVENT_PTRACE:
+				printf("%s ptrace change: tid=%d pid=%d tracer tid=%d, pid=%d", tbuf,
+						proc_ev->event_data.ptrace.process_pid,
+						proc_ev->event_data.ptrace.process_tgid,
+						proc_ev->event_data.ptrace.tracer_pid,
+						proc_ev->event_data.ptrace.tracer_tgid);
+				break;
 			case PROC_EVENT_COMM:
-				printf("comm: tid=%d pid=%d comm %s\n",
+				printf("%s comm: tid=%d pid=%d comm %s\n", tbuf,
 						proc_ev->event_data.comm.process_pid,
 						proc_ev->event_data.comm.process_tgid,
 						proc_ev->event_data.comm.comm);
 				break;
+			case PROC_EVENT_COREDUMP:
+				printf("%s coredump: tid=%d pid=%d", tbuf,
+						proc_ev->event_data.coredump.process_pid,
+						proc_ev->event_data.coredump.process_tgid);
+				break;
 			case PROC_EVENT_EXIT:
-				printf("exit: tid=%d pid=%d exit_code=%d\n",
+				/* Check /proc/pid/stat - if not exist or Z, then process gone. What is status if coredumping */
+				printf("%s exit: tid=%d pid=%d exit_code=%d\n", tbuf,
 						proc_ev->event_data.exit.process_pid,
 						proc_ev->event_data.exit.process_tgid,
-						proc_ev->event_data.exit.exit_code);
+						proc_ev->event_data.exit.exit_code,
+						proc_ev->event_data.exit.exit_signal);
 				break;
 			default:
-				printf("unhandled proc event %d\n", proc_ev->what);
+				printf("%s unhandled proc event %d\n", tbuf, proc_ev->what);
 				break;
 			}
 		}
