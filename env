@@ -20,9 +20,9 @@ k()
 	SIG=${2:-TERM}
 
 	if [[ -z $1 ]]; then
-		kill -$SIG $(cat /var/run/keepalived.pid)
+		kill -$SIG $(cat /run/keepalived.pid)
 	else
-		kill -$SIG $(cat /var/run/keepalived/$1/keepalived.pid)
+		kill -$SIG $(cat /run/keepalived/$1/keepalived.pid)
 	fi
 }
 

@@ -89,5 +89,6 @@ do
 		fi
 	done < $FIFO
 
+	PROLOGUE=$(echo "$(date +"%a %b %e %X %Y")": \[$PPID:$$\])
 	echo "$PROLOGUE" STOPPED >>$LOG_FILE
 done

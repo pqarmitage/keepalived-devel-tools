@@ -7,11 +7,12 @@ else
 	NAME=${NAME%.sh}
 fi
 
-echo -n "$(date +"%a %b %e %X %Y")": \[$PPID:$$\] >>/tmp/$NAME.log
+PARAMS=
 for i in $(seq 1 $#); do
-	echo -n " '$1'" >>/tmp/$NAME.log
+	PARAMS="$PARAMS $1"
 	shift
 done
-echo >>/tmp/$NAME.log
+
+echo "$(date +"%a %b %e %X %Y")": \[$PPID:$$\] $PARAMS >>/tmp/$NAME.log
 
 exit 0

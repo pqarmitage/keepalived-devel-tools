@@ -1,0 +1,263 @@
+# VO - VDR - HAP01A & B - Configuration Keepalived
+# 2018-03-07 : ASAP.MC - Suppression IP 185.145.78.42 pour RIGHTV
+# 2018-03-22 : ASAP.TF - Ajout IP 83.206.78.81 & intervention eth0.1000 pour MIB4 et reconfig eth0 en eth0.859 & ajout 172.19.1.236 MB4-CMSI
+# 2018-03-28 : ASAP.TF - Ajout IP de SO9-CMSI et SO10-CMSI
+# 2018-05-16 : ASAP.TF - Ajout IP dak-licenser01
+# 2018-05-23 : ASAP.TF - Ajout IP pour Dakota (agora, cmsi, monitor)
+# 2018-05-29 : ASAP.TF - Ajout IP Alhambra
+# 2018-06-04 : ASAP.MC - Ajout IP de SO2
+# 2018-06-06 : ASAP.TF - Ajout IP pour VPN alhambra-licenser01 (.226)
+# 2018-06-13 : ASAP.TF - Ajout IP pour SO6-CMSI (.224)
+# 2018-07-16 : ASAP.TF - Ajout IP pour IKOMG-STEV01 et ANDORRA TELECOM
+# 2018-07-18 : ASAP.MC - Modif Suite IKOMG et ANDORRA
+# 2018-07-18 : ASAP.TF - Ajout IP pour OSP-NSSDC01 172.19.1.223
+# 2018-07-25 : ASAP.TF - Ajout IP pour SO5-CMSI05 172.19.1.222
+# 2018-07-30 : ASAP.TF - Ajout IP pour SO4-CMSI04 172.19.1.221
+# 2018-09-13 : ASAP.TF - Ajout IP pour SO7-CMSI07 172.19.1.220
+# 2018-10-16 : ASAP.TF - Ajout IP pour equidia-stev01 et bein-stev01
+# 2018-11-12 : ASAP.TF - Suppression interface 83.206 pour LaD
+# 2018-11-21 : ASAP.MC - Ajout IP 172.19.1.219 pour mib4-licenser01-south
+
+# Check for the presence of the SSH daemon. That way, if SSH dies, we prefer
+# the other node which remains remotely manageable.
+
+vrrp_script chk_sshd {
+        script "pkill -0 -f /usr/sbin/sshd" # pkill -0 is cheaper than pidof
+        interval 5                      # check every 5 seconds
+        weight -4                       # remove 4 points of prio if missing
+        fall 2                          # check twice before setting down
+        rise 1                          # check once before setting up
+}
+
+vrrp_script chk_probe_north {
+	script "ping -c5 -l5 -i 0.2 -w1 172.21.53.188 -A"	# Is this the address of the Orange 400 router?
+	interval 2
+	weight -4
+	fall 1
+	rise 1
+}
+
+#vrrp_script chk_probe_83 {
+#        script "ping -c5 -l5 -i 0.2 -w1 83.206.78.94 -A"
+#        interval 2
+#        weight -4
+#        fall 1
+#        rise 1
+#}
+
+
+# This is an example of how it would be possible to check if the LB sees some
+# operational servers, and to use the result to decide to be master or backup.
+# The "/are-you-ok" url should be referenced as a "monitor-uri" in hapee-lb,
+# and this vrrp_script should be referenced in the "track_script" block of the
+# concerned VRRP instances.
+
+#vrrp_script chk_servers {
+#        script "echo 'GET /are-you-ok' | nc 127.1 8080 | grep -q '200 OK'"
+#        interval 2                      # check every 2 seconds
+#        weight 2                        # add 2 points of prio if OK
+#        fall 2                          # check twice before setting down
+#        rise 2                          # check twice before setting up
+#}
+
+# Ensure that if one vrrp instance fails or becomes backup, the other one will too
+#vrrp_sync_group GROUP1 {
+#	group {
+#		VI_100
+#		VI_2
+#	}
+#}
+
+vrrp_instance VI_100 {
+        interface eth0.859		# or bond0 or whatever prod interface
+	nopreempt
+	virtual_router_id 12            # use a distinct value for each instance
+        priority 240                    # 240 on master, 239 on backup
+	mcast_src_ip 185.145.78.201	# Is this the only address on p3p1 - if so delete this line
+
+	virtual_ipaddress {
+			185.145.78.200  #VIP CLUSTER
+			185.145.78.30   #DXPERSO
+			185.145.78.31   #DAK-OMP01
+			185.145.78.33   #COSMIC
+			185.145.78.34   #DRMMULTIOP-LICENSER
+			185.145.78.39   #MIB4-AGORA
+			185.145.78.40   #MIB4-OMP
+			185.145.78.41   #MIB4-Licenser
+			185.145.78.42   #MIB4-volan01 
+			185.145.78.44   #MIB4-perso01
+			185.145.78.45	#MIB4-monitor01
+			185.145.78.51   #DAK-AGORA01
+			185.145.78.54   #DAK-LICENSER01
+			185.145.78.55   #DAK-MONITOR01
+			185.145.78.32   #ALH-OMP01					
+			185.145.78.56   #ALH-AGORA01
+			185.145.78.58   #ALH-LICENSER01
+			185.145.78.59	#ALH-MONITOR01
+		}
+
+        virtual_ipaddress_excluded {
+			185.145.78.60   #IKOMG-STEV01	
+			185.145.78.61   #AND-LICENSER01
+			185.145.78.62   #AND-PERSO01
+			185.145.78.96	#FRANSAT-STEV01
+			185.145.78.97   #EQUIDIA-STEV01
+			185.145.78.98 	#BEIN-STEV01
+        }
+
+#	track_script {
+#		chk_probe_north
+#	}
+#
+#	track_interface {
+# 		eth0		# interfaces to monitor
+#	}
+}
+
+#vrrp_instance VI_2 {
+#	interface p3p1
+#	nopreempt
+#	virtual_router_id 25
+#	priority 254
+#	mcast_src_ip 172.19.1.252	# Is this the only address on p3p1 - if so delete this line
+#
+#	virtual_ipaddress { 
+#		172.19.1.254    #VIP CLUSTER
+#		172.19.1.240    #SO3-CMSI
+#		172.19.1.239    #SO1-CMSI
+#		172.19.1.236    #MB4-CMSI
+#		172.19.1.235    #SO9-CMSI
+#		172.19.1.234    #SO10-CMSI
+#		172.19.1.233    #SO8-CMSI
+#		172.19.1.231    #DAK-LICENSER01
+#		172.19.1.232    #DAK-CMSI01
+#		172.19.1.230    #DAK-AGORA01
+#		172.19.1.229	#ALH-CMSI01
+#		172.19.1.228	#ALH-LICENSER01
+#		172.19.1.227	#ALH-AGORA01
+#		172.19.1.226	#SO2-CMSI
+#		172.19.1.225    #ALH-LICENSER01-VPN
+#		172.19.1.224	#SO6-CMSI
+#	}
+#
+#	virtual_ipaddress_excluded {
+#		172.19.1.219    #MIB4-LICENCER01
+#		172.19.1.223    #OSP-NSSDC01
+#		172.19.1.222    #SO5-CMSI05
+#		172.19.1.221    #SO4-CMSI04
+#		172.19.1.220	#SO7-CMSI07
+#	}
+#
+#	track_script {
+#		chk_sshd
+#	}
+#}
+#
+##vrrp_instance VI_3 {
+##                interface eth0.1000
+##                state MASTER
+##                #nopreempt
+##                virtual_router_id 26
+##                priority 101
+##                virtual_ipaddress {
+##                        83.206.78.81    #MIB4-AGORA & OMP
+##                }
+##		virtual_routes{
+##			ip route add default via 83.206.78.81 dev eth0.1000 table rt2
+##			ip rule add from 83.206.78.81 table rt2
+##			ip rule add to 83.206.78.81 table rt2	        
+##        	}
+##
+##                virtual_ipaddress_excluded {
+##                }
+##                track_script {
+##                	chk_probe_83
+##                }
+##                track_interface {
+##                        eth0.1000
+##                }
+##}
+#
+#
+## Test Virtual Servers
+#
+##virtual_server 185.145.78.200 443 {
+##	delay_loop 6
+##	lb_algo lc
+##	lb_kind NAT
+##	protocol TCP
+##	timeout 3600
+##
+##	real_server 172.19.1.11 443 {
+##	    weight 1
+##	    TCP_CHECK {
+##			connect_timeout	10
+##			connect_port 	443
+##	    }
+##	}
+##	real_server 172.19.1.12 443 {
+##	    weight 1
+##	    TCP_CHECK {
+##			connect_timeout 10
+##			connect_port	443
+##	    }
+##	}
+##	real_server 172.19.1.13 443 {
+##           weight 1
+##          TCP_CHECK {
+##                        connect_timeout 10
+##                        connect_port    443
+##            }
+##        }
+##        real_server 172.19.1.14 443 {
+##            weight 1
+##            TCP_CHECK {
+##                        connect_timeout 10
+##                        connect_port    443
+##            }
+##        }
+##}
+##
+##virtual_server 185.145.78.200 7443 {
+##	delay_loop 6
+##	lb_algo lc
+##	lb_kind NAT
+##	protocol TCP
+##
+##	real_server 172.19.1.11 7443 {
+##		weight 1
+##		TCP_CHECK {
+##			connect_timeout 10
+##			connect_port    7443
+##		}
+##	}
+##	real_server 172.19.1.12 7443 {
+##		weight 1
+##		TCP_CHECK {
+##			connect_timeout 10
+##			connect_port    7443
+##		}
+##	}
+##}
+##virtual_server 185.145.78.200 80 {
+##	delay_loop 6
+##	lb_algo lc
+##	lb_kind NAT
+##	protocol TCP
+##
+##	real_server 172.19.1.11 80 {
+##		weight 1
+##	TCP_CHECK {
+##			connect_timeout 10
+##			connect_port    80
+##		}
+##	}
+##	real_server 172.19.1.12 80 {
+##		weight 1
+##		TCP_CHECK {
+##			connect_timeout 10
+##			connect_port    80
+##		}
+##	}
+##}
+#include /home/quentin/keepalived/utils/configs/ASAP/ipvsconffiles/*.conf
