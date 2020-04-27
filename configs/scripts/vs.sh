@@ -14,6 +14,12 @@ for i in $(seq 1 $#); do
 done
 echo >>/tmp/$NAME.log
 
+if [[ -x /tmp/$NAME.scr ]]; then
+	echo "  Executing /tmp/$NAME.scr" >>/tmp/$NAME.log
+
+	/tmp/$NAME.scr
+fi
+
 if [[ -f /tmp/$NAME.sig ]]; then
 	SIG=$(cat /tmp/$NAME.sig)
 	kill -$SIG $$

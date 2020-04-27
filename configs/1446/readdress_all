@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PATH=$PATH:.
+
+V=10
+W=100
+
+for f in *.conf conf.d/*.conf conf.d/cloud/*.conf; do
+	readdress -f $f -a $V.$W.1.1
+	echo $f - $V.$W.1.1
+	: $((W++))
+done

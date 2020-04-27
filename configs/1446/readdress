@@ -1,0 +1,46 @@
+#!/bin/bash
+
+trap "rm -f *.$$" EXIT
+
+X=12
+Y=15
+IP=10.100.\$X.\$Y
+FILE=keepalived.conf
+
+HAVE_IP=0
+
+while getopts ":a:f:" opt; do
+	case $opt in
+	a)
+		IFS=' .'
+		<<<$OPTARG read a b X Y rubbish
+		IP="$a.$b.\$X.\$Y"
+		;;
+	f)
+		FILE=$OPTARG
+		;;
+	?)
+		echo Unknown option $OPTARG
+		exit 1
+		;;
+	esac
+done
+
+
+
+IFS=''
+while read line; do
+	if [[ $line =~ 123.123.123.123 ]]; then
+		eval NEXT_IP="$IP"
+		line=$(<<<"$line" sed -e "s/123\.123\.123\.123/$NEXT_IP/")
+		: $((Y++))
+		HAVE_IP=1
+	elif [[ $HAVE_IP -eq 1 ]]; then
+		: $((X++))
+		Y=1
+		HAVE_IP=0
+	fi
+	echo "$line"
+done <$FILE >$FILE.$$
+
+mv $FILE.$$ $FILE

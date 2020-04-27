@@ -1,0 +1,77 @@
+1. Missing } from anon22.conf causes no vrrp or LVS configuration to be loaded
+
+2. When reload with brace missing in anon22.conf all the old ipvs and vrrp configuration remains,
+ whereas if a fresh start, then it would have no vrrp instances or IPVS config
+ Then, when keepalive exits, it segfaults (17:40 coredump):
+#0  0x0000559283a990ca in __test_bit (bmap=0x10, idx=3) at bitops.h:49
+#1  0x0000559283a990ca in thread_event_del (thread_cp=0x559284343090, flag=flag@entry=3) at scheduler.c:627
+#2  0x0000559283a9b392 in thread_cancel (thread_cp=0x559284343090) at scheduler.c:1394
+#3  0x0000559283a38db2 in netlink_close (nl=nl@entry=0x559283cdb570 <nl_kernel>) at keepalived_netlink.c:678
+#4  0x0000559283a3c300 in kernel_netlink_close_monitor () at keepalived_netlink.c:2352
+#5  0x0000559283a3c300 in kernel_netlink_close () at keepalived_netlink.c:2364
+#6  0x0000559283a3f955 in checker_terminate_phase1 (schedule_next_thread=<optimized out>) at check_daemon.c:216
+#7  0x0000559283a3f9a5 in start_checker_termination_thread (thread=<optimized out>) at check_daemon.c:250
+#8  0x0000559283a9b8d3 in thread_call (thread=0x55928442c0f0) at scheduler.c:1776
+#9  0x0000559283a9b8d3 in process_threads (m=0x55928434fd20) at scheduler.c:1834
+#10 0x0000559283a9c2d1 in launch_thread_scheduler (m=<optimized out>) at scheduler.c:1942
+#11 0x0000559283a40150 in start_check_child () at check_daemon.c:672
+#12 0x0000559283a2fd0f in start_keepalived () at main.c:488
+#13 0x0000559283a2fd0f in keepalived_main (argc=9, argv=0x7ffe8b9f7c98) at main.c:2185
+#14 0x00007f4ff163088a in __libc_start_main () at /lib64/libc.so.6
+#15 0x0000559283a2d37a in _start ()
+
+(gdb) select-frame 1
+(gdb) print *thread_cp
+$1 = {id = 0, type = THREAD_READ, master = 0x0, func = 0x0, arg = 0x0, sands = {tv_sec = 0, tv_usec = 7021223305331933184}, u = {val = 1702259052, f = {fd = 1702259052, 
+      close_on_reload = 100}, c = {pid = 1702259052, status = 100}}, event = 0x0, {n = {__rb_parent_color = 0, rb_right = 0x617065656b000000, rb_left = 0x36646576696c}, next = {next = 0x0, 
+      prev = 0x617065656b000000}}, rb_data = {__rb_parent_color = 0, rb_right = 0x0, rb_left = 0x617065656b000000}}
+
+event is NULL, causing the segfault.
+
+3. Need to test combinations of load and reload with no includes, includeds and anon22 err and all OK
+
+Reload
+   |
+   V		OK	Includes	1 include	Brace	-> Start
+
+None		OK	OK		OK		1
+
+OK		OK	OK		OK		5*
+
+includes	4*	OK		OK		5*
+
+1 include	8*	OK		OK		5*
+
+brace		2*	6, 6.1*		7*		5* then 4
+	   (sometimes)
+
+4. During reload (17:59 coredump):
+  In netlink_close nl->thread is invalid
+#0  0x000055e1a775d3c4 in __list_add (next=<optimized out>, prev=0x55e1a7784a28 <__func__.8555>, new=0x55e1a864fe38) at list_head.h:75
+#1  0x000055e1a775d3c4 in list_add_tail (head=<optimized out>, new=0x55e1a864fe38) at list_head.h:102
+#2  0x000055e1a775d3c4 in thread_add_unuse (thread=0x55e1a864fdf0, m=0x55e1a8652970) at scheduler.c:832
+#3  0x000055e1a775d3c4 in thread_cancel (thread_cp=0x55e1a864fdf0) at scheduler.c:1437
+#4  0x000055e1a76fadb2 in netlink_close (nl=nl@entry=0x55e1a799d570 <nl_kernel>) at keepalived_netlink.c:678
+#5  0x000055e1a76fe300 in kernel_netlink_close_monitor () at keepalived_netlink.c:2352
+#6  0x000055e1a76fe300 in kernel_netlink_close () at keepalived_netlink.c:2364
+#7  0x000055e1a7701d43 in start_check (old_checkers_queue=0x55e1a864e2d0, prev_global_data=0x55e1a864a660) at check_daemon.c:341
+#8  0x000055e1a7701e6a in reload_check_thread (thread=<optimized out>) at check_daemon.c:446
+#9  0x000055e1a775d8d3 in thread_call (thread=0x55e1a8661b10) at scheduler.c:1776
+#10 0x000055e1a775d8d3 in process_threads (m=0x55e1a8655d20) at scheduler.c:1834
+#11 0x000055e1a775e2d1 in launch_thread_scheduler (m=<optimized out>) at scheduler.c:1942
+#12 0x000055e1a7702150 in start_check_child () at check_daemon.c:672
+#13 0x000055e1a76f1d0f in start_keepalived () at main.c:488
+#14 0x000055e1a76f1d0f in keepalived_main (argc=9, argv=0x7ffdd2e385b8) at main.c:2185
+#15 0x00007f438b04988a in __libc_start_main () at /lib64/libc.so.6
+#16 0x000055e1a76ef37a in _start ()
+
+5. in /tmp/sched_low.log:
+Cannot change network namespace at a reload - please restart keepalived (it is using low net_namespace)
+
+6. VRRP config remains, no IPVS config loaded
+
+6.1 A second reload produces 5
+
+7. No ipvsadm entries removed
+
+8. 17:59 coredump on exit, otherwise OK. Possibly also 17:40 coredump

@@ -1,0 +1,71 @@
+#==========================================#
+#                                          #
+# * * * HAProxy Global Configuration * * * # 
+#                                          #   
+#==========================================#
+
+global
+    log         127.0.0.1 local2
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     32768
+    nbproc      1   
+    nbthread    2   
+    cpu-map     auto:1/1-2 0-1 
+    user        haproxy
+    group       haproxy
+    daemon
+    stats socket /var/lib/haproxy/stats user haproxy group haproxy mode 0640 level operator
+    tune.bufsize 32768
+    tune.ssl.default-dh-param 4096
+    ssl-default-bind-ciphers EECDH+AESGCM:EDH+AESGCM
+    ssl-default-bind-options ssl-min-ver TLSv1.2 ssl-max-ver TLSv1.3 no-tls-tickets
+    ssl-default-server-ciphers EECDH+AESGCM:EDH+AESGCM
+    ssl-default-server-options ssl-min-ver TLSv1.2 ssl-max-ver TLSv1.3 no-tls-tickets
+    debug
+
+#===========================================#
+#                                           #   
+# * * * HAProxy Default Configuration * * * # 
+#                                           #
+#===========================================#
+
+defaults
+    log         global
+    mode        http
+    option      httplog
+    option      log-health-checks
+    option      log-separate-errors
+    option      dontlognull
+    option      splice-auto
+    option      socket-stats
+    retries     3   
+    option      redispatch
+    maxconn     10000
+    timeout     connect         5s
+    timeout     client          60s 
+    timeout     server          450s
+#    errorfile 400 /etc/haproxy/errors/400.http
+#    errorfile 403 /etc/haproxy/errors/403.http
+#    errorfile 408 /etc/haproxy/errors/408.http
+#    errorfile 500 /etc/haproxy/errors/500.http
+#    errorfile 502 /etc/haproxy/errors/502.http
+#    errorfile 503 /etc/haproxy/errors/503.http
+#    errorfile 504 /etc/haproxy/errors/504.http
+
+
+#===========================================#
+#                                           #
+# * * * * * * * * Statistic * * * * * * * * # 
+#                                           #   
+#===========================================#
+
+
+listen stats
+    bind  *:80		# ipv4-address,ipv6-address
+    stats enable
+    stats hide-version
+    stats refresh 30s 
+    stats show-node
+    stats auth fred:fred
+    stats uri /lb_stats

@@ -1,0 +1,15 @@
+test/tcp_server -4 -p 25 &
+test/tcp_server -4 -p 80 &
+test/tcp_server -4 -p 443 &
+test/tcp_server -4 -p 1194 &
+test/tcp_server -4 -p 3128 &
+test/tcp_server -4 -p 3306 &
+test/tcp_server -4 -p 6284 &
+test/tcp_server -4 -p 8088 &
+test/tcp_server -4 -p 8773 &
+test/tcp_server -4 -p 8774 &
+test/tcp_server -4 -p 8775 &
+test/tcp_server -4 -p 8776 &
+test/tcp_server -4 -p 9200 &
+test/tcp_server -4 -p 9201 &
+test/tcp_server -4 -p 27017 &
