@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -f ../utils/configs/1564/run/*.conf
+cp -p ../utils/configs/1564/empty/*.conf ../utils/configs/1564/run
+
+for i in $(seq 1 64); do ip netns exec 1564.$i keepalived/keepalived -DRM -mf $(pwd)/../utils/configs/1564/run/VRF$(printf "%3.3d" $i).conf -g/tmp/sched.log -G --flush-log-file -P; done

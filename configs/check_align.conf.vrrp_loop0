@@ -1,0 +1,481 @@
+# Need to run:
+#
+# High
+# ====
+# tcp_server -u -p 80 -e 
+# netns ipvs_high
+#
+# Low
+# ====
+# tcp_server -u -p 80 -e 
+# netns ipvs_low
+
+# Things to change
+# ================
+# NFT/IPT
+
+# Control what is enabled
+$PROC_NAME_ALL=${_HASH}
+$PROC_NAME=${_HASH}
+$START_SCRIPT=${_HASH}
+$EMAIL=${_HASH}
+$EMAIL_ALT=${_HASH}
+$EMAIL_ALT_V=${_HASH}
+$EMAIL_ALT_C=${_HASH}
+$CHECK_LOG_ALL=${_HASH}
+$NO_EMAIL_FLT=${_HASH}
+$LVS_SYNC_2=${_HASH}
+$LVS_SYNC=${_HASH}
+$LVS_FLUSH_BEG=${_HASH}
+$LVS_FLUSH_END=${_HASH}
+$LVS_FLUSH_END1=${_HASH}
+$GARP=${_HASH}
+$GARP_MIN=${_HASH}
+$LOWER_NO_ADV=${_HASH}
+$VRRPv3=${_HASH}
+$IPTABLES=${_HASH}
+$NO_IPSET=${_HASH}
+$IPSET_NAME=${_HASH}
+$IPSET_NAMES=${_HASH}
+$NFTABLES=${_HASH}
+$NFTABLES_INST=${_HASH}
+$SKIP_ADV_CHK=${_HASH}
+$STRICT=${_HASH}
+$PRI_CHG=${_HASH}
+$PRIOS=${_HASH}
+$NO_SWAP=${_HASH}
+$CPU_AFIN=${_HASH}
+$RT_PRIO=${_HASH}
+$VI4=${_HASH}
+$VI6=${_HASH}
+
+@low net_namespace low
+@high net_namespace high
+
+@low	$INST=low
+@high	$INST=high
+
+@low net_namespace_ipvs ipvs_low
+@high net_namespace_ipvs ipvs_high
+
+# use_pid_dir
+# linkbeat_use_polling
+# child_wait_time 3
+
+global_defs {
+$PROC_NAME_ALL	process_names hidden
+$PROC_NAME	process_name keepalived_parent
+$PROC_NAME	vrrp_process_name keepalived_vrrp
+$PROC_NAME	ipvs_process_name keepalived_ipvs
+$PROC_NAME	bfd_process_name keepalived_bfd
+
+$START_SCRIPT	startup_script ${_PWD}/../utils/scripts/startup.sh
+$START_SCRIPT	startup_script_timeout 5
+$START_SCRIPT	shutdown_script ${_PWD}/../utils/scripts/shutdown.sh
+$START_SCRIPT	shutdown_script_timeout 5
+
+$EMAIL		notification_email {
+$EMAIL			quentin@armitage.org.uk
+$EMAIL		}
+$EMAIL		notification_email_from keepalived_${INST}@armitage.org.uk
+$EMAIL		smtp_server 172.21.53.188
+$EMAIL		smtp_helo_name ${INST}.armitage.org.uk
+$EMAIL		smtp_connect_timeout 30
+$EMAIL_ALT	smtp_alert on
+$EMAIL_ALT_V	smtp_alert_vrrp on
+$EMAIL_ALT_C	smtp_alert_checker on
+
+$CHECK_LOG_ALL	checker_log_all_failures on
+
+$NO_EMAIL_FLT	no_email_faults
+
+@MCAST_GRP	vrrp_mcast_group4 224.0.0.18
+@MCAST_GRP	vrrp_mcast_group6 ff02::12
+
+		router_id keepalived_$INST
+
+$LVS_SYNC_2	lvs_sync_daemon eth4 id 5 maxlen 1000 port 8488 ttl 1 # group 1.2.3.4
+$LVS_SYNC	lvs_sync_daemon eth4 VI_0 id 5 maxlen 1000 port 8488 ttl 1 # group 1.2.3.4
+
+$LVS_FLUSH_BEG	lvs_flush
+$LVS_FLUSH_END	lvs_flush_onstop
+$LVS_FLUSH_END1	lvs_flush_onstop VS
+
+		vrrp_garp_master_delay 0
+		vrrp_garp_master_repeat 1
+		vrrp_garp_lower_prio_delay 0
+		vrrp_garp_lower_prio_repeat 2
+$GARP		vrrp_garp_master_refresh_repeat 2
+$GARP		vrrp_garp_interval 0.01
+$GARP		vrrp_gna_interval 0.01
+$GARP_MIN	vrrp_min_garp
+$LOWER_NO_ADV	vrrp_lower_prio_no_advert true
+
+$VRRPv3		vrrp_version 3
+
+$IPTABLES	vrrp_iptables TESTIN TESTOUT
+$NO_IPSET	vrrp_ipsets
+$IPSET_NAME	vrrp_ipsets SET
+$IPSET_NAMES	vrrp_ipsets set set6 set_if6 set_igmp set_mld
+$NFTABLES	nftables
+$NFTABLES_INST	nftables $INST
+
+		vrrp_check_unicast_src
+$SKIP_ADV_CHK	vrrp_skip_check_adv_addr
+
+$STRICT		vrrp_strict
+
+$PRI_CHG	vrrp_notify_priority_changes
+
+		max_auto_priority 20
+		min_auto_priority_delay	1000
+
+$PRIOS		vrrp_priority -10
+$PRIOS		checker_priority 10
+$PRIOS		bfd_priority 1
+
+$NO_SWAP	vrrp_no_swap
+$NO_SWAP	checker_no_swap
+$NO_SWAP	bfd_no_swap
+
+$CPU_AFIN	vrrp_cpu_affinity 1 2
+$CPU_AFIN	checker_cpu_affinity 3
+$CPU_AFIN	bfd_cpu_affinity 4
+
+$RT_PRIO	vrrp_rt_priority 20
+$RT_PRIO	checker_rt_priority 10
+$RT_PRIO	bfd_rt_priority 50
+$RT_PRIO	vrrp_rlimit_rtime	20000
+$RT_PRIO	checker_rlimit_rtime	15000
+$RT_PRIO	bfd_rlimit_rtime	5000
+
+@SNMP_SOCK@low	snmp_socket udp:1.2.3.4:705
+@SNMP@low	enable_snmp_rfc2
+@SNMP@low	enable_snmp_rfcv3
+@SNMP@low	enable_snmp_keepalived
+@SNMP@low	enable_snmp_checker
+@SNMP@low	enable_snmp_vrrp
+@SNMP@low	enable_traps
+
+@DBUS		enable_dbus
+@DBUS		dbus_service_name org.keepalived_dbus.Vrrp1
+
+@SCRIPT		script_user keepalived_script
+@SCRIPT		enable_script_security
+
+@NOTIFY_FIFO	notify_fifo /tmp/notify_fifo.$INST
+@NOTIFY_FIFO	notify_fifo_script ${_PWD}/scripts/notify_fifo.sh
+@NOTIFY_FIFO_P	vrrp_notify_fifo /tmp/vrrp_notify_fifo.$INST
+@NOTIFY_FIFO_P	vrrp_notify_fifo_script ${_PWD}/scripts/notify_fifo.sh
+@NOTIFY_FIFO_P	lvs_notify_fifo /tmp/lvs_notify_fifo.$INST
+@NOTIFY_FIFO_P	lvs_notify_fifo_script ${_PWD}/scripts/notify_fifo.sh
+
+@NETLINK_BUFS	vrrp_netlink_cmd_rcv_bufs 1048576
+@NETLINK_BUFS	vrrp_netlink_cmd_rcv_bufs_force
+@NETLINK_BUFS	vrrp_netlink_monitor_rcv_bufs 4194304 # 2097152
+@NETLINK_BUFS	vrrp_netlink_monitor_rcv_bufs_force
+@NETLINK_BUFS	lvs_netlink_cmd_rcv_bufs 1048576
+@NETLINK_BUFS	lvs_netlink_cmd_rcv_bufs_force
+@NETLINK_BUFS	lvs_netlink_monitor_rcv_bufs 4194304 # 2097152
+@NETLINK_BUFS	lvs_netlink_monitor_rcv_bufs_force
+
+@MONITOR_BUFS	process_monitor_rcv_bufs 500000
+@MONITOR_BUFS	process_monitor_rcv_bufs_force
+
+@RX_BUFS	vrrp_rx_bufs_policy ADVERT
+@RX_BUFS	vrrp_rx_bufs_multiplier 4
+
+@RS_INIT	rs_init_notifies
+@RS_QUIET	no_checker_emails
+
+		umask IWGRP | IWOTH | IROTH
+
+@VRRP_DELAY	vrrp_startup_delay 5.5
+
+		log_unknown_vrids
+
+		random_seed 23
+
+		reload_time_file /tmp/reload.time
+		reload_repeat
+
+
+
+}
+
+static_ipaddress {
+	1.2.3.4/24 dev eth0
+	2.3.4.5/25 dev eth0
+}
+
+static_rules {
+    from 192.168.28.0/24 to 192.168.29.0/26 table default iif eth3 oif eth0 tos 22 fwmark 24/12 preference 39 realms 30/20
+    to 1:2:3:4:5:6:7:0/112 from 7:6:5:4:3:2::/96 table 6908 uidrange 10000-19999 preference 16384
+    to 1:2:3:4:6:6:7:0/112 from 8:6:5:4:3:2::/96 l3mdev uidrange 10000-19999 preference 16383
+    from 1.2.10.0/24 l3mdev preference 16384
+    from 0.0.0.0/0 to 192.168.30.0/26 table default iif eth3 oif eth0 preference 16383
+    from default to 192.168.31.0/26 table default iif eth3 oif eth0 preference 16382
+}
+
+static_routes {
+    192.168.100.0/24 table 6909 nexthop via 192.168.101.1 dev eth0 onlink weight 1 nexthop via 192.168.101.2 dev eth4 onlink weight 2 congctl fred
+    192.168.200.0/24 dev eth1 table 6909 tos 0x04 protocol 112 scope link priority 12 mtu 1000 hoplimit 100 advmss 101 rtt 102 rttvar 103 reordering 104 window 105 cwnd 106 ssthresh lock 107 realms cosmos/0x14 rto_min 108 initcwnd 109 initrwnd 110 features ecn ttl-propagate enabled fastopen_no_cookie 1
+    2001:470:69e9:1:2::4 dev eth2 table 6909 tos 0x04 protocol 112 scope link priority 12 mtu 1000 hoplimit 100 advmss 101 rtt 102 rttvar 103 reordering 104 window 105 cwnd 106 ssthresh lock 107 rto_min 108 initcwnd 109 initrwnd 110 features ecn ttl-propagate disabled fastopen_no_cookie 0
+}
+
+$BFD= \
+bfd_instance test${INST} { \
+@low    neighbor_ip ${PREF}${LOW} \
+@high   neighbor_ip ${PREF}${HIGH} \
+#@samson neighbor_ip 172.21.53.188 \
+#@nabal  neighbor_ip 172.21.53.210 \
+        weight 20 reverse \
+}
+
+~LST({INST,PREF,LOW,HIGH},{,10.1.0.,1,3}, {6,fd00:0:1:101::,1,3}) $BFD
+
+track_file TF_1 {
+    file /tmp/track_file_1.trk
+    weight 0
+#    init_file
+}
+
+vrrp_track_process sshd1 {
+    process sshd1
+    weight 12
+#    quorum 4
+    delay 0.5
+}
+
+vrrp_track_process sshd {
+    process /bin/bash ../utils/run_proc
+    weight 12
+    quorum 2
+    terminate_delay 0.05
+    fork_delay 0.001
+#     full_command
+    quorum_max 3
+  param_match
+}
+
+vrrp_track_process sshd_full {
+    process /usr/sbin/alsactl -s -n 19 -c -E ALSA_CONFIG_PATH=/etc/alsa/alsactl.conf --initfile=/lib/alsa/init/00main rdaemon
+    weight 12
+#    quorum 2
+    delay 2
+#     full_command
+#  param_match
+}
+
+vrrp_script scr0 {
+@high   script "${_PWD}/scripts/vs.sh scr0h"
+@medium script "${_PWD}/scripts/vs.sh scr0m"
+@low    script "${_PWD}/scripts/vs.sh scr0l"
+        interval 10
+        timeout 2
+        weight 20 reverse
+}
+
+vrrp_sync_group sg1 {
+	group {
+		VI_0
+		VI_6
+	}
+        track_script {
+                scr0 weight 0
+        }
+
+        track_interface {
+@low            eth1
+@medium         br1
+@high           eth1
+                eth2 weight 20
+                eth3 weight -15
+                eth4 weight 31 reverse
+                eth5 weight -32 reverse
+        }
+
+        track_file {
+                TF_1 weight -10 reverse
+        }
+
+@low    track_bfd {
+@low            test weight 0
+@low    }
+
+        track_process {
+                sshd1 weight -20 reverse
+        }
+}
+
+vrrp_instance VI_0 {
+	state BACKUP
+	interface eth0
+	virtual_router_id 1
+@high	priority 170
+@low	priority 85
+	advert_int 1
+	version 3
+	use_vmac
+
+	virtual_ipaddress {
+		141.1.0.254/32
+	}
+	track_interface {
+		eth6
+		eth7
+	}
+}
+
+vrrp_instance VI_1 {
+	state BACKUP
+	interface eth2	# Appears to be a bug here - complaints track_interface eth2 set on group and instance
+	virtual_router_id 2
+@high	priority 170
+@low	priority 85
+	advert_int 1
+	version 3
+	use_vmac
+
+	virtual_ipaddress {
+		141.1.0.253/32
+		~SEQ(AD, 144, 16, 192) ~SEQ(AD1, 0, 7) 10.2.${AD}.${AD1}/32
+	}
+    virtual_routes {
+            192.168.210.0/24 via 10.1.0.1 dev eth0
+            192.168.211.0/24 via 10.1.0.1 dev eth0
+            192.168.212.0/24 via 10.1.0.1 dev eth0
+            192.168.213.0/24 via 10.1.2.1 dev eth2
+    }
+    virtual_rules {
+        from 192.168.12.0/24 to 192.168.11.0/26 table 51 preference 14999
+        from 192.168.14.0/24 to 192.168.13.0/26 table 51 dev eth1 preference 14998
+        from 192.168.16.0/24 to 192.168.15.0/26 table 51 preference 14997
+    }
+@low    track_bfd {
+@low            test6 weight 0
+@low    }
+}
+
+vrrp_instance VI_6 {
+	state BACKUP
+	interface eth2
+	virtual_router_id 2
+@high	priority 170
+@low	priority 85
+	advert_int 1
+	version 3
+	use_vmac
+
+	virtual_ipaddress {
+		fe80::23:43/64
+		2001:470:69dd:67::1/128
+		~SEQx(AD, 0x90, 0x10, 0xc0) fe80::10:${AD}:1
+	}
+}
+
+$VI4= \
+track_file offset_instance_4.${IF}.${NUM}.${ID} { \
+    file "${_PWD}/../track_files/4.${IF}.${NUM}.${ID}" \
+    weight -100 \
+    init_file \
+} \
+\
+vrrp_instance 4.${IF}.${NUM}.${ID} { \
+    state BACKUP \
+    interface eth${IF} \
+    use_vmac vrrp4.${IF}.${NUM}.${ID} \
+    virtual_router_id ${ID} \
+@high priority 130 \
+@low priority 120 \
+    advert_int 1 \
+    preempt_delay 5 \
+    virtual_ipaddress { \
+        10.${IF}.${NUM}.${ID}/24 \
+    } \
+    mcast_src_ip 10.${IF}.${NUM}.${ID}/24 \
+    unicast_src_ip 10.${IF}.${NUM}.${ID}/24 \
+\
+    track_file { \
+        offset_instance_4.${IF}.${NUM}.${ID} \
+    } \
+}
+
+$VI6=\
+track_file offset_instance_6.${IF}.${NUM}.${ID} { \
+    file "${_PWD}/../track_files/6.${IF}.${NUM}.${ID}" \
+    weight -100 \
+    init_file \
+} \
+\
+vrrp_instance 6.${IF}.${NUM}.${ID} { \
+    version 3 \
+    native_ipv6 \
+    state BACKUP \
+    interface eth${IF} \
+    use_vmac vrrp6.${IF}.${NUM}.${ID} \
+    virtual_router_id ${ID} \
+@high priority 130 \
+@low priority 120 \
+    advert_int 1 \
+    preempt_delay 5 \
+    virtual_ipaddress { \
+	fe80::1/64 \
+        2001:${IF}:${NUM}:${ID}:ff:ff:ff:ff/64 \
+    } \
+\
+    track_file { \
+        offset_instance_6.${IF}.${NUM}.${ID} \
+    } \
+}
+
+$VIs= \
+$VI4 \
+$VI6
+
+$IF=1
+$NUM=1
+$ID=27
+~SEQ(ID,1,4) $VIs
+
+
+virtual_server 10.0.0.1 80 {
+  delay_loop 3
+  lvs_sched rr
+  lvs_method NAT
+  protocol TCP
+  quorum 2
+  sorry_server 192.168.0.254 80
+# alpha
+  real_server 192.168.0.1 80 {
+    weight 1
+    inhibit_on_failure
+    UDP_CHECK {
+#       connect_ip 2001:470:69dd:35::10
+@low        connect_ip fd00:0:1:100::1
+@high        connect_ip fd00:0:1:100::3
+#       connect_ip 10.1.0.1
+        connect_port 123
+#       require_reply
+  retry 3
+    }
+
+    DNS_CHECK {
+        connect_port 53
+        connect_timeout 3
+        retry 2
+        type A
+        name zipporah.armitage.org.uk
+#        bindto 22.22.1.69
+@low     bindto 10.1.0.3
+@high    bindto 10.1.0.1
+	connect_ip 172.21.53.11
+    }
+
+    PING_CHECK {
+       connect_ip fd00:0:1:100::1
+#        connect_ip fd10:0:1:100::1
+#       connect_ip 10.1.0.1
+    }
+  }
+}

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -f ../utils/configs/1564/run/*.conf
+cp -p ../utils/configs/1564/vrrp/*.conf ../utils/configs/1564/run
+
+kill -HUP $(ps -ef | grep keepa | grep -v grep | sed -e "s/^root *//" -e "s/ .*//")

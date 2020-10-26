@@ -1,0 +1,68 @@
+@low net_namespace low
+@medium net_namespace medium
+@high net_namespace high
+
+# instance this_one
+
+# $IF=wlp3s0
+$IF=enp2s0
+@low $IF=eth0
+@medium $IF=br0
+@high $IF=eth0
+
+global_defs {
+# nftables
+# nftables_counters
+#	vrrp_strict
+	vrrp_iptables TESTIN TESTOUT
+# vrrp_ipsets
+        vrrp_garp_master_delay 0
+        vrrp_garp_master_repeat 1
+        vrrp_garp_master_refresh 0
+        vrrp_garp_master_refresh_repeat 2
+##vrrp_garp_interval 10.456
+#	umask IWGRP | IWOTH
+reload_time_file /home/quentin/tmp/fred
+reload_repeat
+# vrrp_rlimit_rttime 100000
+max_auto_priority
+min_auto_priority_delay 1000
+}
+
+VI4= \
+    state BACKUP \
+    virtual_router_id $ID \
+    interface eth$IF \
+    version 3 \
+@high    priority 240 \
+@medium priority 220 \
+@low    priority 200 \
+    advert_int 1 \
+    use_vmac \
+    virtual_ipaddress { \
+      10.$IF.$ID.100/32 \
+      10.$IF.$ID.101/32 \
+    } \
+}
+
+VI6= \
+vrrp_instance VI_6 { \
+    interface eth$IF \
+    state BACKUP \
+    virtual_router_id $ID \
+# use_vmac \
+    version 3 \
+@high    priority 240 \
+@medium priority 220 \
+@low    priority 200 \
+    advert_int 1 \
+    virtual_ipaddress { \
+      fe80::$IF:$ID:4000/64 \
+      2001:470:69dd:2::$If:$ID:3000 \
+    } \
+}
+
+~SEQ(IF,0,1) \
+~SEQ(ID,250,253) \
+	$VI_4 \
+	$VI_6

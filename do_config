@@ -5,7 +5,10 @@
 BUILD_OPTIONS="--enable-bfd --enable-snmp --enable-snmp-rfc --enable-dbus --enable-sha1 --enable-regex --enable-json"
 DEBUG_OPTIONS="--enable-debug"
 ALL_DEBUG_OPTIONS="$DEBUG_OPTIONS --enable-genhash-debug --enable-one-process-debug"
-OLD_DEBUG_OPTIONS="--enable-smtp-alert-debug --enable-epoll-debug --enable-epoll-thread-dump --enable-timer-check --enable-netlink-timers --enable-regex-debug --enable-tsm-debug --enable-regex-timers --enable-vrrp-fd-debug --enable-log-file --enable-asserts --enable-eintr-debug --enable-network-timestamp --enable-track-process-debug --enable-parser-debug --enable-dump-keywords"
+OLD_COMMON_DEBUG_OPTIONS="--enable-asserts --enable-epoll-debug --enable-epoll-thread-dump --enable-eintr-debug --enable-parser-debug --enable-timer-check --enable-smtp-alert-debug --enable-smtp-connect-debug --enable-dump-keywords --enable-script-debug --enable-log-file"
+OLD_VRRP_DEBUG_OPTIONS="--enable-vrrp-fd-debug --enable-tsm-debug --enable-track-process-debug --enable-checksum-debug --enable-netlink-timers --enable-network-timestamp"
+OLD_LVS_DEBUG_OPTIONS="--enable-checker-debug --enable-regex-debug --enable-regex-timers"
+OLD_DEBUG_OPTIONS="$OLD_COMMON_DEBUG_OPTIONS $OLD_VRRP_DEBUG_OPTIONS $OLD_LVS_DEBUG_OPTIONS"
 MEMCHECK_OPTIONS="--enable-mem-check"
 PERF_OPTIONS="--enable-perf"
 LINK_DEBUG_OPTIONS="--disable-hardening --disable-optimise"
@@ -13,7 +16,15 @@ EINTR_DISABLE="--disable-eintr-debug"
 
 OPTIONS=$BUILD_OPTIONS
 
-while getopts ":hadoeDf:mp-" opt; do
+# See if we need pre 2.0.20 debug options
+VER=$(grep AC_INIT configure.ac | sed -e "s/[^]]*], \[//" -e "s/].*//" -e "s/\./ /g")
+MAJOR=${VER%% *}
+VER=${VER#* }
+MINOR=${VER%% *}
+REL=${VER#* }
+[[ $MAJOR -lt 2 || ($MAJOR -eq 2 && $MINOR -eq 0 && $REL -lt 20) ]] && DEBUG_OPTIONS="$OLD_DEBUG_OPTIONS"
+
+while getopts ":hadoeDf:cCmp-" opt; do
 	case $opt in
 		h)
 			echo "$0 -- usage:"
@@ -26,6 +37,8 @@ while getopts ":hadoeDf:mp-" opt; do
 			echo "	-f TYPE	make i/f type TYPE unchangeable"
 			echo "	-m	enable mem-check"
 			echo "	-p	enable perf"
+			echo "	-c	enable strict cast alignment warnings"
+			echo "	-C	enable cast alignment checks"
 
 			exit 0
 			;;
@@ -36,7 +49,7 @@ while getopts ":hadoeDf:mp-" opt; do
 			OPTIONS="$OPTIONS $DEBUG_OPTIONS"
 			;;
 		o)
-			OPTIONS="$OPTIONS $OLD_DEBUG_OPTIONS"
+			DEBUG_OPTIONS="$OPTIONS $OLD_DEBUG_OPTIONS"
 			;;
 		e)
 			OPTIONS="$OPTIONS $EINTR_DISABLE"
@@ -52,6 +65,12 @@ while getopts ":hadoeDf:mp-" opt; do
 			;;
 		p)
 			OPTIONS="$OPTIONS $PERF_OPTIONS"
+			;;
+		c)
+			OPTIONS="$OPTIONS --enable-strict-cast-align"
+			;;
+		C)
+			OPTIONS="$OPTIONS --enable-cast-align-checks"
 			;;
 		-)
 			break

@@ -41,7 +41,7 @@ RET=$(cat /tmp/$NAME.ret)
 
 if [[ $RET -ge 3 && $RET -le 15 ]]; then
 	echo $((RET - 1)) >/tmp/$NAME.ret
-	echo "  Ret sleeping $SLEEP seconds" >>/tmp/$NAME.log
+	echo "  Ret sleeping $RET seconds" >>/tmp/$NAME.log
 
 	sleep $RET
 fi

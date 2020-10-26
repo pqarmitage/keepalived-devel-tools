@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kill -TERM $(ps -ef | grep keepa | grep -v grep | grep " $1 " | sed -e "s/^root *//" -e "s/ .*//")

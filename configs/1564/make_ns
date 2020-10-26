@@ -1,0 +1,87 @@
+#!/bin/bash
+
+NUM_NS=${1:-1}
+
+ip netns add 1564.base
+ip -n 1564.base link set lo up
+ip -n 1564.base link add eth0 type dummy
+ip -n 1564.base addr add 192.168.0.1/24 dev eth0
+ip -n 1564.base link set eth0 up
+
+
+link_num=3001
+
+for i in $(seq 1 $NUM_NS); do
+	ip netns add 1564.$i
+	ip -n 1564.$i link set lo up
+
+	for l in 0 1; do
+		link_num=$((3000 + 2 * i + l - 1))
+		ip -n 1564.base link add br${link_num} type bridge
+		ip -n 1564.base link add link eth0 eth0.${link_num} type vlan protocol 802.1Q id ${link_num}
+		ip -n 1564.base link set eth0.${link_num} master br${link_num}
+		ip -n 1564.base link add link br${link_num} v-br${link_num} type macvlan mode bridge
+		ip -n 1564.base link set v-br${link_num} netns 1564.$i
+		ip -n 1564.base link set br${link_num} up
+		ip -n 1564.base link set eth0.${link_num} up
+		ip -n 1564.$i link set v-br${link_num} up
+		ip -n 1564.$i addr add 10.0.$((2 * i + l - 1)).1/24 dev v-br${link_num}
+	done
+done
+
+
+for i in $(seq 1 $NUM_NS); do
+	ID=$(printf "%3.3d" $i)
+	mkdir -p ${0%/*}/empty
+	mkdir -p ${0%/*}/vrrp
+
+	for type in empty vrrp; do
+		cat >${0%/*}/${type}/VRF${ID}.conf <<EOF
+instance $i
+global_defs {
+  vrrp_version 3
+  enable_dbus
+  dbus_service_name org.keepalivedVRF$ID
+  vrrp_netlink_cmd_rcv_bufs 31457280
+  vrrp_netlink_cmd_rcv_bufs_force
+  vrrp_netlink_monitor_rcv_bufs 31457280
+  vrrp_netlink_monitor_rcv_bufs_force
+}
+EOF
+		[[ $type = empty ]] && continue
+
+		for j in 1 0; do
+			cat >>${0%/*}/${type}/VRF${ID}.conf <<EOF
+
+#st_br$((3000 + 2 * i - j))_v4_1
+vrrp_instance br$((3000 + 2 * i - j))_v4_1 {
+  state BACKUP
+  interface v-br$((3000 + 2 * i - j))
+  virtual_router_id 1
+  priority 100
+  advert_int 1.000000
+  use_vmac br$((3000 + 2 * i - j)).v257
+  virtual_ipaddress {
+    192.168.$((2 * i - j)).254
+  }
+}
+#end_br$((3000 + 2 * i - j))_v4_1
+
+#st_br$((3000 + 2 * i - j))_v6_1
+vrrp_instance br$((3000 + 2 * i - j))_v6_1 {
+  state BACKUP
+  interface v-br$((3000 + 2 * i - j))
+  virtual_router_id 1
+  priority 100
+  advert_int 1.000000
+  use_vmac br$((3000 + 2 * i - j)).v1
+  virtual_ipaddress {
+    2001:192:168:$((2 * i - j))::ffff
+  }
+}
+#end_br$((3000 + 2 * i - j))_v6_1
+EOF
+
+		done
+	done
+done

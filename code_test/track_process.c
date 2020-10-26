@@ -19,6 +19,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#define ALL_MSGS
+
 static pid_t proc_pid;
 static const char *proc_name;
 static size_t proc_name_len;
@@ -102,7 +104,7 @@ static int set_proc_ev_listen(int nl_sock, bool enable)
 
 char buf[256]; unsigned char *p; char *bufp; size_t i;
 for (i = 0, p = (void*)&nlcn_msg, bufp = buf; i < sizeof nlcn_msg; i++, p++) bufp += sprintf(bufp, "%2.2x ", *p); 
-printf("nlcn_msg: %s", buf);
+printf("nlcn_msg: %s\n", buf);
 	rc = send(nl_sock, &nlcn_msg, sizeof(nlcn_msg), 0);
 	if (rc == -1) {
 		perror("netlink send");
@@ -160,40 +162,51 @@ static int handle_proc_ev(int nl_sock)
 			switch (proc_ev->what)
 			{
 			case PROC_EVENT_NONE:
-				printf("set mcast listen ok\n");
+				printf("set mcast listen %d\n", proc_ev->event_data.ack.err);
 				break;
 			case PROC_EVENT_FORK:
-//				printf("fork: parent tid=%d pid=%d -> child tid=%d pid=%d\n",
-//						proc_ev->event_data.fork.parent_pid,
-//						proc_ev->event_data.fork.parent_tgid,
-//						proc_ev->event_data.fork.child_pid,
-//						proc_ev->event_data.fork.child_tgid);
+#ifdef ALL_MSGS
+				printf("fork: parent tid=%d pid=%d -> child tid=%d pid=%d\n",
+						proc_ev->event_data.fork.parent_pid,
+						proc_ev->event_data.fork.parent_tgid,
+						proc_ev->event_data.fork.child_pid,
+						proc_ev->event_data.fork.child_tgid);
+#endif
 				break;
 			case PROC_EVENT_EXEC:
-//				printf("exec: tid=%d pid=%d\n",
-//						proc_ev->event_data.exec.process_pid,
-//						proc_ev->event_data.exec.process_tgid);
+#ifdef ALL_MSGS
+				printf("exec: tid=%d pid=%d\n",
+						proc_ev->event_data.exec.process_pid,
+						proc_ev->event_data.exec.process_tgid);
 				check_process(proc_ev->event_data.exec.process_pid);
+#endif
 				break;
 			case PROC_EVENT_UID:
-//				printf("uid change: tid=%d pid=%d from %d to %d\n",
-//						proc_ev->event_data.id.process_pid,
-//						proc_ev->event_data.id.process_tgid,
-//						proc_ev->event_data.id.r.ruid,
-//						proc_ev->event_data.id.e.euid);
+#ifdef ALL_MSGS
+				printf("uid change: tid=%d pid=%d from %d to %d\n",
+						proc_ev->event_data.id.process_pid,
+						proc_ev->event_data.id.process_tgid,
+						proc_ev->event_data.id.r.ruid,
+						proc_ev->event_data.id.e.euid);
+#endif
 				break;
 			case PROC_EVENT_GID:
-//				printf("gid change: tid=%d pid=%d from %d to %d\n",
-//						proc_ev->event_data.id.process_pid,
-//						proc_ev->event_data.id.process_tgid,
-//						proc_ev->event_data.id.r.rgid,
-//						proc_ev->event_data.id.e.egid);
+#ifdef ALL_MSGS
+				printf("gid change: tid=%d pid=%d from %d to %d\n",
+						proc_ev->event_data.id.process_pid,
+						proc_ev->event_data.id.process_tgid,
+						proc_ev->event_data.id.r.rgid,
+						proc_ev->event_data.id.e.egid);
+#endif
 				break;
+			/* Since Linux v3.2 */
 			case PROC_EVENT_COMM:
-//				printf("comm: tid=%d pid=%d comm %s\n",
-//						proc_ev->event_data.comm.process_pid,
-//						proc_ev->event_data.comm.process_tgid,
-//						proc_ev->event_data.comm.comm);
+#ifdef ALL_MSGS
+				printf("comm: tid=%d pid=%d comm %s\n",
+						proc_ev->event_data.comm.process_pid,
+						proc_ev->event_data.comm.process_tgid,
+						proc_ev->event_data.comm.comm);
+#endif
 				break;
 			case PROC_EVENT_EXIT:
 				printf("exit: tid=%d pid=%d exit_code=%d\n",
@@ -204,6 +217,32 @@ static int handle_proc_ev(int nl_sock)
 					printf("%s (%d) exitted\n", proc_name, proc_pid);
 					proc_pid = 0;
 				}
+				break;
+			/* Since Linux v2.6.32 */
+			case PROC_EVENT_SID:
+#ifdef ALL_MSGS
+				printf("sid change: tid=%d pid=%d",
+						proc_ev->event_data.sid.process_pid,
+						proc_ev->event_data.sid.process_tgid);
+#endif
+				break;
+			/* Since Linux v3.1 */
+			case PROC_EVENT_PTRACE:
+#ifdef ALL_MSGS
+				printf("ptrace change: tid=%d pid=%d tracer tid=%d, pid=%d",
+						proc_ev->event_data.ptrace.process_pid,
+						proc_ev->event_data.ptrace.process_tgid,
+						proc_ev->event_data.ptrace.tracer_pid,
+						proc_ev->event_data.ptrace.tracer_tgid);
+#endif
+				break;
+			/* Since Linux v3.10 */
+			case PROC_EVENT_COREDUMP:
+#ifdef ALL_MSGS
+				printf("coredump: tid=%d pid=%d",
+						proc_ev->event_data.coredump.process_pid,
+						proc_ev->event_data.coredump.process_tgid);
+#endif
 				break;
 			default:
 				printf("unhandled proc event %d\n", proc_ev->what);
@@ -319,8 +358,8 @@ int main(int argc, const char *argv[])
 		goto out;
 	}
 
-	proc_pid = read_procs(argv[1]);
-	proc_name = argv[1];
+	proc_pid = read_procs(argv[1] ?: "bash");
+	proc_name = argv[1] ?: "bash";
 	proc_name_len = strlen(proc_name);
 
 	rc = handle_proc_ev(nl_sock);
