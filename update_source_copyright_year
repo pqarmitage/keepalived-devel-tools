@@ -3,10 +3,11 @@
 # Copyright (C) 2017-2017 Alexandre Cassen, <acassen@gmail.com>
 
 NO_COPY=
+NO_USABLE_COPY=
 UPDATED=
 GIT_UPDATE=0
 GIT_OVERRIDE=0
-GIT_COMMIT_SUBJECT="Copyright update"
+GIT_COMMIT_SUBJECT="Update copyright year"
 TEST_MODE=0
 
 show_help()
@@ -58,15 +59,15 @@ for FILE in $(git ls-tree --name-status -r HEAD); do
 	[[ "configure COPYING aclocal.m4 ChangeLog ar-lib compile depcomp " =~ " ${FILE##*/} " ]] && continue
 
 	CP=$(grep "[Cc]opyright" $FILE)
-	[[ $? -ne 0 ]] && continue
-	[[ ! $CP =~ [Cc]assen ]] && NO_COPY="$NO_COPY $FILE" && continue
+	[[ $? -ne 0 ]] && NO_COPY+=" $FILE" && continue
+	[[ ! $CP =~ [Cc]assen ]] && NO_USABLE_COPY+=" $FILE" && continue
 
 	grep -q "[Cc]opyright .*[Cc]assen" $FILE
-	[[ $? -ne 0 ]] && NO_COPY+=" $FILE" && continue
+	[[ $? -ne 0 ]] && NO_USABLE_COPY+=" $FILE" && continue
 
 	CP=$(grep "[Cc]opyright .*[Cc]assen" $FILE | sed -e "s/.*\([Cc]opyright\)/\1/")
-	[[ ! "$CP" =~ "20" ]] && NO_COPY="$NO_COPY $FILE" && continue
-	[[ "$CP" =~ "2001-%s" ]] && NO_COPY="$NO_COPY $FILE" && continue
+	[[ ! "$CP" =~ "20" ]] && NO_USABLE_COPY+=" $FILE" && continue
+	[[ "$CP" =~ "2001-%s" ]] && NO_USABLE_COPY+=" $FILE" && continue
 
 	CP_YEAR=$(<<<$CP sed -e "s/.*\(20[0-9][0-9]\)[^0-9]/\1/" -e "s/\(....\).*/\1/")
 
@@ -92,4 +93,5 @@ if [[ $GIT_UPDATE -eq 1 ]]; then
 fi
 
 [[ -n $UPDATED ]] && echo Updated: $UPDATED
-[[ -n $NO_COPY ]] && echo No usable copyright statements: $NO_COPY
+[[ -n $NO_USABLE_COPY ]] && echo No usable copyright statements: $NO_USABLE_COPY
+[[ -n $NO_COPY ]] && echo No copyright statements: $NO_COPY
