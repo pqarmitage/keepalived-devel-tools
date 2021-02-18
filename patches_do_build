@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# This script will build all versions through the application of a series of patches
+# The purpose is to be able to check what changes, it any, have been made to the
+#   produced code. This is particulary useful when removing outdated conditional
+#   compilation, when the produced code should not change.
+#
+# The patches must be in patches/
+# There needs to be a keepalived-n.n.n-tar.gz tar file in this directory
+# The scripts apply_patches and find_changes are required
+#
+# The results of the builds will be in builds/[0-9][0-9][0-9]/
+# The files builds/readelf.[0-9][0-9][0-9]/*.i.diff show the changes
+
+# These scripts were developed on a system with 40 CPU cores each with 2 threads
+#   and 512Gb memory. With 54 patch sets, it took approximated 115 seconds to run,
+#   and used 92 minutes of user and 22 minutes of system CPU time and for some of
+#   the time was consuming 100% CPU time.
+# Run this script on a smaller machine at your peril! unless you are processing
+#   only one or two patch sets.
+
+BUILD_DIR=builds/
+PATCH_DIR=patches/$(ls -1 patches | tail)
+
+declare -a patches[1]
+declare -a patch_num[1]
+declare -a pids[1]
+declare -a start_time[1]
+
+# OPTIONS="--enable-bfd --enable-snmp --enable-snmp-rfc --enable-dbus --enable-sha1 --enable-regex --enable-json --enable-debug --disable-eintr-debug --enable-mem-check --with-fixed-if-type=veth"
+OPTIONS="--enable-bfd --enable-snmp --enable-snmp-rfc --enable-dbus --enable-sha1 --enable-regex --enable-json --enable-debug --disable-eintr-debug --with-fixed-if-type=veth --disable-timer-check --disable-asserts"
+
+patches=($(ls $PATCH_DIR | tr "\n" " "))
+
+TAR_FILE=$(ls -rt1 keepalived-*.tar.gz | tail -1)
+rm -rf $BUILD_DIR
+
+NUM_PROC=$(cat /proc/cpuinfo | grep "^processor" | wc -l)
+
+THREADS=$(( ($NUM_PROC + ${#patches[@]} - 1) / ${#patches[@]}))
+
+for p in ${!patches[@]}; do
+	PATCH_NUM=${patches[$p]:0:3}
+	mkdir -p $BUILD_DIR$PATCH_NUM
+	pushd $BUILD_DIR$PATCH_NUM >/dev/null
+
+	../../build ../../$TAR_FILE $PATCH_DIR $PATCH_NUM $THREADS ${OPTIONS} >../build$PATCH_NUM.log 2>&1 &
+	pids[$p]=$!
+	start_time[$p]=$(date +%s)
+#	echo Job $p, patch $PATCH_NUM has pid ${pids[$p]}
+	popd >/dev/null
+done
+
+JOBS_FAILED=
+for build in ${!pids[@]}; do
+	wait -n
+	status=$?
+	end_time=$(date +%s)
+	for p in ${!pids[@]}; do
+		[[ ${pids[$p]} -eq 0 ]] && continue
+		kill -0 ${pids[$p]} 2>/dev/null && continue
+#		echo Job $p, patch num ${patches[$p]:0:3} pid ${pids[$p]} exited with status $status in $((end_time - start_time[$p])) seconds
+		echo Patch ${patches[$p]:0:3} exited with status $status in $((end_time - start_time[$p])) seconds
+		pids[$p]=0
+		[[ $status -ne 0 ]] && JOBS_FAILED="$JOBS_FAILED ${patches[$p]:0:3}"
+	done
+done
+
+[[ -z $JOBS_FAILED ]] && echo All builds succeeded || echo Failed builds: ${JOBS_FAILED% }
+[[ -n $JOBS_FAILED ]] && exit 1
+
+./patches_find_changes
+
+exit 0

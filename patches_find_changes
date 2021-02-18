@@ -1,0 +1,123 @@
+#!/bin/bash
+
+# This will find changes in the build code comparing each change patch by patch
+# do_patch_build needs to have run first, and it will run this script, but this
+# is a separate script so that it can be run repeatedly to detect the changes.
+
+BUILD_DIR=builds
+# INCLUDES="-DHAVE_CONFIG_H -I.  -D_GNU_SOURCE -I/usr/include/libnl3 -DNETSNMP_NO_INLINE -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/libmount -I/usr/include/blkid  -D_GNU_SOURCE"
+INCLUDES="-DHAVE_CONFIG_H -I.  -D_GNU_SOURCE -I/usr/include/libnl3 -DNETSNMP_NO_INLINE -DNETSNMP_USE_INLINE -DNETSNMP_ENABLE_IPV6 -DNETSNMP_REMOVE_U64 -DNETSNMP_USE_INLINE -Ulinux -Dlinux=linux -D_REENTRANT -D_GNU_SOURCE -DDEBIAN -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -I/usr/lib/x86_64-linux-gnu/perl/5.30/CORE -D_FORTIFY_SOURCE=2 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include  -D_GNU_SOURCE"
+
+declare -a builds
+
+rm -rf $BUILD_DIR/readelf.[0-9][0-9][0-9]
+
+builds=($(ls -d builds/[0-9]* | sed -e "s:builds/::"))
+
+echo readelf
+for i in ${builds[@]}; do
+	(
+	cp -p $BUILD_DIR/$i/keepalived/keepalived{,.strip}
+	strip $BUILD_DIR/$i/keepalived/keepalived{,.strip}
+	readelf -a $BUILD_DIR/$i/keepalived/keepalived.strip | grep -v "^    Build ID: " >$BUILD_DIR/readelf-$i.op
+	) &
+done
+
+# wait for readelfs to complete
+wait
+
+echo readelfs diff
+for i in $(seq 0 $((${#builds[@]} - 2))); do
+	diff $BUILD_DIR/readelf-{${builds[i]},${builds[$((i + 1))]}}.op >$BUILD_DIR/readelf-${builds[i]}-${builds[$((i + 1))]}.diff &
+done
+
+wait
+
+echo Find dirs
+PATCH_CHG=
+PATCH_DIFF=
+for f in $BUILD_DIR/readelf-*.diff; do
+	if [[ ! -s $f ]]; then
+		rm $f
+	else
+		PATCHES=${f#*-}
+		PATCHES=${PATCHES%.diff}
+		P1=${PATCHES%-*}
+		P2=${PATCHES#*-}
+		[[ " $PATCH_CHG " =~ " $P1 " ]] || PATCH_CHG="$PATCH_CHG $P1"
+		PATCH_CHG="$PATCH_CHG $P2"
+		PATCH_DIFF="$PATCH_DIFF $PATCHES"
+	fi
+done
+
+echo Objdump
+for p in $PATCH_CHG; do
+	mkdir -p $BUILD_DIR/readelf.$p
+	(
+	rm -f $BUILD_DIR/$p/*.objdump.op
+	for f in $(find $BUILD_DIR/$p -name "*.o"); do
+		readelf -a $f >$BUILD_DIR/readelf.$p/${f##*/}p
+		objdump --disassemble $f | grep -v $BUILD_DIR/$p/ >$BUILD_DIR/readelf.$p/${f##*/}bjdump.op
+	done
+	) &
+done
+
+wait
+
+builds=($PATCH_DIFF)
+
+echo Objdump diffs
+for p in $PATCH_DIFF; do
+	(
+	d1=${p%-*}
+	d2=${p#*-}
+
+	rm -f $BUILD_DIR/readelf.$d2/*.objdump.op.diff
+
+	for f in $BUILD_DIR/readelf.$d2/*.objdump.op; do
+		OP=$BUILD_DIR/readelf.$d2/$(<<< ${f##*/} sed -e "s/$d2/$d1-$d2/").diff
+		diff $BUILD_DIR/readelf.{$d1,$d2}/${f##*/} >$OP && rm $OP
+	done
+	) &
+done
+
+wait
+
+echo gcc
+for b in $PATCH_CHG; do
+	pushd $BUILD_DIR/$b  >/dev/null
+	dirs=$(find . -name "*.c" | sed -e "s:/[^/]*$::" | sort -u)
+	for d in $dirs; do
+		pushd $d >/dev/null
+		TOP=$(<<<$d sed -e "s:^\./::" -e "s:[^/]*:..:g")
+		for f in *.c; do
+			(
+			gcc -I$TOP/lib -I $TOP/keepalived/include $INCLUDES -o ${f%.c}.i -E $f
+			sed -e 's:^# [ 0-9]*":# ":' -e 's:"[ 0-9]*$:":' ${f%.c}.i >${f%.c}.i.nonum
+			) &
+		done
+		popd >/dev/null
+	done
+	popd >/dev/null
+done
+
+wait
+
+echo Source diffs
+for p in $PATCH_DIFF; do
+	(
+	d1=${p%-*}
+	d2=${p#*-}
+
+	rm -f $BUILD_DIR/$d2/*.i.diff
+
+	for f in $(find $BUILD_DIR/$d2/ -name "*.i"); do
+		OP=$BUILD_DIR/readelf.$d2/$(<<<$f sed -e "s:^$BUILD_DIR/$d2/::" -e "s:/:_:g").diff
+		eval diff -B -w $(<<<$f sed -e "s:/$d2/:/{$d1,$d2}/:").nonum >$OP && rm $OP
+	done
+	) &
+done
+
+wait
+
+for d in $(ls $BUILD_DIR/readelf.[0-9][0-9][0-9]/*.i.diff | sed -e "s:/[^/]*$::" | sort -u); do NUM=$(ls -1 $d/*.i.diff | wc -l); echo ${d##*/} $NUM;done
