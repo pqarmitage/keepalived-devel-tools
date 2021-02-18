@@ -11,6 +11,7 @@
 
 unsigned missing_files;
 unsigned missing_directories;
+bool have_wildcard;
 bool log_all;
 bool log_errors;
 
@@ -41,6 +42,7 @@ gl_opendir(const char *name)
 {
 	DIR *dirp;
 
+	have_wildcard = true;
 	dirp = opendir(name);
 	if (log_all)
 		printf("opendir(%s) returning %p, errno %d\n", name, dirp, errno);
@@ -141,6 +143,7 @@ int main(int argc, char **argv)
 	}
 
 	globbuf.gl_offs = 0;
+	globbuf.gl_flags = 0;
 
 	res = glob(argv[optind], flags, flags & GLOB_ERR ? errfunc : NULL, &globbuf);
 
@@ -154,11 +157,14 @@ int main(int argc, char **argv)
 	printf("glob returned %d matches", globbuf.gl_pathc);
 	if (flags & GLOB_ALTDIRFUNC)
 		printf(" (%d missing files, %d missing directories)", missing_files, missing_directories);
+	if (globbuf.gl_flags & GLOB_MAGCHAR)
+		printf(" with metacharacters, 0x%x", globbuf.gl_flags);
+	if (have_wildcard)
+		printf(" with wildcards");
 	printf("\n");
 
-	for(i = 0; i < globbuf.gl_pathc; i++){
-		printf("Opening file '%s'.\n", globbuf.gl_pathv[i]);
-	}
+	for(i = 0; i < globbuf.gl_pathc; i++)
+		printf("Returned file '%s'.\n", globbuf.gl_pathv[i]);
 
 	globfree(&globbuf);
 }
