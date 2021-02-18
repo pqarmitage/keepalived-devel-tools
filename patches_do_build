@@ -39,12 +39,34 @@ NUM_PROC=$(cat /proc/cpuinfo | grep "^processor" | wc -l)
 
 THREADS=$(( ($NUM_PROC + ${#patches[@]} - 1) / ${#patches[@]}))
 
+build()
+{
+	TAR_FILE=$1; shift
+	PATCH_DIR=$1; shift
+	last_patch=$1; shift
+	THREADS=$1; shift
+
+	tar -x --strip-components=1 -f $TAR_FILE
+	../../apply_patches -d $PATCH_DIR -l $last_patch
+
+	[[ $? -ne 0 ]] && echo Patch $PATCH_NUM failed && exit 111
+
+	autoreconf
+
+	echo ./configure $*; echo
+
+	./configure $*
+	make -j$THREADS
+}
+
 for p in ${!patches[@]}; do
 	PATCH_NUM=${patches[$p]:0:3}
 	mkdir -p $BUILD_DIR$PATCH_NUM
 	pushd $BUILD_DIR$PATCH_NUM >/dev/null
 
-	../../build ../../$TAR_FILE $PATCH_DIR $PATCH_NUM $THREADS ${OPTIONS} >../build$PATCH_NUM.log 2>&1 &
+	(
+	build ../../$TAR_FILE $PATCH_DIR $PATCH_NUM $THREADS ${OPTIONS}
+	) >../build$PATCH_NUM.log 2>&1 &
 	pids[$p]=$!
 	start_time[$p]=$(date +%s)
 #	echo Job $p, patch $PATCH_NUM has pid ${pids[$p]}
