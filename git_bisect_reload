@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# This script automates a git bisect to find an error when reloading.
+# The ipvsadm command will probably need changing for other uses.
+
+CONF_FILE=/tmp/1831.conf
+PATCH_FILE=/tmp/1831.patch
+GOOD_VER=v2.1.5
+BAD_VER=updates
+
+# It would be helpful if it detected when it got to the end of the
+# bisect process.
+NUM_TRIES=8
+
+. ${0%/*}/env
+
+rl()
+{
+	:
+}
+
+sudo -u quentin git bisect reset
+sudo -u quentin git checkout .
+sudo -u quentin git checkout $BAD_VER
+sudo -u quentin git bisect start
+sudo -u quentin git bisect bad
+sudo -u quentin git checkout $GOOD_VER >/dev/null 2>&1
+sudo -u quentin git bisect good
+
+for i in $(seq 1 $NUM_TRIES); do
+	echo Building ...
+	sudo -u quentin make >/dev/null 2>&1
+
+	rl; keepalived/keepalived -DRM -mf $CONF_FILE -g/tmp/sched.log -G --flush-log-file -i low
+	sleep 1
+
+	ps -ef | grep keepalived | grep -v grep >/dev/null
+	if [[ $? -ne 0 ]]; then
+		echo Skipping ...
+		sudo -u quentin git bisect skip
+		continue
+	fi
+
+	ip netns exec low ipvsadm -Ln >/tmp/ipvs.pre
+
+	patch -d / -p1 <$PATCH_FILE
+
+	k low HUP
+	sleep 1
+
+	ip netns exec low ipvsadm -Ln >/tmp/ipvs.post
+
+	k low
+
+	patch -d / -Rp1 <$PATCH_FILE
+
+	diff -q /tmp/ipvs.p{re,ost}
+
+	[[ $? -eq 0 ]] && status=bad || status=good
+
+	echo Run was $status
+	sudo -p quentin git bisect $status
+done

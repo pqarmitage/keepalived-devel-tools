@@ -2,7 +2,7 @@
 
 # --enable-mem-check-log --enable-strict-config-checks
 
-BUILD_OPTIONS="--enable-bfd --enable-snmp --enable-snmp-rfc --enable-dbus --enable-sha1 --enable-regex --enable-json"
+BUILD_OPTIONS="--enable-bfd --enable-snmp --enable-snmp-rfc --enable-dbus --enable-regex --enable-json"
 DEBUG_OPTIONS="--enable-debug"
 ALL_DEBUG_OPTIONS="$DEBUG_OPTIONS --enable-genhash-debug --enable-one-process-debug"
 OLD_COMMON_DEBUG_OPTIONS="--enable-asserts --enable-epoll-debug --enable-epoll-thread-dump --enable-eintr-debug --enable-parser-debug --enable-timer-check --enable-smtp-alert-debug --enable-smtp-connect-debug --enable-dump-keywords --enable-script-debug --enable-log-file"
