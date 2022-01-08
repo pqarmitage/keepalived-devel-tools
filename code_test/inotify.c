@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int main(int argc, char **argv)
 {
@@ -10,24 +11,27 @@ int main(int argc, char **argv)
 	char *buf_ptr;
 	struct inotify_event* event;
 	ssize_t len;
+	int i;
 
 	// IN_ALL_EVENTS is all below wxcept IN_EXCL_UNLINK. IN_MOVED = IN_MOVED_FROM | IN_MOVED_TO. IN_CLOSE = IN_CLOSE_WRITE | IN_CLOSE_NOWRITE
-	if (inotify_add_watch(inotify_fd, argv[1],
-		IN_ACCESS |
-		IN_ATTRIB |
-		IN_CLOSE_WRITE |
-		IN_CLOSE_NOWRITE |
-		IN_CREATE |
-		IN_DELETE |
-		IN_DELETE_SELF |
-		IN_MODIFY |
-		IN_MOVE_SELF |
-		IN_MOVED_FROM |
-		IN_MOVED_TO |
-		IN_OPEN |
-		IN_EXCL_UNLINK) == -1) {
-		printf("inotify_add_watch(%s) failed - errno %d - %m\n", argv[1], errno);
-		exit(1);
+	for (i = 1; i < argc; i++) {
+		if (inotify_add_watch(inotify_fd, argv[i],
+			IN_ACCESS |
+			IN_ATTRIB |
+			IN_CLOSE_WRITE |
+			IN_CLOSE_NOWRITE |
+			IN_CREATE |
+			IN_DELETE |
+			IN_DELETE_SELF |
+			IN_MODIFY |
+			IN_MOVE_SELF |
+			IN_MOVED_FROM |
+			IN_MOVED_TO |
+			IN_OPEN |
+			IN_EXCL_UNLINK) == -1) {
+			printf("inotify_add_watch(%s) failed - errno %d - %m\n", argv[i], errno);
+			exit(1);
+		}
 	}
 
 	while (1) {

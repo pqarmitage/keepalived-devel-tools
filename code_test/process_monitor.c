@@ -12,6 +12,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <stdint.h>
+#include <inttypes.h>
+#include <memory.h>
+
+struct seq {
+	bool initialised;
+	bool no_bufs;
+	uint32_t seq;
+};
 
 /*
  * connect to netlink
@@ -98,7 +107,18 @@ static int handle_proc_ev(int nl_sock)
 	struct proc_event *proc_ev;
 	time_t tv;
 	struct tm *tm_time;
-	char tbuf[9];
+	char tbuf[49];
+	unsigned num_cpus;
+	long num;
+	struct seq *cpu_seq;
+
+	num = sysconf(_SC_NPROCESSORS_CONF);
+	if (num > 0) {
+		num_cpus = num;
+		cpu_seq = malloc(num_cpus * sizeof(*cpu_seq));
+		for (num = 0; num < num_cpus; num++)
+			cpu_seq[num].initialised = false;
+	}
 
 	while (!need_exit) {
 		len = recv(nl_sock, &buf, sizeof(buf), 0);
@@ -106,7 +126,14 @@ static int handle_proc_ev(int nl_sock)
 			/* shutdown? */
 			return 0;
 		} else if (len == -1) {
-			if (errno == EINTR) continue;
+			if (errno == EINTR)
+				continue;
+			if (errno == ENOBUFS) {
+				printf("Received ENOBUFS\n");
+				for (num = 0; num < num_cpus; num++)
+					cpu_seq[num].no_bufs = true;
+				continue;
+			}
 			perror("netlink recv");
 			return -1;
 		}
@@ -120,14 +147,17 @@ static int handle_proc_ev(int nl_sock)
 
 			cn_msg = NLMSG_DATA(nlmsghdr);
 			if ((cn_msg->id.idx != CN_IDX_PROC) ||
-			    (cn_msg->id.val != CN_VAL_PROC))
+			    (cn_msg->id.val != CN_VAL_PROC)) {
+				fprintf(stderr, "Received idx %d val %d\n", cn_msg->id.idx, cn_msg->id.val);
 				continue;
+			}
 
 			proc_ev = (struct proc_event *)cn_msg->data;
 
 			tv = time(NULL);
 			tm_time = localtime(&tv);
 			strftime(tbuf, sizeof tbuf, "%T", tm_time);
+			sprintf(tbuf + strlen(tbuf), " %2u: %" PRIu32, proc_ev->cpu, cn_msg->seq);
 
 			switch (proc_ev->what)
 			{
@@ -185,7 +215,7 @@ static int handle_proc_ev(int nl_sock)
 				break;
 			case PROC_EVENT_EXIT:
 				/* Check /proc/pid/stat - if not exist or Z, then process gone. What is status if coredumping */
-				printf("%s exit: tid=%d pid=%d exit_code=%d\n", tbuf,
+				printf("%s exit: tid=%d pid=%d exit_code=%d exit_signal=%d\n", tbuf,
 						proc_ev->event_data.exit.process_pid,
 						proc_ev->event_data.exit.process_tgid,
 						proc_ev->event_data.exit.exit_code,
@@ -194,6 +224,17 @@ static int handle_proc_ev(int nl_sock)
 			default:
 				printf("%s unhandled proc event %d\n", tbuf, proc_ev->what);
 				break;
+			}
+
+			if (cpu_seq) {
+				if (!cpu_seq[proc_ev->cpu].initialised)
+					cpu_seq[proc_ev->cpu].initialised = true;
+				else if (!(cpu_seq[proc_ev->cpu].seq + 1 == cn_msg->seq ||
+					  (cn_msg->seq == 0 && cpu_seq[proc_ev->cpu].seq == UINT32_MAX)))
+					printf("%s Missed %s%" PRIu32 " messages on CPU %u\n", cpu_seq[proc_ev->cpu].no_bufs ? "(no bufs) " : "", tbuf, cn_msg->seq - cpu_seq[proc_ev->cpu].seq - 1, proc_ev->cpu);
+
+				cpu_seq[proc_ev->cpu].seq = cn_msg->seq;
+				cpu_seq[proc_ev->cpu].no_bufs = false;
 			}
 		}
 	}
@@ -210,9 +251,12 @@ int main(int argc, const char *argv[])
 {
 	int nl_sock;
 	int rc = EXIT_SUCCESS;
+	struct sigaction sa = { .sa_handler = on_sigint };
 
-	signal(SIGINT, &on_sigint);
-	siginterrupt(SIGINT, true);
+
+	sigaction(SIGINT, &sa, NULL);
+//	signal(SIGINT, &on_sigint);
+//	siginterrupt(SIGINT, true);
 
 	nl_sock = nl_connect();
 	if (nl_sock == -1)
