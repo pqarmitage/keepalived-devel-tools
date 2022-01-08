@@ -1,0 +1,107 @@
+Sun Dec 20:02:04.163678937 2020: Registering Kernel netlink reflector
+Sun Dec 20:02:04.163723007 2020: Registering Kernel netlink command channel
+Sun Dec 20:02:04.164013197 2020: "vrrp_track_file" is deprecated, please use "track_file"
+Sun Dec 20:02:04.164040645 2020: Configuration specifies interface vlan1 which doesn't currently exist - will use if created
+Sun Dec 20:02:04.164093236 2020: Configuration specifies interface wan which doesn't currently exist - will use if created
+Sun Dec 20:02:04.164118378 2020: Configuration specifies interface vlan8 which doesn't currently exist - will use if created
+Sun Dec 20:02:04.164182143 2020: Delaying startup for 10 seconds
+Sun Dec 20:02:04.164290397 2020: Script /tmp/.keepalived/notify.sh cannot be accessed - No such file or directory
+Sun Dec 20:02:04.164315680 2020: use_vmac or no_accept/strict specified, but no firewall configured - using nftables
+Sun Dec 20:02:04.164334397 2020: Assigned address 192.168.20.2 for interface ha
+Sun Dec 20:02:04.164341102 2020: Assigned address fe80::e23:acff:fe96:6703 for interface ha
+Sun Dec 20:02:05.164714524 2020: (vrrp-ha): Success creating VMAC interface vrrp-ha
+Sun Dec 20:02:05.164782759 2020: Interface vlan8 added
+Sun Dec 20:02:05.164795609 2020: (vrrp.8) interface vlan8 is down
+Sun Dec 20:02:05.164804200 2020: vrrp.8 update added interface 2 num fault 1
+Sun Dec 20:02:05.164940041 2020: NOTICE: setting sysctl net.ipv4.conf.default.rp_filter from 0 to 2
+Sun Dec 20:02:05.165055489 2020: NOTICE: setting sysctl net.ipv4.conf.all.rp_filter from 2 to 0
+Sun Dec 20:02:05.165425647 2020: (vrrp.1): entering FAULT state (interface vlan1 down)
+Sun Dec 20:02:05.165442688 2020: vrrp.1 initialise_interface_tracking_prio num fault to 1
+Sun Dec 20:02:05.165450510 2020: (vrrp.wan): entering FAULT state (interface wan down)
+Sun Dec 20:02:05.165457494 2020: vrrp.wan initialise_interface_tracking_prio num fault to 1
+Sun Dec 20:02:05.165463990 2020: (vrrp.8): entering FAULT state (interface vlan8 down)
+Sun Dec 20:02:05.165471393 2020: vrrp.8 initialise_interface_tracking_prio num fault to 2
+Sun Dec 20:02:05.165478936 2020: (vrrp.8): entering FAULT state (interface vlan8 down)
+Sun Dec 20:02:05.165485780 2020: vrrp.8 initialise_interface_tracking_prio num fault to 3
+Sun Dec 20:02:05.165492694 2020: (vrrp.1): entering FAULT state (interface vrrp.1 down)
+Sun Dec 20:02:05.165499190 2020: vrrp.1 initialise_interface_tracking_prio num fault to 2
+Sun Dec 20:02:05.165506313 2020: (vrrp.wan): entering FAULT state (interface vrrp.wan down)
+Sun Dec 20:02:05.165514485 2020: vrrp.wan initialise_interface_tracking_prio num fault to 2
+Sun Dec 20:02:05.165521958 2020: (vrrp.8): entering FAULT state (interface vrrp.8 down)
+Sun Dec 20:02:05.165528663 2020: vrrp.8 initialise_interface_tracking_prio num fault to 4
+Sun Dec 20:02:05.165535088 2020: (vrrp.1) entering FAULT state (no IPv4 address for interface)
+Sun Dec 20:02:05.165541793 2020: vrrp.1 initialise_vrrp_tracking_prio num fault to 3
+Sun Dec 20:02:05.165547240 2020: VRRP_Group(mygroup): Syncing vrrp.1 to FAULT state
+Sun Dec 20:02:05.165551920 2020: (vrrp.wan) entering FAULT state (no IPv4 address for interface)
+Sun Dec 20:02:05.165556529 2020: vrrp.wan initialise_vrrp_tracking_prio num fault to 3
+Sun Dec 20:02:05.165561139 2020: (vrrp.8) entering FAULT state (no IPv4 address for interface)
+Sun Dec 20:02:05.165565679 2020: vrrp.8 initialise_vrrp_tracking_prio num fault to 5
+Sun Dec 20:02:05.165570567 2020: (vrrp.1) entering FAULT state
+Sun Dec 20:02:05.165576294 2020: (vrrp.wan) entering FAULT state
+Sun Dec 20:02:05.165580974 2020: (vrrp.8) entering FAULT state
+Sun Dec 20:02:05.166143824 2020: Registering gratuitous ARP shared channel
+Sun Dec 20:02:05.166368503 2020: (vrrp-ha) Entering BACKUP STATE (init)
+Sun Dec 20:02:05.166410129 2020: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Sun Dec 20:02:05.166423538 2020: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Sun Dec 20:02:05.166432757 2020: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Sun Dec 20:02:05.166440370 2020: VRRP sockpool: [ifindex(200), family(IPv4), proto(112), fd(16,17)]
+Sun Dec 20:02:05.166717639 2020: (vrrp.8): Success creating VMAC interface vrrp.8
+Sun Dec 20:02:17.383105435 2020: (vrrp-ha) Receive advertisement timeout
+Sun Dec 20:02:17.383207962 2020: (vrrp-ha) Entering MASTER STATE
+Sun Dec 20:02:17.383219207 2020: (vrrp-ha) setting VIPs.
+Sun Dec 20:02:17.383353372 2020: (vrrp-ha) Sending/queueing gratuitous ARPs on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:17.383374115 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:17.383411619 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:17.383437321 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:17.383460997 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:17.383481041 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:22.383553022 2020: (vrrp-ha) Sending/queueing gratuitous ARPs on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:22.383582914 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:22.383627962 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:22.383647098 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:22.383663301 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:22.383678038 2020: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Sun Dec 20:02:26.207269276 2020: (switch-lag) MAC Address changed from 3e:a9:36:6c:e2:57 to 0c:23:ac:96:67:01
+Sun Dec 20:02:26.210174880 2020: Interface wan added
+Sun Dec 20:02:26.210211966 2020: (vrrp.wan) interface wan is down
+Sun Dec 20:02:26.210221883 2020: vrrp.wan update added interface 2 num fault 4
+Sun Dec 20:02:26.210480016 2020: (vrrp.wan): Success creating VMAC interface vrrp.wan
+Sun Dec 20:02:26.211519393 2020: Netlink reports vrrp.wan up
+Sun Dec 20:02:26.211541323 2020: vrrp.wan try_up_instance leaving_init 0 num fault 4
+Sun Dec 20:02:26.214753879 2020: (toswitch2) MAC Address changed from 0c:23:ac:96:67:02 to 0c:23:ac:96:67:01
+Sun Dec 20:02:26.217001439 2020: Interface vlan1 added
+Sun Dec 20:02:26.217036709 2020: (vrrp.1) interface vlan1 is down
+Sun Dec 20:02:26.217046207 2020: vrrp.1 update added interface 2 num fault 4
+Sun Dec 20:02:26.217284854 2020: (vrrp.1): Success creating VMAC interface vrrp.1
+Sun Dec 20:02:26.217573159 2020: Netlink reports vrrp.1 up
+Sun Dec 20:02:26.217591038 2020: vrrp.1 try_up_instance leaving_init 0 num fault 4
+Sun Dec 20:02:26.218900491 2020: Assigned address 10.10.8.252 for interface vlan8
+Sun Dec 20:02:26.218926262 2020: vrrp.8 try_up_instance leaving_init 0 num fault 5
+Sun Dec 20:02:26.220580591 2020: Assigned address 20.20.20.252 for interface wan
+Sun Dec 20:02:26.220639886 2020: vrrp.wan try_up_instance leaving_init 0 num fault 3
+Sun Dec 20:02:26.222746856 2020: Assigned address 10.10.1.252 for interface vlan1
+Sun Dec 20:02:26.222784500 2020: vrrp.1 try_up_instance leaving_init 0 num fault 3
+Sun Dec 20:02:26.227921390 2020: Netlink reports vlan1 up
+Sun Dec 20:02:26.227947371 2020: vrrp.1 try_up_instance leaving_init 0 num fault 2
+Sun Dec 20:02:26.227956241 2020: vrrp.1 try_up_instance leaving_init 0 num fault 1
+Sun Dec 20:02:26.227968743 2020: Netlink reports wan up
+Sun Dec 20:02:26.227976495 2020: vrrp.wan try_up_instance leaving_init 0 num fault 2
+Sun Dec 20:02:26.227983270 2020: vrrp.wan try_up_instance leaving_init 0 num fault 1
+Sun Dec 20:02:26.228000171 2020: (vlan8) MAC Address changed from 3e:a9:36:6c:e2:57 to 0c:23:ac:96:67:01
+Sun Dec 20:02:26.228032368 2020: Netlink reports vlan8 up
+Sun Dec 20:02:26.228040051 2020: vrrp.8 try_up_instance leaving_init 0 num fault 4
+Sun Dec 20:02:26.228046895 2020: vrrp.8 try_up_instance leaving_init 0 num fault 3
+Sun Dec 20:02:26.228057790 2020: Netlink reports vrrp.8 up
+Sun Dec 20:02:26.228064635 2020: vrrp.8 try_up_instance leaving_init 0 num fault 2
+Sun Dec 20:02:27.577677322 2020: Assigned address fe80::e23:acff:fe96:6701 for interface vlan1
+Sun Dec 20:02:28.025671701 2020: Assigned address fe80::e23:acff:fe96:6701 for interface vlan8
+Sun Dec 20:02:28.153713397 2020: Assigned address fe80::e23:acff:fe96:6701 for interface wan
+Sun Dec 20:02:36.109487488 2020: (vrrp-ha) sent 0 priority
+Sun Dec 20:02:36.109505647 2020: (vrrp-ha) removing VIPs.
+Sun Dec 20:02:37.109965532 2020: NOTICE: resetting sysctl net.ipv4.conf.all.rp_filter to 2
+Sun Dec 20:02:37.110132942 2020: NOTICE: resetting sysctl net.ipv4.conf.default.rp_filter to 0
+Sun Dec 20:02:37.119939834 2020: (vrrp.1) Success removing VMAC interface vrrp.1
+Sun Dec 20:02:37.132921009 2020: (vrrp.wan) Success removing VMAC interface vrrp.wan
+Sun Dec 20:02:37.141740347 2020: (vrrp.8) Success removing VMAC interface vrrp.8
+Sun Dec 20:02:37.148745629 2020: (vrrp-ha) Success removing VMAC interface vrrp-ha
+Sun Dec 20:02:37.153703587 2020: Stopped - used 0.004314 user time, 0.011863 system time

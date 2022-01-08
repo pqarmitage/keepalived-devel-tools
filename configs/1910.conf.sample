@@ -1,0 +1,35 @@
+@low net_namespace low
+
+virtual_server 10.10.10.10 8080   {
+virtualhost "TEST-NAME (10.10.10.10) port 8080"
+        delay_loop 10
+        alpha 1
+        omega 1
+        lvs_sched rr
+        lvs_method TUN
+        smtp_alert on
+        retry 3
+        delay_before_retry 3
+        protocol TCP
+
+    quorum 1
+
+        quorum_up "/sbin/ip -4 addr add 10.10.10.10/32 dev lo"
+        quorum_down "/sbin/ip -4 addr del 10.10.10.10/32 dev lo"
+
+
+	real_server 10.10.108.22 8080 {
+		weight 1
+#		TCP_CHECK {
+#		    connect_timeout 3
+#                   }
+        }
+
+
+	real_server 10.19.2.22 8080 {
+		weight 1
+#		TCP_CHECK {
+#		    connect_timeout 3
+#                   }
+	}
+}

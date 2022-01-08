@@ -1,0 +1,577 @@
+------< Global definitions >------
+ Network namespace = louis
+ Network namespace ipvs = (main namespace)
+ Router ID = ipsecgw-master
+ Default smtp_alert = unset
+ Default smtp_alert_vrrp = unset
+ Default smtp_alert_checker = unset
+ Checkers log all failures = false
+ No test config before reload
+ Dynamic interfaces = true
+ Allow interface changes = false
+ Default interface = eth0
+ Disable local IGMP = no
+ LVS flush = false
+ LVS flush on stop = disabled
+ VRRP notify priority changes = false
+ VRRP IPv4 mcast group = 224.0.0.18
+ VRRP IPv6 mcast group = ff02::12
+ Gratuitous ARP delay = 5
+ Gratuitous ARP repeat = 5
+ Gratuitous ARP refresh timer = 0
+ Gratuitous ARP refresh repeat = 1
+ Gratuitous ARP lower priority delay = 5
+ Gratuitous ARP lower priority repeat = 5
+ Gratuitous ARP for each secondary VMAC = 0s
+ Send advert after receive lower priority advert = true
+ Send advert after receive higher priority advert = false
+ Gratuitous ARP interval = 0.000000
+ Gratuitous NA interval = 0.000000
+ VRRP default protocol version = 2
+ nftables table name = keepalived
+ nftables base chain priority = -1
+ nftables without counters
+ nftables don't force use ifindex for link local IPv6
+ libnftnl version 1.1.3
+ VRRP check unicast_src = false
+ VRRP skip check advert addresses = false
+ VRRP strict mode = false
+ Max auto priority = 0
+ Min auto priority delay = 1000000 usecs
+ VRRP process priority = 0
+ VRRP don't swap = false
+ VRRP realtime priority = 0
+ VRRP realtime limit = 10000
+ Checker process priority = 0
+ Checker don't swap = false
+ Checker realtime priority = 0
+ Checker realtime limit = 10000
+ BFD process priority = 0
+ BFD don't swap = false
+ BFD realtime priority = 0
+ BFD realtime limit = 10000
+ SNMP vrrp disabled
+ SNMP checker disabled
+ SNMP RFCv2 disabled
+ SNMP RFCv3 disabled
+ SNMP traps disabled
+ SNMP socket = default (unix:/var/agentx/master)
+ DBus disabled
+ DBus service name = 
+ Script security enabled
+ Default script uid:gid 0:0
+ vrrp_netlink_cmd_rcv_bufs = 0
+ vrrp_netlink_cmd_rcv_bufs_force = 0
+ vrrp_netlink_monitor_rcv_bufs = 0
+ vrrp_netlink_monitor_rcv_bufs_force = 0
+ process_monitor_rcv_bufs = 0
+ process_monitor_rcv_bufs_force = 0
+ lvs_netlink_cmd_rcv_bufs = 0
+ lvs_netlink_cmd_rcv_bufs_force = 0
+ lvs_netlink_monitor_rcv_bufs = 0
+ lvs_netlink_monitor_rcv_bufs_force = 0
+ rs_init_notifies = 0
+ no_checker_emails = 0
+ rx_bufs_multiples = 3
+ umask = 0177
+ vrrp_startup_delay = 10
+------< VRRP Topology >------
+ VRRP Instance = vrrp.1
+   VRRP Version = 2
+   Sync group = mygroup
+   State = FAULT
+   Wantstate = FAULT
+   Number of interface and track script faults = 3
+   Number of track scripts init = 0
+   Last transition = 1607889158.867946 (Sun Dec 13 19:52:38 2020.867946)
+   Read timeout = DISABLED
+   Master down timer = 3218750 usecs
+   Use VMAC, i/f name vrrp.1, is_up = false, xmit_base = false
+   Interface = vrrp.1
+   Using src_ip = (none)
+   Gratuitous ARP delay = 5
+   Gratuitous ARP repeat = 5
+   Gratuitous ARP refresh = 0
+   Gratuitous ARP refresh repeat = 1
+   Gratuitous ARP lower priority delay = 5
+   Gratuitous ARP lower priority repeat = 5
+   Send advert after receive lower priority advert = true
+   Send advert after receive higher priority advert = false
+   Virtual Router ID = 1
+   Priority = 200
+   Effective priority = 200
+   Total priority = 200
+   Advert interval = 1 sec
+   Accept = enabled
+   Preempt = enabled
+   Preempt delay = 60 secs
+   Promote_secondaries = disabled
+   Authentication type = none
+   last rx checksum = 0x0000, priority 0
+   last tx checksum = 0x0000, priority 0
+   Virtual IP :
+     10.10.1.254/24 dev vrrp.1@vlan1 scope global
+   fd_in -1, fd_out -1
+   Using smtp notification = no
+   Notify deleted = Fault
+   Notify priority changes = false
+ VRRP Instance = vrrp.wan
+   VRRP Version = 2
+   Sync group = mygroup
+   State = FAULT
+   Wantstate = FAULT
+   Number of interface and track script faults = 3
+   Number of track scripts init = 0
+   Last transition = 1607889158.868059 (Sun Dec 13 19:52:38 2020.868059)
+   Read timeout = DISABLED
+   Master down timer = 3218750 usecs
+   Use VMAC, i/f name vrrp.wan, is_up = false, xmit_base = false
+   Interface = vrrp.wan
+   Using src_ip = (none)
+   Gratuitous ARP delay = 5
+   Gratuitous ARP repeat = 5
+   Gratuitous ARP refresh = 0
+   Gratuitous ARP refresh repeat = 1
+   Gratuitous ARP lower priority delay = 5
+   Gratuitous ARP lower priority repeat = 5
+   Send advert after receive lower priority advert = true
+   Send advert after receive higher priority advert = false
+   Virtual Router ID = 100
+   Priority = 200
+   Effective priority = 200
+   Total priority = 200
+   Advert interval = 1 sec
+   Accept = enabled
+   Preempt = enabled
+   Preempt delay = 60 secs
+   Promote_secondaries = disabled
+   Authentication type = none
+   last rx checksum = 0x0000, priority 0
+   last tx checksum = 0x0000, priority 0
+   Virtual IP :
+     20.20.20.254/24 dev vrrp.wan@wan scope global
+   fd_in -1, fd_out -1
+   Using smtp notification = no
+   Notify deleted = Fault
+   Notify priority changes = false
+ VRRP Instance = vrrp.8
+   VRRP Version = 2
+   Sync group = mygroup
+   State = FAULT
+   Wantstate = FAULT
+   Number of interface and track script faults = 5
+   Number of track scripts init = 0
+   Last transition = 1607889158.868113 (Sun Dec 13 19:52:38 2020.868113)
+   Read timeout = DISABLED
+   Master down timer = 3218750 usecs
+   Use VMAC, i/f name vrrp.8, is_up = true, xmit_base = false
+   Interface = vrrp.8, vmac on vlan8
+   Using src_ip = (none)
+   Gratuitous ARP delay = 5
+   Gratuitous ARP repeat = 5
+   Gratuitous ARP refresh = 0
+   Gratuitous ARP refresh repeat = 1
+   Gratuitous ARP lower priority delay = 5
+   Gratuitous ARP lower priority repeat = 5
+   Send advert after receive lower priority advert = true
+   Send advert after receive higher priority advert = false
+   Virtual Router ID = 8
+   Priority = 200
+   Effective priority = 200
+   Total priority = 200
+   Advert interval = 1 sec
+   Accept = enabled
+   Preempt = enabled
+   Preempt delay = 60 secs
+   Promote_secondaries = disabled
+   Authentication type = none
+   last rx checksum = 0x0000, priority 0
+   last tx checksum = 0x0000, priority 0
+   Virtual IP :
+     10.10.8.254/24 dev vrrp.8@vlan8 scope global
+   fd_in 18, fd_out 19
+   Using smtp notification = no
+   Notify deleted = Fault
+   Notify priority changes = false
+ VRRP Instance = vrrp-ha
+   VRRP Version = 2
+   State = MASTER
+   Wantstate = MASTER
+   Number of interface and track script faults = 0
+   Number of track scripts init = 0
+   Last transition = 1607889172.087683 (Sun Dec 13 19:52:52 2020.087683)
+   Read timeout = 1607889193.091588 (Sun Dec 13 19:53:13.091588)
+   Master down timer = 3218750 usecs
+   Use VMAC, i/f name vrrp-ha, is_up = true, xmit_base = false
+   Interface = vrrp-ha, vmac on ha
+   Using src_ip = 192.168.20.2
+   Gratuitous ARP delay = 5
+   Gratuitous ARP repeat = 5
+   Gratuitous ARP refresh = 0
+   Gratuitous ARP refresh repeat = 1
+   Gratuitous ARP lower priority delay = 5
+   Gratuitous ARP lower priority repeat = 5
+   Send advert after receive lower priority advert = true
+   Send advert after receive higher priority advert = false
+   Virtual Router ID = 1
+   Priority = 200
+   Effective priority = 200
+   Total priority = 200
+   Advert interval = 1 sec
+   Accept = enabled
+   Preempt = enabled
+   Preempt delay = 60 secs
+   Promote_secondaries = disabled
+   Authentication type = none
+   last rx checksum = 0x0000, priority 0
+   last tx checksum = 0x0000, priority 0
+   Virtual IP :
+     192.168.20.1/24 dev vrrp-ha@ha scope global set
+   fd_in 16, fd_out 17
+   Using smtp notification = no
+   Notify deleted = Fault
+   Notify priority changes = false
+------< VRRP Sockpool >------
+ fd_in -1 fd_out = -1
+   Interface = vrrp.1
+   Family = IPv4
+   Protocol = VRRP
+   Type = Multicast
+   Rx buf size = 0
+   VRRP instances
+     vrrp.1 vrid 1
+ fd_in -1 fd_out = -1
+   Interface = vrrp.wan
+   Family = IPv4
+   Protocol = VRRP
+   Type = Multicast
+   Rx buf size = 0
+   VRRP instances
+     vrrp.wan vrid 100
+ fd_in 18 fd_out = 19
+   Interface = vrrp.8
+   Family = IPv4
+   Protocol = VRRP
+   Type = Multicast
+   Rx buf size = 0
+   VRRP instances
+     vrrp.8 vrid 8
+ fd_in 16 fd_out = 17
+   Interface = vrrp-ha
+   Family = IPv4
+   Protocol = VRRP
+   Type = Multicast
+   Rx buf size = 0
+   VRRP instances
+     vrrp-ha vrid 1
+------< VRRP Sync groups >------
+ VRRP Sync Group = mygroup, FAULT
+   Num member fault 3, num member init 0
+   VRRP member instances :
+     vrrp.1
+     vrrp.wan
+     vrrp.8
+   Using smtp notification = no
+------< Interfaces >------
+ Name = lo
+   index = 1
+   IPv4 address = 127.0.0.1
+   IPv6 address = (none)
+   State = UP, RUNNING, no broadcast, loopback, no multicast
+   MTU = 65536
+   HW Type = LOOPBACK
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = sit0
+   index = 2
+   IPv4 address = (none)
+   IPv6 address = (none)
+   State = not UP, not RUNNING, no broadcast, no arp, no multicast
+   MTU = 1480
+   HW Type = UNKNOWN (776)
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = tunl0
+   index = 3
+   IPv4 address = (none)
+   IPv6 address = (none)
+   State = not UP, not RUNNING, no broadcast, no arp, no multicast
+   MTU = 1480
+   HW Type = UNKNOWN (768)
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = ens3.peer
+   index = 146
+   IPv4 address = (none)
+   IPv6 address = fe80::1407:aff:fe37:3169
+   MAC = 16:07:0a:37:31:69
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = mgmt
+   index = 147
+   IPv4 address = 192.168.122.105
+   IPv6 address = fe80::e23:acff:fe96:6700
+   MAC = 0c:23:ac:96:67:00
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = ens4.peer
+   index = 148
+   IPv4 address = (none)
+   IPv6 address = fe80::bc86:5aff:fe0c:7f44
+   MAC = be:86:5a:0c:7f:44
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = toswitch1
+   index = 149
+   IPv4 address = (none)
+   IPv6 address = fe80::e23:acff:fe96:6701
+   MAC = 0c:23:ac:96:67:01
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = ens5.peer
+   index = 150
+   IPv4 address = (none)
+   IPv6 address = fe80::9c7d:5aff:feb0:39bc
+   MAC = 9e:7d:5a:b0:39:bc
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = toswitch2
+   index = 151
+   IPv4 address = (none)
+   IPv6 address = fe80::e23:acff:fe96:6702
+   MAC = 0c:23:ac:96:67:02
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = ens6.peer
+   index = 152
+   IPv4 address = (none)
+   IPv6 address = fe80::c018:d1ff:fe08:de0e
+   MAC = c2:18:d1:08:de:0e
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = ha
+   index = 153
+   IPv4 address = 192.168.20.2
+   IPv6 address = fe80::e23:acff:fe96:6703
+   MAC = 0c:23:ac:96:67:03
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 1
+   Original arp_ignore 1
+   Original arp_filter 1
+   rp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+   Tracking VRRP instances :
+     vrrp-ha, weight 0
+ Name = switch-lag
+   index = 154
+   IPv4 address = (none)
+   IPv6 address = (none)
+   MAC = c2:f1:48:d2:52:e8
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = not UP, not RUNNING
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   rp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+ Name = vlan1
+   index = 0 (deleted)
+   IPv4 address = (none)
+   IPv6 address = (none)
+   State = not UP, not RUNNING, no broadcast, no multicast
+   MTU = 0
+   HW Type = UNKNOWN (0)
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   rp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+   Tracking VRRP instances :
+     vrrp.1, weight 0
+ Name = wan
+   index = 0 (deleted)
+   IPv4 address = (none)
+   IPv6 address = (none)
+   State = not UP, not RUNNING, no broadcast, no multicast
+   MTU = 0
+   HW Type = UNKNOWN (0)
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   rp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+   Tracking VRRP instances :
+     vrrp.wan, weight 0
+ Name = vlan8
+   index = 155
+   IPv4 address = (none)
+   IPv6 address = (none)
+   MAC = c2:f1:48:d2:52:e8
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = not UP, not RUNNING
+   Done VRID check
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 1
+   Original arp_ignore 0
+   Original arp_filter 0
+   rp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+   Tracking VRRP instances :
+     vrrp.8, weight 0 (dynamic)
+     vrrp.8, weight 0
+ Name = vrrp.1
+   index = 0 (deleted)
+   IPv4 address = (none)
+   IPv6 address = (none)
+   State = not UP, not RUNNING, no broadcast, no multicast, master down
+   MTU = 0
+   HW Type = UNKNOWN (0)
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   rp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+   Tracking VRRP instances :
+     vrrp.1, weight 0
+ Name = vrrp.wan
+   index = 0 (deleted)
+   IPv4 address = (none)
+   IPv6 address = (none)
+   State = not UP, not RUNNING, no broadcast, no multicast, master down
+   MTU = 0
+   HW Type = UNKNOWN (0)
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 0
+   Original arp_filter 0
+   rp_filter 0
+   Original promote_secondaries 0
+   Reset promote_secondaries counter 0
+   Tracking VRRP instances :
+     vrrp.wan, weight 0
+ Name = vrrp.8
+   index = 157
+   IPv4 address = (none)
+   IPv6 address = (none)
+   MAC = 00:00:5e:00:01:08
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, not RUNNING, master down
+   VMAC type private, underlying interface = vlan8, state = not UP, not RUNNING
+   I/f created by keepalived
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 1
+   Original arp_filter 0
+   rp_filter 2
+   Original promote_secondaries 1
+   Reset promote_secondaries counter 0
+   Tracking VRRP instances :
+     vrrp.8, weight 0
+ Name = vrrp-ha
+   index = 156
+   IPv4 address = (none)
+   IPv6 address = (none)
+   MAC = 00:00:5e:00:01:01
+   MAC broadcast = ff:ff:ff:ff:ff:ff
+   State = UP, RUNNING
+   VMAC type private, underlying interface = ha, state = UP, RUNNING
+   I/f created by keepalived
+   MTU = 1500
+   HW Type = ETHERNET
+   NIC netlink status update
+   Reset ARP config counter 0
+   Original arp_ignore 1
+   Original arp_filter 0
+   rp_filter 0
+   Original promote_secondaries 1
+   Reset promote_secondaries counter 0
+   Tracking VRRP instances :
+     vrrp-ha, weight 0

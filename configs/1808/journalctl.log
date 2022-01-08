@@ -1,0 +1,360 @@
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived[1599]: NOTICE: setting config option max_auto_priority should result in better ke
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived[1599]: Starting VRRP child process, pid=1601
+Dec 11 10:28:26 ipsecgw-master-patch Keepalived[1599]: Printing parent data for process(1599) on signal
+Dec 11 10:30:17 ipsecgw-master-patch Keepalived[1599]: Stopping
+Dec 11 10:30:18 ipsecgw-master-patch Keepalived[1599]: CPU usage (self/children) user: 0.002962/0.035357 system: 0.000000/0.30191
+Dec 11 10:30:18 ipsecgw-master-patch Keepalived[1599]: Stopped Keepalived v2.1.5 (12/09,2020), git commit v2.1.5-245-g65eb6c0e+
+
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Registering Kernel netlink reflector
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Registering Kernel netlink command channel
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: "vrrp_track_file" is deprecated, please use "track_file"
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Configuration specifies interface vlan1 which doesn't currently exist
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Configuration specifies interface wan which doesn't currently exist -
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Configuration specifies interface vlan8 which doesn't currently exist
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Found vrrp vrrp.1
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Found vrrp vrrp.wan
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Found vrrp vrrp.8
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Found vrrp vrrp-ha
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Delaying startup for 10 seconds
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: use_vmac or no_accept/strict specified, but no firewall configured - 
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Assigned address 192.168.20.2 for interface ha
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Assigned address fe80::e23:acff:fe96:6703 for interface ha
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha): Success creating VMAC interface vrrp-ha
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Interface vlan8 added
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.8) interface vlan8 is down
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (switch-lag) MAC Address changed from 56:73:6e:a6:d4:08 to 0c:23:ac:9
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.1): entering FAULT state (interface vlan1 down)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.wan): entering FAULT state (interface wan down)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.8): entering FAULT state (interface vlan8 down)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.8): entering FAULT state (interface vlan8 down)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.1): entering FAULT state (interface vrrp.1 down)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.wan): entering FAULT state (interface vrrp.wan down)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.8): entering FAULT state (interface vrrp.8 down)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.1) entering FAULT state (no IPv4 address for interface)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP_Group(mygroup): Syncing vrrp.1 to FAULT state
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.wan) entering FAULT state (no IPv4 address for interface)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.8) entering FAULT state (no IPv4 address for interface)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.1) entering FAULT state
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.wan) entering FAULT state
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.8) entering FAULT state
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Registering gratuitous ARP shared channel
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Found vrrp vrrp.1 at vrrp_register_workers
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Found vrrp vrrp.wan at vrrp_register_workers
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Found vrrp vrrp.8 at vrrp_register_workers
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Found vrrp vrrp-ha at vrrp_register_workers
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) Entering BACKUP STATE (init)
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp.1 at vrrp_init_instance_sands 3
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp.wan at vrrp_init_instance_sands 3
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp.8 at vrrp_init_instance_sands 3
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP sockpool: [ifindex( 12), family(IPv4), proto(112), fd(13,14)]
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.8): Success creating VMAC interface vrrp.8
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp.8 at vrrp_init_instance_sands 3
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: Interface wan added
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.wan) interface wan is down
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.wan): Success creating VMAC interface vrrp.wan
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp.wan at vrrp_init_instance_sands 3
+Dec 11 10:26:16 ipsecgw-master-patch Keepalived_vrrp[1601]: (toswitch2) MAC Address changed from 0c:23:ac:96:67:02 to 0c:23:ac:96
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: Interface vlan1 added
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.1) interface vlan1 is down
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.1): Success creating VMAC interface vrrp.1
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp.1 at vrrp_init_instance_sands 3
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) start preempt delay (60.000000)
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: Assigned address 10.10.8.252 for interface vlan8
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.8
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: Assigned address 20.20.20.252 for interface wan
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.wan
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: Assigned address 10.10.1.252 for interface vlan1
+Dec 11 10:26:17 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.1
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Netlink reports vlan8 up
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.8
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.8
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Netlink reports vrrp.8 up
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.8
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Netlink reports vlan1 up
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.1
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.1
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Netlink reports vrrp.1 up
+Dec 11 10:26:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Return4 vrrp vrrp.1
+Dec 11 10:26:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Netlink reports wan up
+Dec 11 10:26:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.wan
+Dec 11 10:26:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Return2 vrrp vrrp.wan
+Dec 11 10:26:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Netlink reports vrrp.wan up
+Dec 11 10:26:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Return4 vrrp vrrp.wan
+Dec 11 10:26:19 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Interface dsvti1 added
+Dec 11 10:26:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Interface dsvti2 added
+Dec 11 10:26:20 ipsecgw-master-patch Keepalived_vrrp[1601]: Assigned address fe80::5473:6eff:fea6:d408 for interface vlan1
+Dec 11 10:26:20 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:20 ipsecgw-master-patch Keepalived_vrrp[1601]: Assigned address fe80::5473:6eff:fea6:d408 for interface vlan8
+Dec 11 10:26:20 ipsecgw-master-patch Keepalived_vrrp[1601]: Assigned address fe80::5473:6eff:fea6:d408 for interface wan
+Dec 11 10:26:21 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:22 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:23 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:24 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:25 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:26 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:27 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:28 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:29 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:30 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:31 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:32 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:33 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:34 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:35 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:36 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:37 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:38 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:39 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:40 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:41 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:42 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:43 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:44 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:45 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:46 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:47 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:48 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:49 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:50 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:51 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:52 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:53 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:54 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:55 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:56 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:57 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:58 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:26:59 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:00 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:01 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:02 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:03 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:04 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:05 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:06 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:07 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:08 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:09 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:10 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:11 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:12 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:13 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:14 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:15 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:17 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) received lower priority (150) advert from 192.168.20.3 - di
+Dec 11 10:27:17 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:18 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) received lower priority (150) advert from 192.168.20.3 - di
+Dec 11 10:27:18 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) received lower priority (150) advert from 192.168.20.3 - di
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) Receive advertisement timeout
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) Entering MASTER STATE
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) setting VIPs.
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) Sending/queueing gratuitous ARPs on vrrp-ha for 192.168.20.
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:19 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:20 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:21 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:22 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:23 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:24 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) Sending/queueing gratuitous ARPs on vrrp-ha for 192.168.20.
+Dec 11 10:27:24 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:24 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:24 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:24 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:24 ipsecgw-master-patch Keepalived_vrrp[1601]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 10:27:24 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:25 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:26 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:27 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:28 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:29 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:30 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:31 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:32 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:33 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:34 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:35 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:36 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:37 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:38 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:39 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:40 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:41 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:42 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:43 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:44 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:45 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:46 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:47 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:48 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:49 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:50 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:51 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:52 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:53 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:54 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:55 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:56 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:57 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:58 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:27:59 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:00 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:01 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:02 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:03 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:04 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:05 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:06 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:07 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:08 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:09 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:10 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:11 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:12 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:13 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:14 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:15 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:17 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:18 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:19 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:20 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:21 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:22 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:23 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:24 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:25 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:26 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:26 ipsecgw-master-patch Keepalived_vrrp[1601]: Printing VRRP data for process(1601) on signal
+Dec 11 10:28:27 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:28 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:29 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:30 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:31 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:32 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:33 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:34 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:35 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:36 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:37 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:38 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:39 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:40 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:41 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:42 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:43 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:44 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:45 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:46 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:47 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:48 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:49 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:50 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:51 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:52 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:53 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:54 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:55 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:56 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:57 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:58 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:28:59 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:00 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:01 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:02 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:03 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:04 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:05 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:06 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:07 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:08 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:09 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:10 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:11 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:12 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:13 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:14 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:15 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:17 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:18 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:19 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:20 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:21 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:22 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:23 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:24 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:25 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:26 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:27 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:28 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:29 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:30 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:31 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:32 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:33 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:34 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:35 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:36 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:37 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:38 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:39 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:40 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:41 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:42 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:43 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:44 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:45 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:46 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:47 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:48 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:49 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:50 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:51 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:52 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:53 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:54 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:55 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:56 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:57 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:58 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:29:59 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:00 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:01 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:02 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:03 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:04 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:05 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:06 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:07 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:08 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:09 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:10 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:11 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:12 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:13 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:14 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:15 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:16 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:17 ipsecgw-master-patch Keepalived_vrrp[1601]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 10:30:17 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) sent 0 priority
+Dec 11 10:30:17 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) removing VIPs.
+Dec 11 10:30:18 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.1) Success removing VMAC interface vrrp.1
+Dec 11 10:30:18 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.wan) Success removing VMAC interface vrrp.wan
+Dec 11 10:30:18 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp.8) Success removing VMAC interface vrrp.8
+Dec 11 10:30:18 ipsecgw-master-patch Keepalived_vrrp[1601]: (vrrp-ha) Success removing VMAC interface vrrp-ha
+Dec 11 10:30:18 ipsecgw-master-patch Keepalived_vrrp[1601]: Stopped - used 0.029779 user time, 0.299097 system time

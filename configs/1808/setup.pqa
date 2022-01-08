@@ -1,0 +1,90 @@
+#!/bin/bash
+
+if [[ $1 -eq 1 ]]; then
+	ip link add ens3 address 0c:23:ac:96:67:00 type veth peer ens3.peer
+	ip link set ens3.peer up
+	ip link add ens4 address 0c:23:ac:96:67:01 type veth peer ens4.peer
+	ip link set ens4.peer up
+	ip link add ens5 address 0c:23:ac:96:67:02 type veth peer ens5.peer
+	ip link set ens5.peer up
+	ip link add ens6 address 0c:23:ac:96:67:03 type veth peer ens6.peer
+	ip link set ens6.peer up
+	ip addr add 192.168.122.105/24 brd + dev ens3
+	ip link set ens3 up
+	ip route add default via 192.168.122.1
+	tc qdisc add dev ens3 root fq_codel
+
+	exit 0
+fi
+
+# Start of ip monitor all
+
+if [[ $1 -eq 2 ]]; then
+	ip addr add 192.168.20.2/24 brd + dev ens6
+
+	ip link set ens4 name toswitch1
+	ip link set ens5 name toswitch2
+	ip link set ens6 name ha
+
+	tc qdisc add dev toswitch1 root fq_codel
+	tc qdisc add dev toswitch2 root fq_codel
+
+	ip link set toswitch1 up
+	ip link set ha up
+	ip link set toswitch2 up
+
+	ip addr del 192.168.122.105/24 dev ens3
+	ip link set ens3 down
+	ip link set ens3 name mgmt
+	ip link set mgmt up
+	ip addr add 192.168.122.105/24 dev mgmt
+	ip route add default via 192.168.122.1
+
+	ip link add switch-lag type bond	# ? ip link add switch-lag type vrf table 220
+	# Does loopback-ipsec here
+
+	#ip link set switch-lag up
+	ip link set toswitch1 up
+	ip link set toswitch2 up
+
+	exit 0
+fi
+
+# Start keepalived
+
+if [[ $1 -eq 3 ]]; then
+	# This comes after vrrp-ha created
+	ip link add vlan8 link switch-lag type vlan id 8
+	ip link set toswitch1 down
+	ip link set toswitch1 master switch-lag
+	#ip link set toswitch1 up
+	#ip link set switch-lag down
+
+	ip link add wan link switch-lag type vlan id 5
+
+	ip link set toswitch2 down
+	ip link set toswitch2 master switch-lag
+	# ip link set toswitch2 up	# IS this necessary?
+
+	ip link add vlan1 link switch-lag type vlan id 1
+	ip addr add 10.10.8.252/24 brd + dev vlan8
+	ip addr add 20.20.20.252/24 brd + dev wan
+	ip addr add 10.10.1.252/24 brd + dev vlan1
+	ip rule add pref 220 from all lookup 220
+	ip link set switch-lag up
+	#ip link set vlan1 up
+	#ip link set vlan8 up
+	#ip link set wan up
+
+	exit 0
+fi
+
+if [[ $1 -eq 4 ]]; then
+	for n in 3 4 5 6; do
+		ip link del ens${n}.peer
+	done
+	ip link del switch-lag
+	ip rule del pref 220
+
+	exit 0
+fi

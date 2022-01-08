@@ -1,5 +1,9 @@
 #!/bin/bash
 
+TMPDIR=/tmp
+
+# TMPDIR=/etc/keepalived/tmp
+
 if [[ $# -ge 1 ]]; then
 	NAME=$1
 else
@@ -7,45 +11,46 @@ else
 	NAME=${NAME%.sh}
 fi
 
-echo -n "$(date +"%a %b %e %X %Y")": \[$PPID:$$\] >>/tmp/$NAME.log
+echo -n "$(date +"%a %b %e %X %Y")": \[$PPID:$$\] >>$TMPDIR/$NAME.log
 for i in $(seq 1 $#); do
-	echo -n " '$1'" >>/tmp/$NAME.log
+	echo -n " '$1'" >>$TMPDIR/$NAME.log
 	shift
 done
-echo >>/tmp/$NAME.log
+echo >>$TMPDIR/$NAME.log
+id >>/$TMPDIR/$NAME.log
 
-if [[ -x /tmp/$NAME.scr ]]; then
-	echo "  Executing /tmp/$NAME.scr" >>/tmp/$NAME.log
+if [[ -x $TMPDIR/$NAME.scr ]]; then
+	echo "  Executing $TMPDIR/$NAME.scr" >>$TMPDIR/$NAME.log
 
-	/tmp/$NAME.scr
+	$TMPDIR/$NAME.scr
 fi
 
-if [[ -f /tmp/$NAME.sig ]]; then
-	SIG=$(cat /tmp/$NAME.sig)
+if [[ -f $TMPDIR/$NAME.sig ]]; then
+	SIG=$(cat $TMPDIR/$NAME.sig)
 	kill -$SIG $$
-	echo "  Sent signal $SIG" >>/tmp/$NAME.log
+	echo "  Sent signal $SIG" >>$TMPDIR/$NAME.log
 
 	sleep 5
 fi
 
-if [[ -f /tmp/$NAME.slp ]]; then
-	SLEEP=$(cat /tmp/$NAME.slp)
-	echo "  Sleeping $SLEEP seconds" >>/tmp/$NAME.log
+if [[ -f $TMPDIR/$NAME.slp ]]; then
+	SLEEP=$(cat $TMPDIR/$NAME.slp)
+	echo "  Sleeping $SLEEP seconds" >>$TMPDIR/$NAME.log
 
 	sleep $SLEEP
 fi
 
-[[ ! -f /tmp/$NAME.ret ]] && echo 0 >/tmp/$NAME.ret
+[[ ! -f $TMPDIR/$NAME.ret ]] && echo 0 >$TMPDIR/$NAME.ret
 
-RET=$(cat /tmp/$NAME.ret)
+RET=$(cat $TMPDIR/$NAME.ret)
 
 if [[ $RET -ge 3 && $RET -le 15 ]]; then
-	echo $((RET - 1)) >/tmp/$NAME.ret
-	echo "  Ret sleeping $RET seconds" >>/tmp/$NAME.log
+	echo $((RET - 1)) >$TMPDIR/$NAME.ret
+	echo "  Ret sleeping $RET seconds" >>$TMPDIR/$NAME.log
 
 	sleep $RET
 fi
 
-echo "  Returning $RET" >>/tmp/$NAME.log
+echo "  Returning $RET" >>$TMPDIR/$NAME.log
 
 exit $RET

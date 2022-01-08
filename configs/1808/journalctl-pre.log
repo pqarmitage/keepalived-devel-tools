@@ -1,0 +1,249 @@
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Registering Kernel netlink reflector
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Registering Kernel netlink command channel
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: "vrrp_track_file" is deprecated, please use "track_file"
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Configuration specifies interface vlan1 which doesn't currently exist - will use if created
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Configuration specifies interface wan which doesn't currently exist - will use if created
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Configuration specifies interface vlan8 which doesn't currently exist - will use if created
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Found vrrp vrrp.1
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Found vrrp vrrp.wan
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Found vrrp vrrp.8
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Found vrrp vrrp-ha
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Delaying startup for 10 seconds
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: use_vmac or no_accept/strict specified, but no firewall configured - using nftables
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Assigned address 192.168.20.2 for interface ha
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Assigned address fe80::e23:acff:fe96:6703 for interface ha
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha): Success creating VMAC interface vrrp-ha
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Interface wan added
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.wan) interface wan is down
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (switch-lag) MAC Address changed from 62:8a:c0:47:20:3e to 0c:23:ac:96:67:01
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (toswitch2) MAC Address changed from 0c:23:ac:96:67:02 to 0c:23:ac:96:67:01
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.1): entering FAULT state (interface vlan1 down)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.wan): entering FAULT state (interface wan down)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.wan): entering FAULT state (interface wan down)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.8): entering FAULT state (interface vlan8 down)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.1): entering FAULT state (interface vrrp.1 down)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.wan): entering FAULT state (interface vrrp.wan down)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.8): entering FAULT state (interface vrrp.8 down)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.1) entering FAULT state (no IPv4 address for interface)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP_Group(mygroup): Syncing vrrp.1 to FAULT state
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.wan) entering FAULT state (no IPv4 address for interface)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.8) entering FAULT state (no IPv4 address for interface)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.1) entering FAULT state
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.wan) entering FAULT state
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.8) entering FAULT state
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Registering gratuitous ARP shared channel
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Found vrrp vrrp.1 at vrrp_register_workers
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Found vrrp vrrp.wan at vrrp_register_workers
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Found vrrp vrrp.8 at vrrp_register_workers
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Found vrrp vrrp-ha at vrrp_register_workers
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) Entering BACKUP STATE (init)
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp.1 at vrrp_init_instance_sands 3
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp.wan at vrrp_init_instance_sands 3
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp.8 at vrrp_init_instance_sands 3
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP sockpool: [ifindex(  0), family(IPv4), proto(112), fd(-1,-1)]
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP sockpool: [ifindex( 13), family(IPv4), proto(112), fd(13,14)]
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.wan): Success creating VMAC interface vrrp.wan
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp.wan at vrrp_init_instance_sands 3
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Printing VRRP data for process(4022) on signal
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Interface vlan1 added
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.1) interface vlan1 is down
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.1): Success creating VMAC interface vrrp.1
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp.1 at vrrp_init_instance_sands 3
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: Interface vlan8 added
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.8) interface vlan8 is down
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp.8): Success creating VMAC interface vrrp.8
+Dec 11 13:49:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp.8 at vrrp_init_instance_sands 3
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: Assigned address 20.20.20.252 for interface wan
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.wan 5
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.wan 0
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.wan
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: Assigned address 10.10.1.252 for interface vlan1
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.1 4
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.1 0
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.1
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: Assigned address 10.10.8.252 for interface vlan8
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.8 4
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.8 0
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.8
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) start preempt delay (60.000000)
+Dec 11 13:49:22 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Interface dsvti1 added
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Netlink reports wan up
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.wan 4
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.wan 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.wan
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.wan 3
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.wan 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.wan
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Netlink reports vrrp.wan up
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.wan 2
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.wan 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.wan
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Netlink reports vlan1 up
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.1 3
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.1 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.1
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.1 2
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.1 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.1
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Netlink reports vrrp.1 up
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.1 1
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.1 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->sync->num_member_fault vrrp.1 3
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->sync->num_member_init vrrp.1 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return4 vrrp vrrp.1
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Netlink reports vlan8 up
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.8 3
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.8 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.8
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.8 2
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.8 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return2 vrrp vrrp.8
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Netlink reports vrrp.8 up
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_if_fault vrrp.8 1
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->num_script_init vrrp.8 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->sync->num_member_fault vrrp.8 2
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: vrrp->sync->num_member_init vrrp.8 0
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Return4 vrrp vrrp.8
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Interface dsvti1 deleted
+Dec 11 13:49:23 ipsecgw-master-patch Keepalived_vrrp[4022]: Interface dsvti2 added
+Dec 11 13:49:24 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:25 ipsecgw-master-patch Keepalived_vrrp[4022]: Assigned address fe80::608a:c0ff:fe47:203e for interface vlan8
+Dec 11 13:49:25 ipsecgw-master-patch Keepalived_vrrp[4022]: Assigned address fe80::608a:c0ff:fe47:203e for interface vlan1
+Dec 11 13:49:25 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:25 ipsecgw-master-patch Keepalived_vrrp[4022]: Assigned address fe80::608a:c0ff:fe47:203e for interface wan
+Dec 11 13:49:26 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:27 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:28 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:29 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:30 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:31 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:32 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:33 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:34 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:35 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:36 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:37 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:38 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:39 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:40 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:41 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:42 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:43 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:44 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:45 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:46 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:47 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:48 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:49 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:50 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:51 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:52 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:53 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:54 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:55 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:56 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:57 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:58 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:49:59 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:00 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:01 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:02 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:03 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:04 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:05 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:06 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:07 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:08 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:09 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:10 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:11 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:12 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:13 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:14 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:15 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:16 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:17 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:18 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:19 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:20 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:21 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:22 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) received lower priority (150) advert from 192.168.20.3 - discarding
+Dec 11 13:50:22 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:23 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) received lower priority (150) advert from 192.168.20.3 - discarding
+Dec 11 13:50:23 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) received lower priority (150) advert from 192.168.20.3 - discarding
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 1
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) Receive advertisement timeout
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) Entering MASTER STATE
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) setting VIPs.
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) Sending/queueing gratuitous ARPs on vrrp-ha for 192.168.20.1
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:24 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:25 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:26 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:27 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:28 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:29 ipsecgw-master-patch Keepalived_vrrp[4022]: (vrrp-ha) Sending/queueing gratuitous ARPs on vrrp-ha for 192.168.20.1
+Dec 11 13:50:29 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:29 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:29 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:29 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:29 ipsecgw-master-patch Keepalived_vrrp[4022]: Sending gratuitous ARP on vrrp-ha for 192.168.20.1
+Dec 11 13:50:29 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:30 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:31 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:32 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:33 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:34 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:35 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:36 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:37 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:38 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:39 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:40 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:41 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:42 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:43 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:44 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:45 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:46 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:47 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:48 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:49 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:50 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:51 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:52 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:53 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:54 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:55 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:56 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:57 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:58 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:50:59 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:00 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:01 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:02 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:03 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:04 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:05 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:06 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:07 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:08 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:09 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:10 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:11 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:12 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:13 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:14 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:15 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2
+Dec 11 13:51:16 ipsecgw-master-patch Keepalived_vrrp[4022]: VRRP State of vrrp-ha at vrrp_init_instance_sands 2

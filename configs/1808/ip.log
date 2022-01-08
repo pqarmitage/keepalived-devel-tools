@@ -1,0 +1,1148 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+3: ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+4: ens7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:04 brd ff:ff:ff:ff:ff:ff
+5: ens8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:05 brd ff:ff:ff:ff:ff:ff
+6: ens9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:06 brd ff:ff:ff:ff:ff:ff
+7: ens10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:07 brd ff:ff:ff:ff:ff:ff
+8: ens4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+9: ens5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.105/24 brd 192.168.122.255 scope global ens3
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e23:acff:fe96:6700/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+4: ens7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:04 brd ff:ff:ff:ff:ff:ff
+5: ens8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:05 brd ff:ff:ff:ff:ff:ff
+6: ens9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:06 brd ff:ff:ff:ff:ff:ff
+7: ens10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:07 brd ff:ff:ff:ff:ff:ff
+8: ens4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+9: ens5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[ADDR]3: ens6    inet 192.168.20.2/24 scope global ens6
+       valid_lft forever preferred_lft forever
+[ROUTE]local 192.168.20.2 dev ens6 table local proto kernel scope host src 192.168.20.2 
+[LINK]8: toswitch1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet ens4 
+[NETCONF]inet ens4 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]Deleted inet6 ens4 
+[NETCONF]inet6 ens4 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]9: toswitch2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet ens5 
+[NETCONF]inet ens5 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]Deleted inet6 ens5 
+[NETCONF]inet6 ens5 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]3: ha: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[ADDR]3: ens6    inet 192.168.20.2/24 scope global ha
+       valid_lft forever preferred_lft forever
+[NETCONF]Deleted inet ens6 
+[NETCONF]inet ens6 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]Deleted inet6 ens6 
+[NETCONF]inet6 ens6 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]8: toswitch1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev ens4 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev ens4 proto kernel metric 256 pref medium
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[ROUTE]192.168.20.0/24 dev ens6 proto kernel scope link src 192.168.20.2 
+[ROUTE]broadcast 192.168.20.0 dev ens6 table local proto kernel scope link src 192.168.20.2 
+[ROUTE]broadcast 192.168.20.255 dev ens6 table local proto kernel scope link src 192.168.20.2 
+[ROUTE]ff00::/8 dev ens6 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev ens6 proto kernel metric 256 pref medium
+[ROUTE]ff00::/8 dev ens5 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev ens5 proto kernel metric 256 pref medium
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[ROUTE]Deleted default via 192.168.122.1 dev ens3 
+[ADDR]Deleted 2: ens3    inet 192.168.122.105/24 brd 192.168.122.255 scope global ens3
+       valid_lft forever preferred_lft forever
+[ROUTE]Deleted 192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.105 
+[ROUTE]Deleted broadcast 192.168.122.255 dev ens3 table local proto kernel scope link src 192.168.122.105 
+[ROUTE]Deleted broadcast 192.168.122.0 dev ens3 table local proto kernel scope link src 192.168.122.105 
+[ROUTE]Deleted local 192.168.122.105 dev ens3 table local proto kernel scope host src 192.168.122.105 
+[NEIGH]Deleted 192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e DELAY
+[LINK]2: ens3: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+[ROUTE]Deleted fe80::/64 dev ens3 proto kernel metric 256 pref medium
+[ROUTE]Deleted anycast fe80:: dev ens3 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted local fe80::e23:acff:fe96:6700 dev ens3 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted ff00::/8 dev ens3 table local metric 256 pref medium
+[NEIGH]Deleted ff02::16 dev ens3 lladdr 33:33:00:00:00:16 NOARP
+[NEIGH]Deleted ff02::1:ff96:6700 dev ens3 lladdr 33:33:ff:96:67:00 NOARP
+[NEIGH]Deleted ff02::2 dev ens3 lladdr 33:33:00:00:00:02 NOARP
+[ADDR]Deleted 2: ens3    inet6 fe80::e23:acff:fe96:6700/64 scope link 
+       valid_lft forever preferred_lft forever
+[LINK]2: mgmt: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet ens3 
+[NETCONF]inet ens3 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]Deleted inet6 ens3 
+[NETCONF]inet6 ens3 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]2: mgmt: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev ens3 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev ens3 proto kernel metric 256 pref medium
+[NETCONF]mpls lo input off 
+[NETCONF]mpls ens3 input off 
+[NETCONF]mpls ens6 input off 
+[NETCONF]mpls ens7 input off 
+[NETCONF]mpls ens8 input off 
+[NETCONF]mpls ens9 input off 
+[NETCONF]mpls ens10 input off 
+[NETCONF]mpls ens4 input off 
+[NETCONF]mpls ens5 input off 
+[ADDR]8: ens4    inet6 fe80::e23:acff:fe96:6701/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6701 dev ens4 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev ens4 table local proto kernel metric 0 pref medium
+[ADDR]3: ens6    inet6 fe80::e23:acff:fe96:6703/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6703 dev ens6 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev ens6 table local proto kernel metric 0 pref medium
+[ADDR]9: ens5    inet6 fe80::e23:acff:fe96:6702/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6702 dev ens5 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev ens5 table local proto kernel metric 0 pref medium
+[ADDR]2: ens3    inet 192.168.122.105/24 brd 192.168.122.255 scope global mgmt
+       valid_lft forever preferred_lft forever
+[ROUTE]local 192.168.122.105 dev ens3 table local proto kernel scope host src 192.168.122.105 
+[ROUTE]broadcast 192.168.122.255 dev ens3 table local proto kernel scope link src 192.168.122.105 
+[ROUTE]192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.105 
+[ROUTE]broadcast 192.168.122.0 dev ens3 table local proto kernel scope link src 192.168.122.105 
+[ADDR]2: ens3    inet6 fe80::e23:acff:fe96:6700/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6700 dev ens3 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev ens3 table local proto kernel metric 0 pref medium
+[NSID]nsid 0 
+[ROUTE]default via 192.168.122.1 dev ens3 proto 196 metric 20 
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e REACHABLE
+[LINK]10: switch-lag: <BROADCAST,MULTICAST,MASTER> mtu 1500 qdisc noop state DOWN group default event FEATURE CHANGE 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet switch-lag forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 switch-lag forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls switch-lag input off 
+[LINK]10: switch-lag: <BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet loopback-ipsec forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 loopback-ipsec forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls loopback-ipsec input off 
+[LINK]11: loopback-ipsec: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/ether a6:14:f1:8c:c1:1e brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev loopback-ipsec table local metric 256 pref medium
+[ROUTE]fe80::/64 dev loopback-ipsec proto kernel metric 256 pref medium
+[ADDR]11: loopback-ipsec    inet6 fe80::a414:f1ff:fe8c:c11e/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::a414:f1ff:fe8c:c11e dev loopback-ipsec table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev loopback-ipsec table local proto kernel metric 0 pref medium
+[NETCONF]inet vrrp-ha forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vrrp-ha forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vrrp-ha input off 
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[LINK]12: vrrp-ha@ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vlan8 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vlan8 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vlan8 input off 
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[ROUTE]Deleted fe80::/64 dev ens4 proto kernel metric 256 pref medium
+[ROUTE]Deleted anycast fe80:: dev ens4 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted local fe80::e23:acff:fe96:6701 dev ens4 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted ff00::/8 dev ens4 table local metric 256 pref medium
+[NEIGH]Deleted ff02::1:ff96:6701 dev ens4 lladdr 33:33:ff:96:67:01 NOARP
+[NEIGH]Deleted ff02::16 dev ens4 lladdr 33:33:00:00:00:16 NOARP
+[ADDR]Deleted 8: ens4    inet6 fe80::e23:acff:fe96:6701/64 scope link 
+       valid_lft forever preferred_lft forever
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default event FEATURE CHANGE 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default event FEATURE CHANGE 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]12: vrrp-ha@ens6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vrrp.8 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vrrp.8 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vrrp.8 input off 
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet wan forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 wan forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls wan input off 
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vrrp.wan forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vrrp.wan forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vrrp.wan input off 
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[ROUTE]Deleted fe80::/64 dev ens5 proto kernel metric 256 pref medium
+[ROUTE]Deleted anycast fe80:: dev ens5 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted local fe80::e23:acff:fe96:6702 dev ens5 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted ff00::/8 dev ens5 table local metric 256 pref medium
+[NEIGH]Deleted ff02::1:ff96:6702 dev ens5 lladdr 33:33:ff:96:67:02 NOARP
+[NEIGH]Deleted ff02::16 dev ens5 lladdr 33:33:00:00:00:16 NOARP
+[ADDR]Deleted 9: ens5    inet6 fe80::e23:acff:fe96:6702/64 scope link 
+       valid_lft forever preferred_lft forever
+[LINK]9: toswitch2: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default event FEATURE CHANGE 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]12: vrrp-ha@ens6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <NO-CARRIER,BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel master switch-lag state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <NO-CARRIER,BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel master switch-lag state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vlan1 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vlan1 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vlan1 input off 
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vrrp.1 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vrrp.1 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vrrp.1 input off 
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]18: vrrp.1@vlan1: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]18: vrrp.1@vlan1: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[ADDR]11: loopback-ipsec    inet 15.15.15.15/32 scope global loopback-ipsec
+       valid_lft forever preferred_lft forever
+[ROUTE]local 15.15.15.15 dev loopback-ipsec table local proto kernel scope host src 15.15.15.15 
+[ADDR]13: vlan8    inet 10.10.8.252/24 scope global vlan8
+       valid_lft forever preferred_lft forever
+[ROUTE]local 10.10.8.252 dev vlan8 table local proto kernel scope host src 10.10.8.252 
+[ADDR]15: wan    inet 20.20.20.252/24 scope global wan
+       valid_lft forever preferred_lft forever
+[ROUTE]local 20.20.20.252 dev wan table local proto kernel scope host src 20.20.20.252 
+[ADDR]17: vlan1    inet 10.10.1.252/24 scope global vlan1
+       valid_lft forever preferred_lft forever
+[ROUTE]local 10.10.1.252 dev vlan1 table local proto kernel scope host src 10.10.1.252 
+[LINK]18: vrrp.1@vlan1: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[RULE]220:	from all lookup 220
+[RULE]220:	from all lookup 220
+[NEIGH]192.168.20.3 dev ens6 lladdr 0c:23:ac:6a:c6:03 REACHABLE
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev switch-lag table local metric 256 pref medium
+[ROUTE]fe80::/64 dev switch-lag proto kernel metric 256 pref medium
+[LINK]10: switch-lag: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]10.10.8.0/24 dev vlan8 proto kernel scope link src 10.10.8.252 
+[ROUTE]broadcast 10.10.8.0 dev vlan8 table local proto kernel scope link src 10.10.8.252 
+[ROUTE]broadcast 10.10.8.255 dev vlan8 table local proto kernel scope link src 10.10.8.252 
+[LINK]13: vlan8@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev vlan8 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev vlan8 proto kernel metric 256 pref medium
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]17: vlan1@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]10.10.1.0/24 dev vlan1 proto kernel scope link src 10.10.1.252 
+[ROUTE]broadcast 10.10.1.0 dev vlan1 table local proto kernel scope link src 10.10.1.252 
+[ROUTE]broadcast 10.10.1.255 dev vlan1 table local proto kernel scope link src 10.10.1.252 
+[LINK]17: vlan1@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev vlan1 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev vlan1 proto kernel metric 256 pref medium
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]18: vrrp.1@vlan1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]20.20.20.0/24 dev wan proto kernel scope link src 20.20.20.252 
+[ROUTE]broadcast 20.20.20.0 dev wan table local proto kernel scope link src 20.20.20.252 
+[ROUTE]broadcast 20.20.20.255 dev wan table local proto kernel scope link src 20.20.20.252 
+[LINK]15: wan@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev wan table local metric 256 pref medium
+[ROUTE]fe80::/64 dev wan proto kernel metric 256 pref medium
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[ROUTE]30.30.30.0/24 via 20.20.20.1 dev wan proto 196 metric 20 
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet dsvti1 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 dsvti1 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]19: dsvti1@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/none 
+[ROUTE]ff00::/8 dev dsvti1 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev dsvti1 proto kernel metric 256 pref medium
+[ADDR]19: dsvti1    inet6 fe80::e4fc:674f:16e6:d633/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e4fc:674f:16e6:d633 dev dsvti1 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev dsvti1 table local proto kernel metric 0 pref medium
+[NETCONF]inet dsvti2 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 dsvti2 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/none 
+[ROUTE]ff00::/8 dev dsvti2 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev dsvti2 proto kernel metric 256 pref medium
+[ADDR]20: dsvti2    inet6 fe80::5cee:8115:d047:993f/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::5cee:8115:d047:993f dev dsvti2 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev dsvti2 table local proto kernel metric 0 pref medium
+[LINK]20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/none 
+[LINK]20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/none 
+[ADDR]17: vlan1    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::5473:6eff:fea6:d408 dev vlan1 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev vlan1 table local proto kernel metric 0 pref medium
+[ROUTE]172.20.8.0/22 dev dsvti1 proto 196 metric 20 
+[ADDR]13: vlan8    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::5473:6eff:fea6:d408 dev vlan8 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev vlan8 table local proto kernel metric 0 pref medium
+[ADDR]10: switch-lag    inet6 fe80::e23:acff:fe96:6701/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6701 dev switch-lag table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev switch-lag table local proto kernel metric 0 pref medium
+[ADDR]15: wan    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::5473:6eff:fea6:d408 dev wan table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev wan table local proto kernel metric 0 pref medium
+[ROUTE]172.20.8.0/22 dev dsvti2 proto 196 metric 20 
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e STALE
+[ADDR]12: vrrp-ha    inet 192.168.20.1/24 scope global vrrp-ha
+       valid_lft forever preferred_lft forever
+[ROUTE]local 192.168.20.1 dev vrrp-ha table local proto kernel scope host src 192.168.20.1 
+[ROUTE]192.168.20.0/24 dev vrrp-ha proto kernel scope link src 192.168.20.1 
+[ROUTE]broadcast 192.168.20.0 dev vrrp-ha table local proto kernel scope link src 192.168.20.1 
+[ROUTE]broadcast 192.168.20.255 dev vrrp-ha table local proto kernel scope link src 192.168.20.1 
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e PROBE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e REACHABLE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e STALE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e PROBE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e REACHABLE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e STALE
+[ADDR]Deleted 12: vrrp-ha    inet 192.168.20.1/24 scope global vrrp-ha
+       valid_lft forever preferred_lft forever
+[ROUTE]Deleted 192.168.20.0/24 dev vrrp-ha proto kernel scope link src 192.168.20.1 
+[ROUTE]Deleted broadcast 192.168.20.255 dev vrrp-ha table local proto kernel scope link src 192.168.20.1 
+[ROUTE]Deleted broadcast 192.168.20.0 dev vrrp-ha table local proto kernel scope link src 192.168.20.1 
+[ROUTE]Deleted local 192.168.20.1 dev vrrp-ha table local proto kernel scope host src 192.168.20.1 
+[NEIGH]Deleted 224.0.0.18 dev vrrp-ha lladdr 01:00:5e:00:00:12 NOARP
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]18: vrrp.1@vlan1: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet vrrp.1 
+[NETCONF]Deleted inet6 vrrp.1 
+[NETCONF]Deleted mpls vrrp.1 
+[LINK]Deleted 18: vrrp.1@vlan1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet vrrp.wan 
+[NETCONF]Deleted inet6 vrrp.wan 
+[NETCONF]Deleted mpls vrrp.wan 
+[LINK]Deleted 16: vrrp.wan@wan: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet vrrp.8 
+[NETCONF]Deleted inet6 vrrp.8 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+3: ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+4: ens7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:04 brd ff:ff:ff:ff:ff:ff
+5: ens8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:05 brd ff:ff:ff:ff:ff:ff
+6: ens9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:06 brd ff:ff:ff:ff:ff:ff
+7: ens10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:07 brd ff:ff:ff:ff:ff:ff
+8: ens4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+9: ens5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.105/24 brd 192.168.122.255 scope global ens3
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e23:acff:fe96:6700/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+4: ens7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:04 brd ff:ff:ff:ff:ff:ff
+5: ens8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:05 brd ff:ff:ff:ff:ff:ff
+6: ens9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:06 brd ff:ff:ff:ff:ff:ff
+7: ens10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:07 brd ff:ff:ff:ff:ff:ff
+8: ens4: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+9: ens5: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[ADDR]3: ens6    inet 192.168.20.2/24 scope global ens6
+       valid_lft forever preferred_lft forever
+[ROUTE]local 192.168.20.2 dev ens6 table local proto kernel scope host src 192.168.20.2 
+[LINK]8: toswitch1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet ens4 
+[NETCONF]inet ens4 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]Deleted inet6 ens4 
+[NETCONF]inet6 ens4 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]9: toswitch2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet ens5 
+[NETCONF]inet ens5 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]Deleted inet6 ens5 
+[NETCONF]inet6 ens5 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]3: ha: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[ADDR]3: ens6    inet 192.168.20.2/24 scope global ha
+       valid_lft forever preferred_lft forever
+[NETCONF]Deleted inet ens6 
+[NETCONF]inet ens6 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]Deleted inet6 ens6 
+[NETCONF]inet6 ens6 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]8: toswitch1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev ens4 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev ens4 proto kernel metric 256 pref medium
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[ROUTE]192.168.20.0/24 dev ens6 proto kernel scope link src 192.168.20.2 
+[ROUTE]broadcast 192.168.20.0 dev ens6 table local proto kernel scope link src 192.168.20.2 
+[ROUTE]broadcast 192.168.20.255 dev ens6 table local proto kernel scope link src 192.168.20.2 
+[ROUTE]ff00::/8 dev ens6 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev ens6 proto kernel metric 256 pref medium
+[ROUTE]ff00::/8 dev ens5 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev ens5 proto kernel metric 256 pref medium
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[ROUTE]Deleted default via 192.168.122.1 dev ens3 
+[ADDR]Deleted 2: ens3    inet 192.168.122.105/24 brd 192.168.122.255 scope global ens3
+       valid_lft forever preferred_lft forever
+[ROUTE]Deleted 192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.105 
+[ROUTE]Deleted broadcast 192.168.122.255 dev ens3 table local proto kernel scope link src 192.168.122.105 
+[ROUTE]Deleted broadcast 192.168.122.0 dev ens3 table local proto kernel scope link src 192.168.122.105 
+[ROUTE]Deleted local 192.168.122.105 dev ens3 table local proto kernel scope host src 192.168.122.105 
+[NEIGH]Deleted 192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e DELAY
+[LINK]2: ens3: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+[ROUTE]Deleted fe80::/64 dev ens3 proto kernel metric 256 pref medium
+[ROUTE]Deleted anycast fe80:: dev ens3 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted local fe80::e23:acff:fe96:6700 dev ens3 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted ff00::/8 dev ens3 table local metric 256 pref medium
+[NEIGH]Deleted ff02::16 dev ens3 lladdr 33:33:00:00:00:16 NOARP
+[NEIGH]Deleted ff02::1:ff96:6700 dev ens3 lladdr 33:33:ff:96:67:00 NOARP
+[NEIGH]Deleted ff02::2 dev ens3 lladdr 33:33:00:00:00:02 NOARP
+[ADDR]Deleted 2: ens3    inet6 fe80::e23:acff:fe96:6700/64 scope link 
+       valid_lft forever preferred_lft forever
+[LINK]2: mgmt: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet ens3 
+[NETCONF]inet ens3 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]Deleted inet6 ens3 
+[NETCONF]inet6 ens3 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]2: mgmt: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev ens3 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev ens3 proto kernel metric 256 pref medium
+[NETCONF]mpls lo input off 
+[NETCONF]mpls ens3 input off 
+[NETCONF]mpls ens6 input off 
+[NETCONF]mpls ens7 input off 
+[NETCONF]mpls ens8 input off 
+[NETCONF]mpls ens9 input off 
+[NETCONF]mpls ens10 input off 
+[NETCONF]mpls ens4 input off 
+[NETCONF]mpls ens5 input off 
+[ADDR]8: ens4    inet6 fe80::e23:acff:fe96:6701/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6701 dev ens4 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev ens4 table local proto kernel metric 0 pref medium
+[ADDR]3: ens6    inet6 fe80::e23:acff:fe96:6703/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6703 dev ens6 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev ens6 table local proto kernel metric 0 pref medium
+[ADDR]9: ens5    inet6 fe80::e23:acff:fe96:6702/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6702 dev ens5 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev ens5 table local proto kernel metric 0 pref medium
+[ADDR]2: ens3    inet 192.168.122.105/24 brd 192.168.122.255 scope global mgmt
+       valid_lft forever preferred_lft forever
+[ROUTE]local 192.168.122.105 dev ens3 table local proto kernel scope host src 192.168.122.105 
+[ROUTE]broadcast 192.168.122.255 dev ens3 table local proto kernel scope link src 192.168.122.105 
+[ROUTE]192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.105 
+[ROUTE]broadcast 192.168.122.0 dev ens3 table local proto kernel scope link src 192.168.122.105 
+[ADDR]2: ens3    inet6 fe80::e23:acff:fe96:6700/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6700 dev ens3 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev ens3 table local proto kernel metric 0 pref medium
+[NSID]nsid 0 
+[ROUTE]default via 192.168.122.1 dev ens3 proto 196 metric 20 
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e REACHABLE
+[LINK]10: switch-lag: <BROADCAST,MULTICAST,MASTER> mtu 1500 qdisc noop state DOWN group default event FEATURE CHANGE 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet switch-lag forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 switch-lag forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls switch-lag input off 
+[LINK]10: switch-lag: <BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet loopback-ipsec forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 loopback-ipsec forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls loopback-ipsec input off 
+[LINK]11: loopback-ipsec: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/ether a6:14:f1:8c:c1:1e brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev loopback-ipsec table local metric 256 pref medium
+[ROUTE]fe80::/64 dev loopback-ipsec proto kernel metric 256 pref medium
+[ADDR]11: loopback-ipsec    inet6 fe80::a414:f1ff:fe8c:c11e/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::a414:f1ff:fe8c:c11e dev loopback-ipsec table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev loopback-ipsec table local proto kernel metric 0 pref medium
+[NETCONF]inet vrrp-ha forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vrrp-ha forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vrrp-ha input off 
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[LINK]12: vrrp-ha@ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vlan8 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vlan8 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vlan8 input off 
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[ROUTE]Deleted fe80::/64 dev ens4 proto kernel metric 256 pref medium
+[ROUTE]Deleted anycast fe80:: dev ens4 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted local fe80::e23:acff:fe96:6701 dev ens4 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted ff00::/8 dev ens4 table local metric 256 pref medium
+[NEIGH]Deleted ff02::1:ff96:6701 dev ens4 lladdr 33:33:ff:96:67:01 NOARP
+[NEIGH]Deleted ff02::16 dev ens4 lladdr 33:33:00:00:00:16 NOARP
+[ADDR]Deleted 8: ens4    inet6 fe80::e23:acff:fe96:6701/64 scope link 
+       valid_lft forever preferred_lft forever
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default event FEATURE CHANGE 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default event FEATURE CHANGE 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]12: vrrp-ha@ens6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vrrp.8 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vrrp.8 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vrrp.8 input off 
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet wan forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 wan forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls wan input off 
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vrrp.wan forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vrrp.wan forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vrrp.wan input off 
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:02 brd ff:ff:ff:ff:ff:ff
+[ROUTE]Deleted fe80::/64 dev ens5 proto kernel metric 256 pref medium
+[ROUTE]Deleted anycast fe80:: dev ens5 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted local fe80::e23:acff:fe96:6702 dev ens5 table local proto kernel metric 0 pref medium
+[ROUTE]Deleted ff00::/8 dev ens5 table local metric 256 pref medium
+[NEIGH]Deleted ff02::1:ff96:6702 dev ens5 lladdr 33:33:ff:96:67:02 NOARP
+[NEIGH]Deleted ff02::16 dev ens5 lladdr 33:33:00:00:00:16 NOARP
+[ADDR]Deleted 9: ens5    inet6 fe80::e23:acff:fe96:6702/64 scope link 
+       valid_lft forever preferred_lft forever
+[LINK]9: toswitch2: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default event FEATURE CHANGE 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]12: vrrp-ha@ens6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <NO-CARRIER,BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel master switch-lag state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <NO-CARRIER,BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 qdisc fq_codel master switch-lag state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vlan1 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vlan1 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vlan1 input off 
+[LINK]10: switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,MASTER,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet vrrp.1 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 vrrp.1 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]mpls vrrp.1 input off 
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]18: vrrp.1@vlan1: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]18: vrrp.1@vlan1: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[ADDR]11: loopback-ipsec    inet 15.15.15.15/32 scope global loopback-ipsec
+       valid_lft forever preferred_lft forever
+[ROUTE]local 15.15.15.15 dev loopback-ipsec table local proto kernel scope host src 15.15.15.15 
+[ADDR]13: vlan8    inet 10.10.8.252/24 scope global vlan8
+       valid_lft forever preferred_lft forever
+[ROUTE]local 10.10.8.252 dev vlan8 table local proto kernel scope host src 10.10.8.252 
+[ADDR]15: wan    inet 20.20.20.252/24 scope global wan
+       valid_lft forever preferred_lft forever
+[ROUTE]local 20.20.20.252 dev wan table local proto kernel scope host src 20.20.20.252 
+[ADDR]17: vlan1    inet 10.10.1.252/24 scope global vlan1
+       valid_lft forever preferred_lft forever
+[ROUTE]local 10.10.1.252 dev vlan1 table local proto kernel scope host src 10.10.1.252 
+[LINK]18: vrrp.1@vlan1: <NO-CARRIER,BROADCAST,MULTICAST,UP,M-DOWN> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[RULE]220:	from all lookup 220
+[RULE]220:	from all lookup 220
+[NEIGH]192.168.20.3 dev ens6 lladdr 0c:23:ac:6a:c6:03 REACHABLE
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev switch-lag table local metric 256 pref medium
+[ROUTE]fe80::/64 dev switch-lag proto kernel metric 256 pref medium
+[LINK]10: switch-lag: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]10.10.8.0/24 dev vlan8 proto kernel scope link src 10.10.8.252 
+[ROUTE]broadcast 10.10.8.0 dev vlan8 table local proto kernel scope link src 10.10.8.252 
+[ROUTE]broadcast 10.10.8.255 dev vlan8 table local proto kernel scope link src 10.10.8.252 
+[LINK]13: vlan8@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev vlan8 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev vlan8 proto kernel metric 256 pref medium
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]17: vlan1@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]10.10.1.0/24 dev vlan1 proto kernel scope link src 10.10.1.252 
+[ROUTE]broadcast 10.10.1.0 dev vlan1 table local proto kernel scope link src 10.10.1.252 
+[ROUTE]broadcast 10.10.1.255 dev vlan1 table local proto kernel scope link src 10.10.1.252 
+[LINK]17: vlan1@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev vlan1 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev vlan1 proto kernel metric 256 pref medium
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]18: vrrp.1@vlan1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]20.20.20.0/24 dev wan proto kernel scope link src 20.20.20.252 
+[ROUTE]broadcast 20.20.20.0 dev wan table local proto kernel scope link src 20.20.20.252 
+[ROUTE]broadcast 20.20.20.255 dev wan table local proto kernel scope link src 20.20.20.252 
+[LINK]15: wan@switch-lag: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state LOWERLAYERDOWN group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[ROUTE]ff00::/8 dev wan table local metric 256 pref medium
+[ROUTE]fe80::/64 dev wan proto kernel metric 256 pref medium
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[ROUTE]30.30.30.0/24 via 20.20.20.1 dev wan proto 196 metric 20 
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]inet dsvti1 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 dsvti1 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]19: dsvti1@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/none 
+[ROUTE]ff00::/8 dev dsvti1 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev dsvti1 proto kernel metric 256 pref medium
+[ADDR]19: dsvti1    inet6 fe80::e4fc:674f:16e6:d633/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e4fc:674f:16e6:d633 dev dsvti1 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev dsvti1 table local proto kernel metric 0 pref medium
+[NETCONF]inet dsvti2 forwarding on rp_filter off mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[NETCONF]inet6 dsvti2 forwarding on mc_forwarding off proxy_neigh off ignore_routes_with_linkdown off 
+[LINK]20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/none 
+[ROUTE]ff00::/8 dev dsvti2 table local metric 256 pref medium
+[ROUTE]fe80::/64 dev dsvti2 proto kernel metric 256 pref medium
+[ADDR]20: dsvti2    inet6 fe80::5cee:8115:d047:993f/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::5cee:8115:d047:993f dev dsvti2 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev dsvti2 table local proto kernel metric 0 pref medium
+[LINK]20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/none 
+[LINK]20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default 
+    link/none 
+[ADDR]17: vlan1    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::5473:6eff:fea6:d408 dev vlan1 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev vlan1 table local proto kernel metric 0 pref medium
+[ROUTE]172.20.8.0/22 dev dsvti1 proto 196 metric 20 
+[ADDR]13: vlan8    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::5473:6eff:fea6:d408 dev vlan8 table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev vlan8 table local proto kernel metric 0 pref medium
+[ADDR]10: switch-lag    inet6 fe80::e23:acff:fe96:6701/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::e23:acff:fe96:6701 dev switch-lag table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev switch-lag table local proto kernel metric 0 pref medium
+[ADDR]15: wan    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+[ROUTE]local fe80::5473:6eff:fea6:d408 dev wan table local proto kernel metric 0 pref medium
+[ROUTE]anycast fe80:: dev wan table local proto kernel metric 0 pref medium
+[ROUTE]172.20.8.0/22 dev dsvti2 proto 196 metric 20 
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[LINK]9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default 
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e STALE
+[ADDR]12: vrrp-ha    inet 192.168.20.1/24 scope global vrrp-ha
+       valid_lft forever preferred_lft forever
+[ROUTE]local 192.168.20.1 dev vrrp-ha table local proto kernel scope host src 192.168.20.1 
+[ROUTE]192.168.20.0/24 dev vrrp-ha proto kernel scope link src 192.168.20.1 
+[ROUTE]broadcast 192.168.20.0 dev vrrp-ha table local proto kernel scope link src 192.168.20.1 
+[ROUTE]broadcast 192.168.20.255 dev vrrp-ha table local proto kernel scope link src 192.168.20.1 
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e PROBE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e REACHABLE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e STALE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e PROBE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e REACHABLE
+[NEIGH]192.168.122.1 dev ens3 lladdr 22:e4:bb:03:ea:6e STALE
+[ADDR]Deleted 12: vrrp-ha    inet 192.168.20.1/24 scope global vrrp-ha
+       valid_lft forever preferred_lft forever
+[ROUTE]Deleted 192.168.20.0/24 dev vrrp-ha proto kernel scope link src 192.168.20.1 
+[ROUTE]Deleted broadcast 192.168.20.255 dev vrrp-ha table local proto kernel scope link src 192.168.20.1 
+[ROUTE]Deleted broadcast 192.168.20.0 dev vrrp-ha table local proto kernel scope link src 192.168.20.1 
+[ROUTE]Deleted local 192.168.20.1 dev vrrp-ha table local proto kernel scope host src 192.168.20.1 
+[NEIGH]Deleted 224.0.0.18 dev vrrp-ha lladdr 01:00:5e:00:00:12 NOARP
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]18: vrrp.1@vlan1: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet vrrp.1 
+[NETCONF]Deleted inet6 vrrp.1 
+[NETCONF]Deleted mpls vrrp.1 
+[LINK]Deleted 18: vrrp.1@vlan1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]16: vrrp.wan@wan: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet vrrp.wan 
+[NETCONF]Deleted inet6 vrrp.wan 
+[NETCONF]Deleted mpls vrrp.wan 
+[LINK]Deleted 16: vrrp.wan@wan: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:64 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+[LINK]14: vrrp.8@vlan8: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet vrrp.8 
+[NETCONF]Deleted inet6 vrrp.8 
+[NETCONF]Deleted mpls vrrp.8 
+[LINK]Deleted 14: vrrp.8@vlan8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[LINK]12: vrrp-ha@ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet vrrp-ha 
+[NETCONF]Deleted inet6 vrrp-ha 
+[NETCONF]Deleted mpls vrrp-ha 
+[LINK]Deleted 12: vrrp-ha@ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: mgmt: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+4: ens7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:04 brd ff:ff:ff:ff:ff:ff
+5: ens8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:05 brd ff:ff:ff:ff:ff:ff
+6: ens9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:06 brd ff:ff:ff:ff:ff:ff
+7: ens10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:07 brd ff:ff:ff:ff:ff:ff
+8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+10: switch-lag: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+11: loopback-ipsec: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/ether a6:14:f1:8c:c1:1e brd ff:ff:ff:ff:ff:ff
+13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+19: dsvti1@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/none 
+20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/none 
+    alias vpn:aggregator remote-id:30.30.30.1 svti-template:svti-tmpl-agg
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: mgmt: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.105/24 brd 192.168.122.255 scope global mgmt
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e23:acff:fe96:6700/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.20.2/24 scope global ha
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e23:acff:fe96:6703/64 scope link 
+       valid_lft forever preferred_lft forever
+4: ens7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:04 brd ff:ff:ff:ff:ff:ff
+5: ens8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:05 brd ff:ff:ff:ff:ff:ff
+6: ens9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:06 brd ff:ff:ff:ff:ff:ff
+7: ens10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:07 brd ff:ff:ff:ff:ff:ff
+8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+10: switch-lag: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::e23:acff:fe96:6701/64 scope link 
+       valid_lft forever preferred_lft forever
+11: loopback-ipsec: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether a6:14:f1:8c:c1:1e brd ff:ff:ff:ff:ff:ff
+    inet 15.15.15.15/32 scope global loopback-ipsec
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a414:f1ff:fe8c:c11e/64 scope link 
+       valid_lft forever preferred_lft forever
+13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.8.252/24 scope global vlan8
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+    inet 20.20.20.252/24 scope global wan
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.1.252/24 scope global vlan1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+19: dsvti1@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/none 
+    inet6 fe80::e4fc:674f:16e6:d633/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/none 
+    inet6 fe80::5cee:8115:d047:993f/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+
+[NETCONF]Deleted mpls vrrp.8 
+[LINK]Deleted 14: vrrp.8@vlan8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:08 brd ff:ff:ff:ff:ff:ff
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[LINK]3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default 
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+[LINK]12: vrrp-ha@ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+[NETCONF]Deleted inet vrrp-ha 
+[NETCONF]Deleted inet6 vrrp-ha 
+[NETCONF]Deleted mpls vrrp-ha 
+[LINK]Deleted 12: vrrp-ha@ens6: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default 
+    link/ether 00:00:5e:00:01:01 brd ff:ff:ff:ff:ff:ff
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: mgmt: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+4: ens7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:04 brd ff:ff:ff:ff:ff:ff
+5: ens8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:05 brd ff:ff:ff:ff:ff:ff
+6: ens9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:06 brd ff:ff:ff:ff:ff:ff
+7: ens10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:07 brd ff:ff:ff:ff:ff:ff
+8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+10: switch-lag: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+11: loopback-ipsec: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/ether a6:14:f1:8c:c1:1e brd ff:ff:ff:ff:ff:ff
+13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+19: dsvti1@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/none 
+20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/none 
+    alias vpn:aggregator remote-id:30.30.30.1 svti-template:svti-tmpl-agg
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: mgmt: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.122.105/24 brd 192.168.122.255 scope global mgmt
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e23:acff:fe96:6700/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ha: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:03 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.20.2/24 scope global ha
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e23:acff:fe96:6703/64 scope link 
+       valid_lft forever preferred_lft forever
+4: ens7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:04 brd ff:ff:ff:ff:ff:ff
+5: ens8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:05 brd ff:ff:ff:ff:ff:ff
+6: ens9: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:06 brd ff:ff:ff:ff:ff:ff
+7: ens10: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether 0c:23:ac:96:67:07 brd ff:ff:ff:ff:ff:ff
+8: toswitch1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+9: toswitch2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc fq_codel master switch-lag state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+10: switch-lag: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 0c:23:ac:96:67:01 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::e23:acff:fe96:6701/64 scope link 
+       valid_lft forever preferred_lft forever
+11: loopback-ipsec: <BROADCAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/ether a6:14:f1:8c:c1:1e brd ff:ff:ff:ff:ff:ff
+    inet 15.15.15.15/32 scope global loopback-ipsec
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a414:f1ff:fe8c:c11e/64 scope link 
+       valid_lft forever preferred_lft forever
+13: vlan8@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.8.252/24 scope global vlan8
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+15: wan@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+    inet 20.20.20.252/24 scope global wan
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+17: vlan1@switch-lag: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 56:73:6e:a6:d4:08 brd ff:ff:ff:ff:ff:ff
+    inet 10.10.1.252/24 scope global vlan1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5473:6eff:fea6:d408/64 scope link 
+       valid_lft forever preferred_lft forever
+19: dsvti1@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/none 
+    inet6 fe80::e4fc:674f:16e6:d633/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever
+20: dsvti2@lo: <NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/none 
+    inet6 fe80::5cee:8115:d047:993f/64 scope link stable-privacy 
+       valid_lft forever preferred_lft forever

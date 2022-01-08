@@ -1,0 +1,41 @@
+diff --git a/keepalived/vrrp/vrrp_daemon.c b/keepalived/vrrp/vrrp_daemon.c
+index 631e29c9..568a6b2a 100644
+--- a/keepalived/vrrp/vrrp_daemon.c
++++ b/keepalived/vrrp/vrrp_daemon.c
+@@ -596,8 +596,11 @@ start_vrrp(data_t *prev_global_data)
+ #endif
+ 		}
+ 	}
++	vrrp_t *vrrp;
++	list_for_each_entry(vrrp, &vrrp_data->vrrp, e_list)
++    log_message(LOG_INFO, "Found vrrp %s", &vrrp_data->vrrp->iname);
+ 
+-	if (!__test_bit(CONFIG_TEST_BIT, &debug)) {
++  if (!__test_bit(CONFIG_TEST_BIT, &debug)) {
+ 		/* Init & start the VRRP packet dispatcher */
+ 		if (!reload && global_data->vrrp_startup_delay) {
+ 			vrrp_delayed_start_time = timer_add_long(time_now, global_data->vrrp_startup_delay);
+diff --git a/keepalived/vrrp/vrrp_scheduler.c b/keepalived/vrrp/vrrp_scheduler.c
+index a02186be..3ee92982 100644
+--- a/keepalived/vrrp/vrrp_scheduler.c
++++ b/keepalived/vrrp/vrrp_scheduler.c
+@@ -294,7 +294,7 @@ void
+ vrrp_init_instance_sands(vrrp_t *vrrp)
+ {
+ 	set_time_now();
+-
++	log_message(LOG_INFO, "VRRP State of %s at vrrp_init_instance_sands %d", vrrp->iname, vrrp->state);
+ 	if (vrrp->state == VRRP_STATE_MAST) {
+ 		if (vrrp->reload_master)
+ 			vrrp->sands = time_now;
+@@ -379,6 +379,10 @@ vrrp_register_workers(list_head_t *l)
+ 	sock_t *sock;
+ 	timeval_t timer;
+ 
++	vrrp_t *vrrp;
++	list_for_each_entry(vrrp, &vrrp_data->vrrp, e_list)
++		log_message(LOG_INFO, "Found vrrp %s at vrrp_register_workers", vrrp->iname);
++	
+ 	/* Init compute timer */
+ 	memset(&timer, 0, sizeof(timer));
+ 
