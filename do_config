@@ -23,8 +23,9 @@ VER=${VER#* }
 MINOR=${VER%% *}
 REL=${VER#* }
 [[ $MAJOR -lt 2 || ($MAJOR -eq 2 && $MINOR -eq 0 && $REL -lt 20) ]] && DEBUG_OPTIONS="$OLD_DEBUG_OPTIONS"
+NO_DBUS_DATA_DIR=0
 
-while getopts ":hadoeDf:cCmp-" opt; do
+while getopts ":hadoeDf:ncCmp-" opt; do
 	case $opt in
 		h)
 			echo "$0 -- usage:"
@@ -35,6 +36,7 @@ while getopts ":hadoeDf:cCmp-" opt; do
 			echo "	-e	disable EINTR checking"
 			echo "	-D	disable link optimiser/hardening"
 			echo "	-f TYPE	make i/f type TYPE unchangeable"
+			echo "	-n	don't specify --with-dbus-data-dir=/usr/share"
 			echo "	-m	enable mem-check"
 			echo "	-p	enable perf"
 			echo "	-c	enable strict cast alignment warnings"
@@ -60,6 +62,9 @@ while getopts ":hadoeDf:cCmp-" opt; do
 		f)
 			OPTIONS="$OPTIONS --with-fixed-if-type=$OPTARG"
 			;;
+		n)
+			NO_DBUS_DATA_DIR=1
+			;;
 		m)
 			OPTIONS="$OPTIONS $MEMCHECK_OPTIONS"
 			;;
@@ -81,6 +86,9 @@ while getopts ":hadoeDf:cCmp-" opt; do
 			;;
 	esac
 done
+
+[[ $NO_DBUS_DATA_DIR -eq 0 ]] && OPTIONS="$OPTIONS --with-dbus-data-dir=/usr/share"
+
 shift $((OPTIND-1))
 
 ./configure $OPTIONS $*
